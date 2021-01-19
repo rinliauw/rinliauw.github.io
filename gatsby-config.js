@@ -1,17 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jonathan Jauhari`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jonathan Jauhari`,
+      summary: `Computer Science student at the University of Melbourne`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: ``,
+    siteUrl: `https://jonjau.github.io`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `jonjauhari`,
     },
   },
   plugins: [
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -73,5 +74,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-typescript`
   ],
 }
