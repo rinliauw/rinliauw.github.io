@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import favicon from '../../content/assets/profile-pic.jpg';
 
 interface Props {
   description?: string
@@ -79,6 +80,9 @@ const SEO = ({ description, lang, meta, title }: Props) => {
         },
         // another hack
       ].concat(meta as any)}
+      link={[
+        { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` }
+    ]}
     />
   );
 };

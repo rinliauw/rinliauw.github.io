@@ -52,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].id;
 
       // `context` is available in the template as a
-      // prop and as a variable in GraphQ
+      // prop and as a variable in GraphQL
       createPage({
         // slug starts with a '/'
         path: `/${category}${post.fields.slug}`,
