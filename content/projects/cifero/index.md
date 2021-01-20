@@ -59,10 +59,10 @@ be in Esperanto (I don't think it's cifero).
 
 ## Screenshots
 
-![ks1](/cifero/ks1.png)
-![c1](/cifero/c1.png)
-![c2](/cifero/c2.png)
-![c5](/cifero/c5.png)
+![keysmith](./keysmith.jpg)
+![cifero1](./cifero1.jpg)
+![cifero2](./cifero2.jpg)
+![cifero5](./cifero5.jpg)
 
 ## Sample text
 

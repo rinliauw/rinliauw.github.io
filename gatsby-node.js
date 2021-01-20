@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const projectPost = path.resolve(`./src/templates/project-post.tsx`);
 
   await createPagesFromMarkdownFiles("blog", blogPost);
-  await createPagesFromMarkdownFiles("projects", blogPost);
+  await createPagesFromMarkdownFiles("projects", projectPost);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

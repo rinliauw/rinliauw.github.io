@@ -54,6 +54,7 @@ interface Props extends PageProps {
   };
 }
 
+// TODO: compact/archive view
 const Blog = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;

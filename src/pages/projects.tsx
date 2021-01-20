@@ -54,7 +54,7 @@ interface Props extends PageProps {
   };
 }
 
-const Posts = ({ data, location }: Props) => {
+const Projects = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts = data.allMarkdownRemark.nodes;
 
@@ -74,7 +74,7 @@ const Posts = ({ data, location }: Props) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link to={`/projects${post.fields.slug}`} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
@@ -97,4 +97,4 @@ const Posts = ({ data, location }: Props) => {
   );
 };
 
-export { Posts as default, pageQuery };
+export { Projects as default, pageQuery };
