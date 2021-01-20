@@ -4,31 +4,7 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-interface Props extends PageProps {
-  data: {
-    allMarkdownRemark: any;
-    site: {
-      siteMetadata: {
-        title: string;
-      };
-    };
-  };
-}
-
-const BlogIndex = ({ data, location }: Props) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
-
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      About
-    </Layout>
-  );
-};
-
-export default BlogIndex;
-
-export const pageQuery = graphql`
+const pageQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -50,3 +26,28 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+
+interface Props extends PageProps {
+  data: {
+    allMarkdownRemark: any;
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
+}
+
+const About = ({ data, location }: Props) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
+      About
+    </Layout>
+  );
+};
+
+export { About as default, pageQuery };

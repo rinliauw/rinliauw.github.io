@@ -4,22 +4,23 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  // make / ("index") point to /posts
+  // make / ("index") point to /blog
   createRedirect({
-    fromPath: '/',
-    toPath: '/posts',
+    fromPath: "/",
+    toPath: "/blog",
     isPermanent: true,
     redirectInBrowser: true,
-  })
+  });
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
-
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
+  // Get all markdown posts in the the subfolder category in /content/{category}
+  // (defined in gatsby-config.js)
+  const createPagesFromMarkdownFiles = async (category, postComponent) => {
+    // Sorted by date, reverse chrono, ad arbitrary limit of 1000 pages
+    const postsResult = await graphql(
+      `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/${category}/" } }
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
@@ -28,36 +29,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            fileAbsolutePath
           }
         }
       }
-    `
-  );
-
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
+      `
     );
-    return;
-  }
 
-  const posts = result.data.allMarkdownRemark.nodes;
+    if (postsResult.errors) {
+      reporter.panicOnBuild(
+        `There was an error loading your posts in category '${category}'`,
+        postsResult.errors
+      );
+      return;
+    }
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog"
-  // (defined in gatsby-config.js) `context` is available in the template as a
-  // prop and as a variable in GraphQL
+    const posts = postsResult.data.allMarkdownRemark.nodes;
 
-  if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
         index === posts.length - 1 ? null : posts[index + 1].id;
 
+      // `context` is available in the template as a
+      // prop and as a variable in GraphQ
       createPage({
-        path: post.fields.slug,
-        component: blogPost,
+        // slug starts with a '/'
+        path: `/${category}${post.fields.slug}`,
+        component: postComponent,
         context: {
           id: post.id,
           previousPostId,
@@ -65,7 +64,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       });
     });
-  }
+  };
+
+  // Templates for a blog post and a project post
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
+  const projectPost = path.resolve(`./src/templates/project-post.tsx`);
+
+  await createPagesFromMarkdownFiles("blog", blogPost);
+  await createPagesFromMarkdownFiles("projects", blogPost);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

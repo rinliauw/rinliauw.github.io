@@ -1,12 +1,12 @@
 import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 
 const Navbar = () => {
   return (
     <>
       <div className="navbar">
         <h2>
-          <Link to="/posts">Posts</Link>
+          <Link to="/blog">Blog</Link>
         </h2>
         <h2>
           <Link to="/projects">Projects</Link>

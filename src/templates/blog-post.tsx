@@ -4,6 +4,46 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+const pageQuery = graphql`
+query BlogPostBySlug(
+  $id: String!
+  $previousPostId: String
+  $nextPostId: String
+) {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  markdownRemark(id: { eq: $id }) {
+    id
+    excerpt(pruneLength: 160)
+    html
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+      description
+    }
+  }
+  previous: markdownRemark(id: { eq: $previousPostId }) {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+  next: markdownRemark(id: { eq: $nextPostId }) {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+}
+`;
+
 interface Props {
   location: Location;
   data: {
@@ -19,11 +59,12 @@ interface Props {
   pageContext: any;
 }
 
-const BlogPostTemplate = ({ data, location }: Props) => {
+const BlogPost = ({ data, location }: Props) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
+  // TODO: time to read, table of contents, tags
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -58,14 +99,14 @@ const BlogPostTemplate = ({ data, location }: Props) => {
           {/* TODO: make these stack */}
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/blog${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -76,44 +117,4 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   );
 };
 
-export default BlogPostTemplate;
-
-export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(id: { eq: $id }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-  }
-`;
+export { BlogPost as default, pageQuery };

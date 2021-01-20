@@ -4,6 +4,16 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 interface Props extends PageProps {
   data: {
     site: {
@@ -14,7 +24,7 @@ interface Props extends PageProps {
   };
 }
 
-const NotFoundPage = ({ data, location }: Props) => {
+const NotFound = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
@@ -26,14 +36,4 @@ const NotFoundPage = ({ data, location }: Props) => {
   );
 };
 
-export default NotFoundPage;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
+export { NotFound as default, pageQuery };
