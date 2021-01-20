@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, graphql, PageProps } from "gatsby";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -14,14 +13,16 @@ interface Props {
         title: string;
       };
     };
+    previous: any;
+    next: any;
   };
   pageContext: any;
 }
 
-const BlogPostTemplate = ({ data, location, pageContext }: Props) => {
+const BlogPostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const { previous, next } = pageContext;
+  const { previous, next } = data;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -43,9 +44,6 @@ const BlogPostTemplate = ({ data, location, pageContext }: Props) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -57,6 +55,7 @@ const BlogPostTemplate = ({ data, location, pageContext }: Props) => {
             padding: 0,
           }}
         >
+          {/* TODO: make these stack */}
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">

@@ -89,7 +89,7 @@ footer {
 
 hr {
   background: var(--color-accent);
-  height: 1px;
+  height: 4px;
   border: 0;
 }
 
@@ -102,7 +102,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  margin-top: var(--spacing-12);
+  margin-top: var(--spacing-8);
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
@@ -251,7 +251,7 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-2);
 }
 
 .main-heading {
@@ -269,7 +269,7 @@ a:focus {
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-4);
+  font-size: var(--fontSize-3);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
@@ -317,6 +317,17 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar h2 {
+  padding-right: 10px;
+  word-wrap: normal;
+  font-size: var(--fontSize-3);
+  color: var(--color-primary);
 }
 
 /* Media queries */

@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
 
-import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -22,7 +21,7 @@ const BlogIndex = ({ data, location }: Props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
+      About
     </Layout>
   );
 };
