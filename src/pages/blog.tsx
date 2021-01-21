@@ -14,8 +14,9 @@ const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/blog/"}}
-      sort: { fields: [frontmatter___date], order: DESC }) {
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       nodes {
         excerpt
         fields {
@@ -70,29 +71,32 @@ const Blog = ({ data, location }: Props) => {
 
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    {/* relative link to e.g. /posts/post1-slug/ */}
-                    <Link to={`.${post.fields.slug}`} itemProp="url">
+              <Link to={`/blog${post.fields.slug}`} itemProp="url">
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2 className="post-list-item-headline">
+                      {/* relative link to e.g. /posts/post1-slug/ */}
                       <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+                    </h2>
+                    <small className="post-list-item-headline-date">
+                      {post.frontmatter.date}
+                    </small>
+                  </header>
+                  <section>
+                    <p
+                      className="post-list-item-description"
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              </Link>
             </li>
           );
         })}
