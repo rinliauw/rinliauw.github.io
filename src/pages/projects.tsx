@@ -60,7 +60,7 @@ const Projects = ({ data, location }: Props) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Projects" />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post: MarkdownRemarkNode) => {
           const title = post.frontmatter.title || post.fields.slug;

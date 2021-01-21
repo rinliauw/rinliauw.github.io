@@ -43,7 +43,7 @@ const About = ({ data, location }: Props) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="About" />
       <article
         className="blog-post"
         itemScope

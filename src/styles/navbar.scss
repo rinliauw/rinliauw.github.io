@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  h2 {
+    padding-right: var(--spacing-4);
+    word-wrap: normal;
+    font-size: var(--fontSize-3);
+    color: var(--color-primary);
+  }
+}
