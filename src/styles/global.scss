@@ -29,14 +29,14 @@
   --spacing-24: 6rem;
   --spacing-32: 8rem;
 
-  --fontFamily-sans: "Noto Sans", "Helvetica", Montserrat, system-ui,
+  --fontFamily-sans: "Noto Sans", "Helvetica", system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Garamond", "Merriweather", Cambria, "Times New Roman",
+  --fontFamily-serif: "Garamond", "Garamond", "Merriweather", Cambria, "Times New Roman",
     Times, serif;
 
   --font-body: var(--fontFamily-sans);
-  --font-heading: var(--fontFamily-sans);
+  --font-heading: var(--fontFamily-serif);
 
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
