@@ -16,10 +16,7 @@ const Layout = ({ location, title, children }: Props) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">
         <h1 className="main-heading">
-          <Link to="/">
-            <span>Jonathan </span>
-            <span style={{color: "#c08e5b"}}>Jauhari</span>
-          </Link>
+          <Link to="/">{title}</Link>
         </h1>
         <Navbar />
       </header>

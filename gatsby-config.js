@@ -1,4 +1,6 @@
 module.exports = {
+  // publish to username.github.io/v2
+  pathPrefix: "/v2",
   siteMetadata: {
     title: `Jonathan Jauhari`,
     author: {
