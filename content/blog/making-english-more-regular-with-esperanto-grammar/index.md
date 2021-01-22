@@ -127,9 +127,7 @@ the structure of the sentence makes its meaning unclear.
 
 A popular example is:
 
-```_
-I saw a man on a hill with a telescope.
-```
+    I saw a man on a hill with a telescope.
 
 There are several interpretations:
 
@@ -140,22 +138,18 @@ There are several interpretations:
 The sentence might be disambiguated by context, or a change in sentence
 structure:
 
-```_
-1. I saw a man on a hill, which had a telescope.
-2. I saw a man, who had a telescope, on a hill.
-3. I saw, using a telescope, a man on a hill.
-```
+    1. I saw a man on a hill, which had a telescope.
+    2. I saw a man, who had a telescope, on a hill.
+    3. I saw, using a telescope, a man on a hill.
 
 If it were "I saw a man with a woman with a telescope", disambiguation
 would be much more difficult. In speech, emphasis and pauses could be used.
 
 A possible translation:
 
-```_
-1. I see-is man-on on have-telescope-a hill-o.
-2. I see-is have-telescope-a man-on on hill-o.
-3. I use-telescope-e see-is man-on on hill-o.
-```
+    1. I see-is man-on on have-telescope-a hill-o.
+    2. I see-is have-telescope-a man-on on hill-o.
+    3. I use-telescope-e see-is man-on on hill-o.
 
 - the article 'a' is dropped.
 - -o marks a noun.
@@ -170,11 +164,9 @@ a good idea, since they might get more complex. What if instead of 'have
 telescope' we had 'had one telescope and now have two'? More extensible but
 less natural would be:
 
-```_
-1. I see-is man-on on hill-o which have-as telescope-on.
-2. I see-is man-on who have-as telescope-on on hill-o.
-3. I see-is use-ante telescope-on man-on on hill-o.
-```
+    1. I see-is man-on on hill-o which have-as telescope-on.
+    2. I see-is man-on who have-as telescope-on on hill-o.
+    3. I see-is use-ante telescope-on man-on on hill-o.
 
 - -ant- marks continuity, and again, -e makes an adverb so 'use-ante
   telescope-on' is an adverbial clause that would describe an action as 'using
@@ -183,9 +175,7 @@ less natural would be:
 
 ### Lexical ambiguity 1
 
-```_
-She went to the bank.
-```
+    She went to the bank.
 
 What bank? Merriam-Webster lists
 [5 entries](https://www.merriam-webster.com/dictionary/bank) for 'bank', but
@@ -199,18 +189,14 @@ Here 'bank' is either:
 Further context is needed, and often it is available. There is no good way to
 deal with this without adding an extra clause.
 
-```_
-1. She go-is to the-bank-o of the-river-o.
-2. She go-is to the-bank-o for store-i money-o.
-```
+    1. She go-is to the-bank-o of the-river-o.
+    2. She go-is to the-bank-o for store-i money-o.
 
 - -i makes a verb infinitive: 'store-i money-o' is 'to store money'.
 
 ### Lexical ambiguity 2
 
-```_
-I like understanding people.
-```
+    I like understanding people.
 
 This time the sentence structure doesn't help us, and the ambiguity arises
 from the fact that 'understanding' can be a verb or an adjective:
@@ -221,18 +207,14 @@ from the fact that 'understanding' can be a verb or an adjective:
 Disambiguation by inventing new English words (this is irregular, and not always
 possible):
 
-```_
-1. I like understanders.
-2. I like people-understanding.
-```
+    1. I like understanders.
+    2. I like people-understanding.
 
 Esperanto grammar is particularly well-suited for this. Changing the suffix
 changes the role of the word.
 
-```_
-1. I like-as understand-ajn person-ojn.
-2. I like-as understand-i person-ojn.
-```
+    1. I like-as understand-ajn person-ojn.
+    2. I like-as understand-i person-ojn.
 
 In the first sentence:
 
@@ -252,9 +234,7 @@ In the second sentence:
 Somewhat related to lexical ambiguity is morphological ambiguity, which (as I
 understand) is when adding prefixes and suffixes leads to (further) ambiguity.
 
-```_
-This shoe is untieable.
-```
+    This shoe is untieable.
 
 Interpretations:
 
@@ -263,17 +243,13 @@ Interpretations:
 
 With punctuation (different emphasis in speech):
 
-```_
-1. This shoe is untie-able.
-2. This shoe is un-tieable.
-```
+    1. This shoe is untie-able.
+    2. This shoe is un-tieable.
 
 With Esperanto grammar:
 
-```_
-1. This-shoe-o can-as be-i not-tie-ita.
-2. This-shoe-o not-can-as be-i tie-ita.
-```
+    1. This-shoe-o can-as be-i not-tie-ita.
+    2. This-shoe-o not-can-as be-i tie-ita.
 
 - not- negates
 - 'can' is considered a verb
@@ -285,9 +261,7 @@ With Esperanto grammar:
 
 ### The "comma problem"
 
-```_
-I invited my parents, Jack and Jill to the party.
-```
+    I invited my parents, Jack and Jill to the party.
 
 Interpretations:
 
@@ -296,20 +270,16 @@ Interpretations:
 
 Changing the sentence structure, and punctuation can disambiguate:
 
-```_
-1. I invited my parents, Jack, and Jill to the party.
-   I invited Jack, Jill, and my parents to the party.
+    1. I invited my parents, Jack, and Jill to the party.
+       I invited Jack, Jill, and my parents to the party.
 
-2. I invited my parents (Jack and Jill) to the party.
-   I invited to the party, my parents: Jack and Jill.
-```
+    2. I invited my parents (Jack and Jill) to the party.
+       I invited to the party, my parents: Jack and Jill.
 
 Esperanto grammar (as well as more regular punctuation):
 
-```_
-1. I invite-is I-an parent-ojn, Jack-on, and Jill-on to the-party-o.
-2. I invite-is I-an parent-ojn who name-as Jack and Jill to the-party-o.
-```
+    1. I invite-is I-an parent-ojn, Jack-on, and Jill-on to the-party-o.
+    2. I invite-is I-an parent-ojn who name-as Jack and Jill to the-party-o.
 
 - 'I' becomes 'my' by adding -a.
 - Since 'my parents' is a direct object we also add -n, so 'I-an parent-ojn'.
@@ -317,9 +287,7 @@ Esperanto grammar (as well as more regular punctuation):
 
 ### The "it problem"
 
-```_
-The dog furiously chased the cat until it suddenly fell.
-```
+    The dog furiously chased the cat until it suddenly fell.
 
 What is 'it' referring to?
 
@@ -328,46 +296,41 @@ What is 'it' referring to?
 
 I can't think of a way to disambiguate this while keeping the 'it'.
 
-```_
-1. The-dog-o fury-e chase-is the-cat-on until the-cat-o sudden-e fall-is.
-2. The-dog-o fury-e chase-is the-cat-on until the-dog-o sudden-e fall-is.
-```
+    1. The-dog-o fury-e chase-is the-cat-on until the-cat-o sudden-e fall-is.
+    2. The-dog-o fury-e chase-is the-cat-on until the-dog-o sudden-e fall-is.
 
 ### Sample translation
 
 [Source](https://omniglot.com/language/articles/englishlearningchallenges.htm).
 With slight alterations:
 
-```_
-English grammar is complex, making it difficult to remember, master and use
-logically. Ensuring you use the correct grammar can be tricky, especially
-when you are in conversation with someone and they are speaking at an
-alarmingly fast pace. Learning grammar is like learning to drive, you can
-learn all of the theory, rules and regulations, but you won't be good at it
-unless you practice it and it starts to become second nature to you. Grammar
-is extremely important, incorrect use of grammar can confuse the person you
-are speaking to and even change the meaning of what you are communicating,
-what's more is native English speakers are hyper-aware of grammar and will
-notice almost immediately if a grammatical error is made, even if this is the
-smallest of errors. Don't get me started on accents...
-```
+    English grammar is complex, making it difficult to remember, master and use
+    logically. Ensuring you use the correct grammar can be tricky, especially
+    when you are in conversation with someone and they are speaking at an
+    alarmingly fast pace. Learning grammar is like learning to drive, you can
+    learn all of the theory, rules and regulations, but you won't be good at it
+    unless you practice it and it starts to become second nature to you. Grammar
+    is extremely important, incorrect use of grammar can confuse the person you
+    are speaking to and even change the meaning of what you are communicating,
+    what's more is native English speakers are hyper-aware of grammar and will
+    notice almost immediately if a grammatical error is made, even if this is
+    the smallest of errors. Don't get me started on accents...
 
 Esperanto grammar (kind of):
 
-```_
-English-a grammar-o be-as complex-a, such-that difficult-as remember-i,
-master-i and use-i logic-e it-n. Ensure-i that you use-as correct-a grammar-o
-can-as be-i trick-a, special-e when you converse-as with person-o and they
-speak-as at alarm-e fast-a pace-o. Learn-i grammar-on be-as like learn-i
-drive-i, you can-as learn-i all the theory-ojn, rule-ojn, regulation-ojn, but
-you not good-os at it unless you practice-as it-n and it start-as become-i
-second-a nature-o to you. Grammar-o be-is extreme-e important-a,
-not-correct-a use-o of grammar-o can-as confuse-i the person-on whom you
-speak-as, and even change-as the meaning-on of what you communicate-as,
-more-e, native-a English-a speaker-oj hyper-e aware-as of grammar-o and
-notice-os almost immediate-e if grammar-a error-o make-itas, even if this
-be-as the most small error-o. Not start-u I-n on accent-oj...
-```
+    English-a grammar-o be-as complex-a, such-that difficult-as remember-i,
+    master-i and use-i logic-e it-n. Ensure-i that you use-as correct-a
+    grammar-o can-as be-i trick-a, special-e when you converse-as with
+    person-o and they speak-as at alarm-e fast-a pace-o. Learn-i grammar-on
+    be-as like learn-i drive-i, you can-as learn-i all the theory-ojn,
+    rule-ojn, regulation-ojn, but you not good-os at it unless you
+    practice-as it-n and it start-as become-i second-a nature-o to you.
+    Grammar-o be-is extreme-e important-a, not-correct-a use-o of grammar-o
+    can-as confuse-i the person-on whom you speak-as, and even change-as the
+    meaning-on of what you communicate-as, more-e, native-a English-a
+    speaker-oj hyper-e aware-as of grammar-o and notice-os almost immediate-e
+    if grammar-a error-o make-itas, even if this be-as the most small
+    error-o. Not start-u I-n on accent-oj...
 
 Most of this is probably inaccurate, but it is interesting still.
 
