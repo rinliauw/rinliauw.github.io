@@ -18,3 +18,4 @@ export const fontSize = [
   "2.488rem",
   "2.986re",
 ];
+

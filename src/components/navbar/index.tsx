@@ -1,24 +1,22 @@
 import React from "react";
 import { Link } from "gatsby";
-
-import "../styles/navbar.scss";
+import { NavbarContainer } from "./styled";
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar">
-        <div className="navbar-item">
-          <h2>
-            <Link to="/blog">Blog</Link>
-          </h2>
-        </div>
+      <NavbarContainer>
+        <h2>Jonathan Jauhari</h2>
+        <h2>
+          <Link to="/blog">Blog</Link>
+        </h2>
         <h2>
           <Link to="/projects">Projects</Link>
         </h2>
         <h2>
           <Link to="/about">About</Link>
         </h2>
-      </div>
+      </NavbarContainer>
       <hr></hr>
     </>
   );
