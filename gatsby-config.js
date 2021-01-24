@@ -1,6 +1,7 @@
 module.exports = {
   // publish to username.github.io/v2
   pathPrefix: "/v2",
+
   siteMetadata: {
     title: `Jonathan Jauhari`,
     author: {
@@ -51,13 +52,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              noInlineHighlight: true
-            }
-          },
-          
+          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -89,6 +84,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`
   ],
 };
