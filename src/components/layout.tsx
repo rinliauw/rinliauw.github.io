@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
 import Navbar from "./navbar";
 
 import styled from "styled-components";
 import { spacing, fontSize } from "../common";
+import Container from "./container";
 
 export const LayoutBackground = styled.div`
   background-color: black;
@@ -14,6 +14,12 @@ export const LayoutHeader = styled.header`
   left: 0;
   right: 0;
   z-index: 10;
+`;
+
+// fr is fraction
+export const LayoutMain = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 `;
 
 export const GlobalWrapper = styled.div`
@@ -46,7 +52,9 @@ const Layout = ({ location, title, children }: Props) => {
       <LayoutHeader>
         <Navbar />
       </LayoutHeader>
-      <main>{children}</main>
+      <LayoutMain>
+        <Container>{children}</Container>
+      </LayoutMain>
       <footer>Copyright © {new Date().getFullYear()} Jonathan Jauhari</footer>
     </LayoutBackground>
   );
