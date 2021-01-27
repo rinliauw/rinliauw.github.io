@@ -9,6 +9,11 @@ const theme = {
     heading: "#f1f1f1",
     accent: "#d1dce5",
   },
+
+  font: {
+      sans: "'Noto Sans', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'",
+      serif: "'Noto Serif', 'Georgia', 'Cambria', 'Times New Roman', 'serif'"
+  }
 };
 
 export default theme;
