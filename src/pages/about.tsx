@@ -69,7 +69,7 @@ const About = ({ data, location }: Props) => {
             through my email:
             <br />
             <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
-              joncjauhari [at] gmail [dot] com].
+              joncjauhari [at] gmail [dot] com.
             </a>
           </p>
 

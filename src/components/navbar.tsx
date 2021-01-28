@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { fontSize } from "../common";
 
+// TODO: breakpoints.
+
 const Nav = styled.nav`
   margin: 0 auto;
   height: 3.75rem;
@@ -48,9 +50,7 @@ const NavbarSecondary = styled.div`
 const NavbarLink = styled(Link)`
   display: block;
   font-weight: 500;
-  color: lighter;
-  transition: base;
-
+  
   margin: 0 1rem;
   font-size: ${fontSize[3]};
 `;
@@ -63,9 +63,9 @@ const Navbar = () => {
           <NavbarBrand>Jonathan Jauhari</NavbarBrand>
         </NavbarBrandLink>
         <NavbarSecondary>
-          <NavbarLink to="/about">About</NavbarLink>
           <NavbarLink to="/blog">Blog</NavbarLink>
           <NavbarLink to="/projects">Projects</NavbarLink>
+          <NavbarLink to="/about">About</NavbarLink>
         </NavbarSecondary>
       </NavbarContainer>
     </Nav>
