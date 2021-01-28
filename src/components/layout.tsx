@@ -1,15 +1,16 @@
 import React from "react";
-import Navbar from "./navbar";
-
 import styled from "styled-components";
-import Container from "./container";
 
-export const LayoutBackground = styled.div`
+import Container from "./container";
+import Navbar from "./navbar";
+import Footer from "./footer";
+
+const LayoutBackground = styled.div`
   background-color: black;
   min-height: 100%;
 `;
 
-export const LayoutHeader = styled.header`
+const LayoutHeader = styled.header`
   position: absolute;
   left: 0;
   right: 0;
@@ -17,10 +18,17 @@ export const LayoutHeader = styled.header`
 `;
 
 // fr is fraction
-export const LayoutMain = styled.main`
+const LayoutMain = styled.main`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 `;
+
+const LayoutFooter = styled.footer`
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 
 interface Props {
   location: Location;
@@ -40,7 +48,9 @@ const Layout = ({ location, title, children }: Props) => {
       <LayoutMain>
         <Container>{children}</Container>
       </LayoutMain>
-      <footer>Copyright © {new Date().getFullYear()} Jonathan Jauhari</footer>
+      <LayoutFooter>
+        <Footer />
+      </LayoutFooter>
     </LayoutBackground>
   );
 };
