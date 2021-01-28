@@ -1,12 +1,50 @@
 import React from "react";
 import { Link, graphql, PageProps } from "gatsby";
+import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import "../styles/blog.scss";
 import { ThemeProvider } from "styled-components";
 import theme from "../common/theme";
+import {spacing, fontSize} from "../common";
+
+const PostListItem = styled.article`
+  margin-bottom: ${spacing[8]};
+  margin-top: ${spacing[8]};
+  padding: ${spacing[3]};
+  border-radius: 8px;
+  color: var(--color-text);
+
+  header {
+    margin-bottom: ${spacing[4]};
+    .post-list-item-headline {
+      font-size: ${fontSize[3]};
+      color: var(--color-primary);
+      margin-bottom: ${spacing[2]};
+      margin-top: 0;
+    }
+  }
+  .post-list-item-description {
+    margin-bottom: 0;
+  }
+
+  // x:hover and x :hover are not the same.
+  &:hover {
+    background-color: rgb(46, 46, 46);
+    header {
+      .post-list-item-headline {
+        color: var(--color-primary-bright);
+      }
+      .post-list-item-headline-date {
+        color: var(--color-text-bright);
+      }
+    }
+    .post-list-item-description {
+      color: var(--color-text-bright);
+    }
+  }
+`;
 
 const pageQuery = graphql`
   query {
@@ -75,7 +113,7 @@ const Blog = ({ data, location }: Props) => {
             return (
               <li key={post.fields.slug}>
                 <Link to={`/blog${post.fields.slug}`} itemProp="url">
-                  <article
+                  <PostListItem
                     className="post-list-item"
                     itemScope
                     itemType="http://schema.org/Article"
@@ -98,7 +136,7 @@ const Blog = ({ data, location }: Props) => {
                         itemProp="description"
                       />
                     </section>
-                  </article>
+                  </PostListItem>
                 </Link>
               </li>
             );

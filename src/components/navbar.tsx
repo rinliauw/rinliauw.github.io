@@ -17,7 +17,7 @@ const Nav = styled.nav`
   backdrop-filter: none;
 `;
 
-const NavbarContainer = styled.div`
+const NavbarWrapper = styled.div`
   display: flex;
   max-width: 75rem;
   align-items: center;
@@ -58,7 +58,7 @@ const NavbarLink = styled(Link)`
 const Navbar = () => {
   return (
     <Nav>
-      <NavbarContainer>
+      <NavbarWrapper>
         <NavbarBrandLink to="/">
           <NavbarBrand>Jonathan Jauhari</NavbarBrand>
         </NavbarBrandLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <NavbarLink to="/projects">Projects</NavbarLink>
           <NavbarLink to="/about">About</NavbarLink>
         </NavbarSecondary>
-      </NavbarContainer>
+      </NavbarWrapper>
     </Nav>
   );
 };

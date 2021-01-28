@@ -6,6 +6,7 @@ import Container from "./container";
 
 export const LayoutBackground = styled.div`
   background-color: black;
+  min-height: 100%;
 `;
 
 export const LayoutHeader = styled.header`
