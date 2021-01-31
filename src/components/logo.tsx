@@ -10,7 +10,7 @@ export const TealSquare = styled.span`
   width: ${fontSize[4]};
   height: ${fontSize[4]};
   display: inline-block;
-  background-color: lightgrey;
+  background-color: red;
   border-radius: 3px;
 `;
 

@@ -5,8 +5,10 @@ import Container from "./container";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
+import theme from "../common/theme";
+
 const LayoutBackground = styled.div`
-  background-color: black;
+  background-color: ${theme.colors.background};
   min-height: 100%;
 `;
 
@@ -43,7 +45,7 @@ const Layout = ({ location, title, children }: Props) => {
   return (
     <LayoutBackground>
       <LayoutHeader>
-        <Navbar />
+        <Navbar path={location.pathname} />
       </LayoutHeader>
       <LayoutMain>
         <Container>{children}</Container>

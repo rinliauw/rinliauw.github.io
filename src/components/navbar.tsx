@@ -2,42 +2,40 @@ import React from "react";
 import { Link } from "gatsby";
 
 import styled from "styled-components";
-import { fontSize } from "../common";
+import { spacing, fontSize } from "../common";
+import theme from "../common/theme";
 
 // TODO: breakpoints.
 
 const Nav = styled.nav`
   margin: 0 auto;
-  height: 3.75rem;
+  height: ${spacing[15]};
 
   position: initial;
-  padding: 3rem 1rem;
+  padding: ${spacing[12]} ${spacing[4]};
   background-color: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
 `;
 
 const NavbarWrapper = styled.div`
   display: flex;
   max-width: 75rem;
   align-items: center;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: ${spacing[6]};
+  padding-right: ${spacing[6]};
   margin-left: auto;
   margin-right: auto;
 `;
 
 const NavbarBrand = styled.h1`
-  font-size: 20;
+  font-size: ${fontSize[4]};
   font-weight: 500;
   margin: 0;
 `;
 
 const NavbarBrandLink = styled(Link)`
   flex: 0 0 auto;
-  cursor: pointer;
-  transition: base;
-  color: lighter;
+  transition: color 0.1s;
+  color: ${theme.colors.text};
 `;
 
 const NavbarSecondary = styled.div`
@@ -47,15 +45,35 @@ const NavbarSecondary = styled.div`
   justify-content: flex-end;
 `;
 
+interface NavbarLinkProps {
+  selected: boolean;
+}
+
 const NavbarLink = styled(Link)`
   display: block;
   font-weight: 500;
-  
-  margin: 0 1rem;
+
+  margin: 0 ${spacing[2]};
   font-size: ${fontSize[3]};
+
+  padding: ${spacing[1]} ${spacing[4]} ${spacing[1]} ${spacing[4]};
+  border-radius: 2px;
+  transition: color 0.1s;
+
+  &:focus,
+  &:hover {
+    color: ${theme.colors.primaryBright};
+  }
 `;
 
-const Navbar = () => {
+  // color: ${(p: NavbarLinkProps) =>
+  //   p.selected ? theme.colors.primaryBright : theme.colors.backgroundBright};
+
+interface Props {
+  path: string;
+}
+
+const Navbar = ({ path }: Props) => {
   return (
     <Nav>
       <NavbarWrapper>
