@@ -1,8 +1,33 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const Article = styled.article`
+  header {
+    h1 {
+      margin: var(--spacing-0) var(--spacing-0) var(--spacing-4)
+        var(--spacing-0);
+    }
+    p {
+      font-size: var(--fontSize-3);
+      font-family: var(--font-heading);
+    }
+  }
+`;
+
+const FooterNextPrevious = styled.nav`
+  ul {
+    margin: var(--spacing-0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+`;
 
 const pageQuery = graphql`
 query ProjectPostBySlug(
@@ -71,8 +96,7 @@ const ProjectPost = ({ data, location }: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
+      <Article
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -85,8 +109,8 @@ const ProjectPost = ({ data, location }: Props) => {
           itemProp="articleBody"
         />
         <hr />
-      </article>
-      <nav className="blog-post-nav">
+      </Article>
+      <FooterNextPrevious>
         <ul
           style={{
             display: `flex`,
@@ -112,7 +136,7 @@ const ProjectPost = ({ data, location }: Props) => {
             )}
           </li>
         </ul>
-      </nav>
+      </FooterNextPrevious>
     </Layout>
   );
 };

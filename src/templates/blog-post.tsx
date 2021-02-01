@@ -5,8 +5,6 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-// import "../styles/blog-post.scss";
-
 const Article = styled.article`
   header {
     h1 {
