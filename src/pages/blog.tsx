@@ -4,7 +4,10 @@ import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import "../styles/blog.scss";
+import { ThemeProvider } from "styled-components";
+import theme from "../common/theme";
+import { MarkdownRemarkNode } from "../common/types";
+import PostListItem from "../components/post-list-item";
 
 const pageQuery = graphql`
   query {
@@ -32,18 +35,6 @@ const pageQuery = graphql`
   }
 `;
 
-interface MarkdownRemarkNode {
-  excerpt: string;
-  fields: {
-    slug: string;
-  };
-  frontmatter: {
-    date: Date;
-    title: string;
-    description: string;
-  };
-}
-
 interface Props extends PageProps {
   data: {
     allMarkdownRemark: {
@@ -63,45 +54,20 @@ const Blog = ({ data, location }: Props) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Blog" />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map((post: MarkdownRemarkNode) => {
-          const title = post.frontmatter.title || post.fields.slug;
-
-          return (
+    <ThemeProvider theme={theme}>
+      <Layout location={location} title={siteTitle}>
+        <SEO title="Blog" />
+        <ol style={{ listStyle: `none` }}>
+          {posts.map((post: MarkdownRemarkNode) => (
             <li key={post.fields.slug}>
               <Link to={`/blog${post.fields.slug}`} itemProp="url">
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <header>
-                    <h2 className="post-list-item-headline">
-                      {/* relative link to e.g. /posts/post1-slug/ */}
-                      <span itemProp="headline">{title}</span>
-                    </h2>
-                    <small className="post-list-item-headline-date">
-                      {post.frontmatter.date}
-                    </small>
-                  </header>
-                  <section>
-                    <p
-                      className="post-list-item-description"
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
-                </article>
+                <PostListItem post={post} />
               </Link>
             </li>
-          );
-        })}
-      </ol>
-    </Layout>
+          ))}
+        </ol>
+      </Layout>
+    </ThemeProvider>
   );
 };
 

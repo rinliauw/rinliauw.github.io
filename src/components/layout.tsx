@@ -1,6 +1,36 @@
 import React from "react";
-import { Link } from "gatsby";
+import styled from "styled-components";
+
+import Container from "./container";
 import Navbar from "./navbar";
+import Footer from "./footer";
+
+import theme from "../common/theme";
+
+const LayoutBackground = styled.div`
+  background-color: ${theme.colors.background};
+  min-height: 100%;
+`;
+
+const LayoutHeader = styled.header`
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+`;
+
+// fr is fraction
+const LayoutMain = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+`;
+
+const LayoutFooter = styled.footer`
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 
 interface Props {
   location: Location;
@@ -13,16 +43,17 @@ const Layout = ({ location, title, children }: Props) => {
   const isRootPath = location.pathname === rootPath;
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">
-        <h1 className="main-heading">
-          <Link to="/">{title}</Link>
-        </h1>
-        <Navbar />
-      </header>
-      <main>{children}</main>
-      <footer>Copyright © {new Date().getFullYear()} Jonathan Jauhari</footer>
-    </div>
+    <LayoutBackground>
+      <LayoutHeader>
+        <Navbar path={location.pathname} />
+      </LayoutHeader>
+      <LayoutMain>
+        <Container>{children}</Container>
+      </LayoutMain>
+      <LayoutFooter>
+        <Footer />
+      </LayoutFooter>
+    </LayoutBackground>
   );
 };
 

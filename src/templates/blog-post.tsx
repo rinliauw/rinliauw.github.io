@@ -1,49 +1,72 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import "../styles/blog-post.scss";
+const Article = styled.article`
+  header {
+    h1 {
+      margin: var(--spacing-0) var(--spacing-0) var(--spacing-4)
+        var(--spacing-0);
+    }
+    p {
+      font-size: var(--fontSize-3);
+      font-family: var(--font-heading);
+    }
+  }
+`;
+
+const FooterNextPrevious = styled.nav`
+  ul {
+    margin: var(--spacing-0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+`;
 
 const pageQuery = graphql`
-query BlogPostBySlug(
-  $id: String!
-  $previousPostId: String
-  $nextPostId: String
-) {
-  site {
-    siteMetadata {
-      title
+  query BlogPostBySlug(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(id: { eq: $id }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+      }
+    }
+    previous: markdownRemark(id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    next: markdownRemark(id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
     }
   }
-  markdownRemark(id: { eq: $id }) {
-    id
-    excerpt(pruneLength: 160)
-    html
-    frontmatter {
-      title
-      date(formatString: "MMMM DD, YYYY")
-      description
-    }
-  }
-  previous: markdownRemark(id: { eq: $previousPostId }) {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-    }
-  }
-  next: markdownRemark(id: { eq: $nextPostId }) {
-    fields {
-      slug
-    }
-    frontmatter {
-      title
-    }
-  }
-}
 `;
 
 interface Props {
@@ -73,11 +96,7 @@ const BlogPost = ({ data, location }: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <Article itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
@@ -87,17 +106,9 @@ const BlogPost = ({ data, location }: Props) => {
           itemProp="articleBody"
         />
         <hr />
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      </Article>
+      <FooterNextPrevious>
+        <ul>
           {/* TODO: make these stack */}
           <li>
             {previous && (
@@ -114,7 +125,7 @@ const BlogPost = ({ data, location }: Props) => {
             )}
           </li>
         </ul>
-      </nav>
+      </FooterNextPrevious>
     </Layout>
   );
 };
