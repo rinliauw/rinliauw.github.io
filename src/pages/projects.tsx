@@ -3,6 +3,10 @@ import { Link, graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { MarkdownRemarkNode } from "../common/types";
+import theme from "../common/theme";
+import { ThemeProvider } from "styled-components";
+import PostListItem from "../components/post-list-item";
 
 const pageQuery = graphql`
   query {
@@ -12,8 +16,9 @@ const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/projects/"}}
-      sort: { fields: [frontmatter___date], order: DESC }) {
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       nodes {
         excerpt
         fields {
@@ -28,18 +33,6 @@ const pageQuery = graphql`
     }
   }
 `;
-
-interface MarkdownRemarkNode {
-  excerpt: string;
-  fields: {
-    slug: string;
-  };
-  frontmatter: {
-    date: Date;
-    title: string;
-    description: string;
-  };
-}
 
 interface Props extends PageProps {
   data: {
@@ -59,41 +52,20 @@ const Projects = ({ data, location }: Props) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Projects" />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map((post: MarkdownRemarkNode) => {
-          const title = post.frontmatter.title || post.fields.slug;
-
-          return (
+    <ThemeProvider theme={theme}>
+      <Layout location={location} title={siteTitle}>
+        <SEO title="Projects" />
+        <ol style={{ listStyle: `none` }}>
+          {posts.map((post: MarkdownRemarkNode) => (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={`/projects${post.fields.slug}`} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+              <Link to={`/projects${post.fields.slug}`} itemProp="url">
+                <PostListItem post={post} />
+              </Link>
             </li>
-          );
-        })}
-      </ol>
-    </Layout>
+          ))}
+        </ol>
+      </Layout>
+    </ThemeProvider>
   );
 };
 

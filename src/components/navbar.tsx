@@ -36,6 +36,11 @@ const NavbarBrandLink = styled(Link)`
   flex: 0 0 auto;
   transition: color 0.1s;
   color: ${theme.colors.text};
+
+  &:focus,
+  &:hover {
+    color: ${theme.colors.primaryBright};
+  }K
 `;
 
 const NavbarSecondary = styled.div`
