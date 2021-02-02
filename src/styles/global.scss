@@ -140,6 +140,10 @@ a {
   margin-bottom: var(--spacing-8);
 }
 
+.gatsby-resp-image-wrapper {
+  margin: var(--spacing-6);
+}
+
 @media (max-width: 42rem) {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);

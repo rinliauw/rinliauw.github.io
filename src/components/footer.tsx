@@ -34,22 +34,33 @@ const SocialLink = styled.a`
 `;
 
 const Footer = () => {
+  // title is for info when hovered
+  // target and rel is for "open in new tab" functionality
   return (
     <FooterWrapper>
       <Copyright>© {new Date().getFullYear()} Jonathan Jauhari </Copyright>
       <SocialLinks>
-        <SocialLink title="My Github profile" href="https://github.com/jonjau">
+        <SocialLink
+          title="My Github profile"
+          href="https://github.com/jonjau"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaGithub />
         </SocialLink>
         <SocialLink
           title="My Linkedin profile"
           href="https://www.linkedin.com/in/jonathanjauhari/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FaLinkedin />
         </SocialLink>
         <SocialLink
           title="Send me an email"
           href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FaEnvelope />
         </SocialLink>

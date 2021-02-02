@@ -11,7 +11,7 @@ const Header = styled.header`
 `;
 
 const Headline = styled.h2`
-  font-family: ${theme.font.serif};
+  font-family: ${theme.fonts.serif};
   font-size: ${fontSize[3]};
   color: ${theme.colors.primary};
   margin-bottom: ${spacing[1]};
@@ -19,7 +19,7 @@ const Headline = styled.h2`
 `;
 
 const Dateline = styled.p`
-  font-family: ${theme.font.serif};
+  font-family: ${theme.fonts.serif};
   font-size: ${fontSize[0]};
 `;
 

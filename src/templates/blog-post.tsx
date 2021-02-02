@@ -8,24 +8,24 @@ import { fontSize, lineHeight, spacing } from "../common";
 import theme from "../common/theme";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const Article = styled.article`
-  header {
-    font-family: ${theme.font.serif};
-    h1 {
-      margin: 0 ${spacing[4]} 0 0;
-    }
-    p {
-      font-size: ${fontSize[3]};
-    }
+const ArticleHeader = styled.header`
+  font-family: ${theme.fonts.serif};
+  h1 {
+    margin: 0 ${spacing[4]} 0 0;
   }
+  p {
+    font-size: ${fontSize[3]};
+  }
+`;
 
-  hr {
+const HorizontalRule = styled.hr`
     background-color: ${theme.colors.complementary};
     height: 0.25rem;
     margin-bottom: ${spacing[4]};
     border: 0;
-  }
+`;
 
+const Article = styled.article`
   a {
     color: ${theme.colors.primary};
     text-decoration: none;
@@ -36,15 +36,13 @@ const Article = styled.article`
     }
   }
 
-  /* Prose */
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: ${theme.font.serif};
+    font-family: ${theme.fonts.serif};
     color: ${theme.colors.primary};
   }
 
@@ -207,20 +205,19 @@ const BlogPost = ({ data, location }: Props) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <Article itemScope itemType="http://schema.org/Article">
-        <header>
+        <ArticleHeader>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
-        </header>
-        <hr />
+        </ArticleHeader>
+        <HorizontalRule />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
+        <HorizontalRule />
       </Article>
       <FooterNextPrevious>
         <ul>
-          {/* TODO: make these stack */}
           <li>
             {previous && (
               <Link to={`/blog${previous.fields.slug}`} rel="prev">

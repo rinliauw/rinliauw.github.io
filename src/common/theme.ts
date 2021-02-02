@@ -1,6 +1,5 @@
 
 // lighten color: https://pinetools.com/lighten-color
-// brights are lightened by 5%
 
 const theme = {
   colors: {
@@ -15,9 +14,11 @@ const theme = {
     heading: "#f1f1f1",
   },
 
-  font: {
+  // 'monospace' does not affect generated code blocks: the prism theme does.
+  fonts: {
       sans: "'Noto Sans', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'",
-      serif: "'Noto Serif', 'Georgia', 'Cambria', 'Times New Roman', 'serif'"
+      serif: "'Noto Serif', 'Georgia', 'Cambria', 'Times New Roman', 'serif'",
+      monospace: "'Consolas', 'Menlo', 'Monaco', 'Courier New', 'monospace'",
   }
 };
 
