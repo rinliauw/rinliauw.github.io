@@ -11,13 +11,15 @@ const Header = styled.header`
 `;
 
 const Headline = styled.h2`
+  font-family: ${theme.font.serif};
   font-size: ${fontSize[3]};
   color: ${theme.colors.primary};
-  margin-bottom: ${spacing[2]};
+  margin-bottom: ${spacing[1]};
   margin-top: 0;
 `;
 
 const Dateline = styled.p`
+  font-family: ${theme.font.serif};
   font-size: ${fontSize[0]};
 `;
 
@@ -28,9 +30,9 @@ const Section = styled.section`
 const Description = styled.p``;
 
 const Article = styled.article`
-  margin-bottom: ${spacing[8]};
-  margin-top: ${spacing[8]};
-  padding: ${spacing[3]};
+  margin-bottom: ${spacing[4]};
+  margin-top: ${spacing[4]};
+  padding: ${spacing[4]};
   border-radius: 4px;
   color: ${theme.colors.text};
 
@@ -38,15 +40,15 @@ const Article = styled.article`
 
   // x:hover and x :hover are not the same.
   &:hover {
-    background-color: ${theme.colors.backgroundBright};
+    background-color: ${theme.colors.backgroundLight};
     ${Headline} {
-      color: ${theme.colors.primaryBright};
+      color: ${theme.colors.primaryLight};
     }
     ${Dateline} {
-      color: ${theme.colors.textBright};
+      color: ${theme.colors.textLight};
     }
     ${Description} {
-      color: ${theme.colors.textBright};
+      color: ${theme.colors.textLight};
     }
   }
 `;

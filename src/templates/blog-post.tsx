@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { fontSize, lineHeight, spacing } from "../common";
 import theme from "../common/theme";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Article = styled.article`
   header {
@@ -15,6 +16,23 @@ const Article = styled.article`
     }
     p {
       font-size: ${fontSize[3]};
+    }
+  }
+
+  hr {
+    background-color: ${theme.colors.complementary};
+    height: 0.25rem;
+    margin-bottom: ${spacing[4]};
+    border: 0;
+  }
+
+  a {
+    color: ${theme.colors.primary};
+    text-decoration: none;
+    :hover,
+    :focus {
+      color: ${theme.colors.primaryLight};
+      text-decoration: none;
     }
   }
 
@@ -41,12 +59,12 @@ const Article = styled.article`
   ul,
   ol {
     margin: 0 0 ${spacing[8]} 0;
-    padding: 0;
+    padding: 0 0 0 ${spacing[4]};
     list-style-position: outside;
     list-style-image: none;
 
     li {
-      padding-left: 0;
+      padding-left: ${spacing[2]};
       margin-bottom: ${spacing[4]};
     }
   }
@@ -67,11 +85,11 @@ const Article = styled.article`
   }
 
   blockquote {
-    color: ${theme.colors.textLight};
+    color: ${theme.colors.textDark};
     margin-left: -${spacing[6]};
     margin-right: ${spacing[8]};
     padding: 0 0 0 ${spacing[6]};
-    border-left: 0.25rem solid ${theme.colors.primary};
+    border-left: 0.25rem solid ${theme.colors.complementary};
     font-size: ${fontSize[1]};
     // font-style: italic;
     margin-bottom: ${spacing[8]};
@@ -96,9 +114,10 @@ const Article = styled.article`
     thead {
       tr {
         th {
-          border-bottom: 1px ${theme.colors.accent};
+          border-bottom: 1px solid ${theme.colors.text};
         }
       }
+      border-bottom: 1px solid white;
     }
   }
 `;
@@ -111,6 +130,12 @@ const FooterNextPrevious = styled.nav`
     justify-content: space-between;
     list-style: none;
     padding: 0;
+    a {
+      color: ${theme.colors.primary};
+      &:hover {
+        color ${theme.colors.primaryLight};
+      }
+    }
   }
 `;
 
@@ -186,6 +211,7 @@ const BlogPost = ({ data, location }: Props) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        <hr />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -198,14 +224,14 @@ const BlogPost = ({ data, location }: Props) => {
           <li>
             {previous && (
               <Link to={`/blog${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
+                <FaArrowLeft /> {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
               <Link to={`/blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title} <FaArrowRight />
               </Link>
             )}
           </li>

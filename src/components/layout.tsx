@@ -6,6 +6,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 
 import theme from "../common/theme";
+import { spacing } from "../common";
 
 const LayoutBackground = styled.div`
   background-color: ${theme.colors.background};
@@ -26,9 +27,7 @@ const LayoutMain = styled.main`
 `;
 
 const LayoutFooter = styled.footer`
-  left: 0;
-  right: 0;
-  bottom: 0;
+  margin-top: ${spacing[8]};
 `;
 
 
