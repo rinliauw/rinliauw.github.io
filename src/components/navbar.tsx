@@ -39,7 +39,7 @@ const NavbarBrandLink = styled(Link)`
 
   &:focus,
   &:hover {
-    color: ${theme.colors.primaryBright};
+    color: ${theme.colors.primaryLight};
   }K
 `;
 
@@ -67,7 +67,7 @@ const NavbarLink = styled(Link)`
 
   &:focus,
   &:hover {
-    color: ${theme.colors.primaryBright};
+    color: ${theme.colors.primaryLight};
   }
 `;
 

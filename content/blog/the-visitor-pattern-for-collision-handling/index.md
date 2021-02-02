@@ -1,5 +1,5 @@
 ---
-title: "The Visitor Pattern for Simple Collision Handling"
+title: "The Visitor Pattern for Collision Handling"
 date: 2020-11-20T11:23:15+11:00
 draft: false
 description: "A motivation for the visitor design pattern."

@@ -19,3 +19,9 @@ export const fontSize = [
   "2.986re",
 ];
 
+export const lineHeight = {
+  none: 1,
+  tight: 1.1,
+  normal: 1.5,
+  relaxed: 1.625,
+};
