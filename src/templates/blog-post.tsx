@@ -4,23 +4,108 @@ import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { fontSize, lineHeight, spacing } from "../common";
+import theme from "../common/theme";
 
 const Article = styled.article`
   header {
+    font-family: ${theme.font.serif};
     h1 {
-      margin: var(--spacing-0) var(--spacing-0) var(--spacing-4)
-        var(--spacing-0);
+      margin: 0 ${spacing[4]} 0 0;
     }
     p {
-      font-size: var(--fontSize-3);
-      font-family: var(--font-heading);
+      font-size: ${fontSize[3]};
+    }
+  }
+
+  /* Prose */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.font.serif};
+    color: ${theme.colors.primary};
+  }
+
+  p {
+    line-height: ${lineHeight.relaxed};
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+    margin: 0 0 ${spacing[8]} 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 ${spacing[8]} 0;
+    padding: 0;
+    list-style-position: outside;
+    list-style-image: none;
+
+    li {
+      padding-left: 0;
+      margin-bottom: ${spacing[4]};
+    }
+  }
+
+  li {
+    > {
+      p {
+        margin-bottom: ${spacing[4]};
+      }
+      ul {
+        margin-left: ${spacing[8]};
+        margin-top: ${spacing[4]};
+      }
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    color: ${theme.colors.textLight};
+    margin-left: -${spacing[6]};
+    margin-right: ${spacing[8]};
+    padding: 0 0 0 ${spacing[6]};
+    border-left: 0.25rem solid ${theme.colors.primary};
+    font-size: ${fontSize[1]};
+    // font-style: italic;
+    margin-bottom: ${spacing[8]};
+
+    > {
+      :last-child {
+        margin-bottom: ${spacing[0]};
+      }
+
+      ul,
+      ol {
+        list-style-position: inside;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: ${spacing[8]};
+    border-collapse: collapse;
+    border-spacing: 0.25rem;
+    thead {
+      tr {
+        th {
+          border-bottom: 1px ${theme.colors.accent};
+        }
+      }
     }
   }
 `;
 
 const FooterNextPrevious = styled.nav`
   ul {
-    margin: var(--spacing-0);
+    margin: ${spacing[0]};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

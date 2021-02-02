@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { spacing } from "../common";
+import { createGlobalStyle } from "styled-components";
 
 const Container = styled.div`
   grid-column: 2;
