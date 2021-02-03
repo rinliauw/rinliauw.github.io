@@ -50,6 +50,7 @@ const Article = styled.article`
   h5,
   h6 {
     font-family: ${theme.fonts.serif};
+    font-weight: lighter;
     color: ${theme.colors.primary};
   }
 

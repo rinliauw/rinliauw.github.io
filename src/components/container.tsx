@@ -12,12 +12,13 @@ const Container = styled.div`
     max-width: 40rem;
     padding-left: ${spacing[6]};
     padding-right: ${spacing[6]};
+    padding-top: 10rem;
   }
   @media ${devices.tablet_landscape} {
     max-width: 50rem;
   }
   margin: 0 auto;
-  padding-top: 10rem;
+  padding-top: 5rem;
 `;
 
 export default Container;

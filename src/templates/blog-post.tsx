@@ -50,6 +50,7 @@ const Article = styled.article`
   h5,
   h6 {
     font-family: ${theme.fonts.serif};
+    font-weight: lighter;
     color: ${theme.colors.primary};
   }
 
@@ -132,7 +133,7 @@ const FooterNextPrevious = styled.nav`
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     font-size: ${fontSize[0]};
 
     @media ${devices.tablet_portrait} {

@@ -13,6 +13,7 @@ const Header = styled.header`
 const Headline = styled.h2`
   font-family: ${theme.fonts.serif};
   font-size: ${fontSize[3]};
+  font-weight: lighter;
   color: ${theme.colors.primary};
   margin-bottom: ${spacing[1]};
   margin-top: 0;
