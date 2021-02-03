@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { spacing, fontSize } from "../common";
 import theme from "../common/theme";
 import { MarkdownRemarkNode } from "../common/types";
+import { devices } from "../common/breakpoints";
 
 const Header = styled.header`
   margin-bottom: ${spacing[4]};
@@ -38,6 +39,11 @@ const Article = styled.article`
   color: ${theme.colors.text};
 
   transition: background-color 0.1s;
+
+  background-color: ${theme.colors.backgroundLight};
+  @media ${devices.tablet_portrait} {
+    background-color: ${theme.colors.background};
+  }
 
   // x:hover and x :hover are not the same.
   &:hover {

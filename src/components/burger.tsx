@@ -1,6 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
+import { devices } from "../common/breakpoints";
 import theme from "../common/theme";
 
 interface StyledBurgerProps {
@@ -8,8 +9,11 @@ interface StyledBurgerProps {
 }
 
 const BurgerWrapper = styled.div`
+  @media ${ devices.tablet_portrait }  {
+    display: none;
+  }
   padding: 1rem;
-  z-index: 30;
+  z-index: 20;
 `;
 
 const StyledBurger = styled.button<StyledBurgerProps>`
@@ -27,6 +31,7 @@ const StyledBurger = styled.button<StyledBurgerProps>`
   border: none;
   cursor: pointer;
   padding: 0;
+  // z-index: 30;
 
   &:focus {
     outline: none;
@@ -38,7 +43,7 @@ const StyledBurger = styled.button<StyledBurgerProps>`
     background: ${({ open }) =>
       open ? theme.colors.complementary: theme.colors.complementary};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.1s linear;
     position: relative;
     transform-origin: 1px;
 
@@ -66,9 +71,9 @@ const Burger = ({ open, setOpen }: Props) => {
   return (
     <BurgerWrapper>
     <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div/>
+      <div/>
+      <div/>
     </StyledBurger>
     </BurgerWrapper>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 
 import styled from "styled-components";
@@ -8,8 +8,6 @@ import Logo from "./logo";
 import { devices } from "../common/breakpoints";
 import Burger from "./burger";
 import Menu from "./menu";
-
-// TODO: breakpoints.
 
 const Nav = styled.nav`
   margin: 0 auto;
@@ -54,34 +52,16 @@ const NavbarSecondary = styled.div`
   }
 `;
 
-const MobileMenuContainer = styled.div`
-  position: fixed;
-  // width:30px;
-  // height: 40px;
-  top: 60px;
-  right: 0;
-  // bottom: 0;
-  // left: 0;
-  z-index: 100;
-  padding: 1rem 0;
-  overflow: auto;
-  background-color: red;
-
-  @media ${devices.tablet_portrait} {
-    display: none;
-  }
-`;
-
 interface NavbarLinkProps {
   selected: boolean;
 }
 
 const NavbarLink = styled(Link)<NavbarLinkProps>`
   display: none;
+  font-weight: lighter;
 
   @media ${devices.tablet_portrait} {
     display: block;
-    font-weight: 500;
 
     margin: 0 ${spacing[2]};
     font-size: ${fontSize[3]};
@@ -102,8 +82,27 @@ const NavbarLink = styled(Link)<NavbarLinkProps>`
   }
 `;
 
-// color: ${(p: NavbarLinkProps) =>
-//   p.selected ? theme.colors.primaryBright : theme.colors.backgroundBright};
+const MobileMenu = styled.div`
+  display: flex;
+`;
+
+const useOnClickOutside = (
+  ref: React.RefObject<HTMLDivElement>,
+  handler: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  useEffect(() => {
+    const listener = (event: any) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener("mousedown", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+    };
+  }, [ref, handler]);
+};
 
 interface Props {
   path: string;
@@ -111,6 +110,10 @@ interface Props {
 
 const Navbar = ({ path }: Props) => {
   const [open, setOpen] = useState(false);
+
+  const node = useRef<HTMLDivElement>(null);
+  useOnClickOutside(node, () => setOpen(false));
+
   return (
     <Nav>
       <NavbarWrapper>
@@ -127,10 +130,11 @@ const Navbar = ({ path }: Props) => {
           <NavbarLink to="/about" selected={path.includes("/about")}>
             About
           </NavbarLink>
-        <Burger open={open} setOpen={setOpen} />
+          <MobileMenu ref={node}>
+            <Burger open={open} setOpen={setOpen} />
+            <Menu open={open} />
+          </MobileMenu>
         </NavbarSecondary>
-        {/* <MobileMenuContainer></MobileMenuContainer> */}
-        <Menu open={open} />
       </NavbarWrapper>
     </Nav>
   );

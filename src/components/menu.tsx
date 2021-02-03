@@ -1,10 +1,15 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import styled from "styled-components";
+import { fontSize, spacing } from "../common";
 import { breakpoints, devices } from "../common/breakpoints";
 import theme from "../common/theme";
 
 export const StyledMenu = styled.nav<Props>`
+  @media ${ devices.tablet_portrait }  {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +21,8 @@ export const StyledMenu = styled.nav<Props>`
   top: 0;
   // left: 0;
   right: 0;
-  transition: transform 0.3s ease-in-out;
+  z-index: 15;
+  transition: transform 0.1s ease-in-out;
   transform: ${({ open }) =>
     open ? "translateX(0)" : "translateX(100%)"};
 
@@ -25,22 +31,30 @@ export const StyledMenu = styled.nav<Props>`
   }
 
   a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${theme.colors.primary};
-    text-decoration: none;
-    transition: color 0.3s linear;
+    font-size: ${fontSize[1]};
+    margin: ${spacing[4]} 0;
+    
+    border-bottom-style: dotted;
+    border-bottom-width: 3px;
+    border-bottom-color: ${theme.colors.primary};
+
+    font-weight: lighter;
+    color: ${theme.colors.text};
+    // text-decoration: underline;
+
+    transition: color 0.1s linear;
 
     @media ${devices.phone} {
-      font-size: 1.5rem;
+      font-size: ${fontSize[3]};
       text-align: center;
     }
 
+    &:focus,
     &:hover {
-      color: ${theme.colors.primary};
+      color: ${theme.colors.textLight};
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color: ${theme.colors.complementary};
     }
   }
 `;
@@ -52,24 +66,15 @@ interface Props {
 const Menu = ({ open }: Props) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-        </span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">
-          &#x1f4b8;
-        </span>
-        Pricing
-      </a>
-      <a href="/">
-        <span role="img" aria-label="contact">
-          &#x1f4e9;
-        </span>
-        Contact
-      </a>
+      <Link to="/blog">
+        Blog
+      </Link>
+      <Link to="/projects">
+        Projects
+      </Link>
+      <Link to="/about">
+        About
+      </Link>
     </StyledMenu>
   );
 };

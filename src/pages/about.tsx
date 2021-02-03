@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import theme from "../common/theme";
 import styled from "styled-components";
-import { lineHeight, spacing } from "../common";
+import { fontSize, lineHeight, spacing } from "../common";
 
 const Article = styled.article`
   a {

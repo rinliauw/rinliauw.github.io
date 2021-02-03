@@ -28,14 +28,17 @@ const HorizontalRule = styled.hr`
 
 const Article = styled.article`
   a {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: ${theme.colors.primary};
+
     color: ${theme.colors.primary};
     :hover,
     :focus {
       color: ${theme.colors.primaryLight};
 
-      // alternative:
-      // text-decoration: underline;
-      // text-decoration-color: ${theme.colors.complementary};
+      @media ${devices.tablet_portrait} {
+      }
 
       border-bottom-style: solid;
       border-bottom-width: 3px;

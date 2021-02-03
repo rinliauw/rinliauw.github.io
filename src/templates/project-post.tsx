@@ -27,6 +27,10 @@ const HorizontalRule = styled.hr`
 
 const Article = styled.article`
   a {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: ${theme.colors.primary};
+
     color: ${theme.colors.primary};
     text-decoration: none;
     :hover,
