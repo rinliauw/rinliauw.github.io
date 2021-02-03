@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import styled from "styled-components";
@@ -48,7 +48,7 @@ interface NavbarLinkProps {
   selected: boolean;
 }
 
-const NavbarLink = styled(Link)`
+const NavbarLink = styled(Link)<NavbarLinkProps>`
   display: block;
   font-weight: 500;
 
@@ -56,17 +56,22 @@ const NavbarLink = styled(Link)`
   font-size: ${fontSize[3]};
 
   padding: ${spacing[1]} ${spacing[4]} ${spacing[1]} ${spacing[4]};
-  border-radius: 2px;
   transition: color 0.1s;
 
   &:focus,
   &:hover {
-    color: ${theme.colors.primaryLight};
+    color: ${theme.colors.textLight};
   }
+
+  border-bottom-style: solid;
+  border-bottom-width: ${spacing[1]};
+
+  border-bottom-color: ${(p: NavbarLinkProps) =>
+    p.selected ? theme.colors.complementary : theme.colors.background};
 `;
 
-  // color: ${(p: NavbarLinkProps) =>
-  //   p.selected ? theme.colors.primaryBright : theme.colors.backgroundBright};
+// color: ${(p: NavbarLinkProps) =>
+//   p.selected ? theme.colors.primaryBright : theme.colors.backgroundBright};
 
 interface Props {
   path: string;
@@ -80,9 +85,15 @@ const Navbar = ({ path }: Props) => {
           <Logo />
         </NavbarBrandLink>
         <NavbarSecondary>
-          <NavbarLink to="/blog">Blog</NavbarLink>
-          <NavbarLink to="/projects">Projects</NavbarLink>
-          <NavbarLink to="/about">About</NavbarLink>
+          <NavbarLink to="/blog" selected={path.includes("/blog")}>
+            Blog
+          </NavbarLink>
+          <NavbarLink to="/projects" selected={path.includes("/projects")}>
+            Projects
+          </NavbarLink>
+          <NavbarLink to="/about" selected={path.includes("/about")}>
+            About
+          </NavbarLink>
         </NavbarSecondary>
       </NavbarWrapper>
     </Nav>
