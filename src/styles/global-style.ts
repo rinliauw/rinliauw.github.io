@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { fontSize, lineHeight, spacing } from ".";
-import theme from "./theme";
+import { fontSize, lineHeight, spacing } from "../common";
+import theme from "../common/theme";
 
 export const GlobalStyle = createGlobalStyle`
 *,

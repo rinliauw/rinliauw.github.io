@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import Container from "./container";
@@ -7,7 +7,8 @@ import Footer from "./footer";
 
 import theme from "../common/theme";
 import { spacing } from "../common";
-import { GlobalStyle } from "../common/global-style";
+import { GlobalStyle } from "../styles/global-style";
+import { devices } from "../common/breakpoints";
 
 const LayoutBackground = styled.div`
   background-color: ${theme.colors.background};
@@ -15,7 +16,12 @@ const LayoutBackground = styled.div`
 `;
 
 const LayoutHeader = styled.header`
-  position: absolute;
+  position: fixed; 
+
+  @media ${devices.tablet_portrait} {
+    position: absolute;
+  }
+
   left: 0;
   right: 0;
   z-index: 10;
@@ -50,6 +56,7 @@ const Layout = ({ location, title, children }: Props) => {
       <LayoutMain>
         <Container>
           <GlobalStyle />
+
           {children}
         </Container>
       </LayoutMain>

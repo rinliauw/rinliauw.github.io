@@ -19,13 +19,15 @@ const TealSquare = styled(FaSquareFull)`
   color: #197060;
   width: ${fontSize[4]};
   height: ${fontSize[4]};
-  margin: ${spacing[3]};
+  margin-left: ${spacing[3]};
 `;
 
 const LogoText = styled.h2`
   font-size: ${fontSize[3]};
   font-family: "Noto Sans";
   font-weight: lighter;
+  margin-left: ${spacing[3]};
+  margin-right: ${spacing[3]};
 `;
 
 const Logo = () => {

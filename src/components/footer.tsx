@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
-import { fontSize } from "../common";
+import { fontSize, spacing } from "../common";
+import theme from "../common/theme";
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -12,16 +13,19 @@ const FooterWrapper = styled.div`
 `;
 
 const Copyright = styled.span`
-  color: light400;
+  padding: ${spacing[1]};
+  margin-left: ${spacing[3]};
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: ${fontSize[1]};
+  color: ${theme.colors.textDark};
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   margin-left: auto;
+  margin-right: ${spacing[2]};
 `;
 
 const SocialLink = styled.a`
@@ -31,6 +35,11 @@ const SocialLink = styled.a`
   font-size: ${fontSize[3]};
   height: 44px;
   width: 44px;
+
+  &:focus,
+  &:hover {
+    color: ${theme.colors.textLight};
+  }
 `;
 
 const Footer = () => {

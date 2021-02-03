@@ -27,6 +27,10 @@ const HorizontalRule = styled.hr`
 
 const Article = styled.article`
   a {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: ${theme.colors.primary};
+
     color: ${theme.colors.primary};
     text-decoration: none;
     :hover,
@@ -50,6 +54,7 @@ const Article = styled.article`
   h5,
   h6 {
     font-family: ${theme.fonts.serif};
+    font-weight: lighter;
     color: ${theme.colors.primary};
   }
 

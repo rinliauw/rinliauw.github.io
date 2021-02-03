@@ -4,9 +4,9 @@ import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import theme from "../common/theme";
 import { MarkdownRemarkNode } from "../common/types";
 import PostListItem from "../components/post-list-item";
+import PostList from "../components/post-list";
 
 const pageQuery = graphql`
   query {
@@ -55,7 +55,7 @@ const Blog = ({ data, location }: Props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
-      <ol style={{ listStyle: `none` }}>
+      <PostList>
         {posts.map((post: MarkdownRemarkNode) => (
           <li key={post.fields.slug}>
             <Link to={`/blog${post.fields.slug}`} itemProp="url">
@@ -63,7 +63,7 @@ const Blog = ({ data, location }: Props) => {
             </Link>
           </li>
         ))}
-      </ol>
+      </PostList>
     </Layout>
   );
 };

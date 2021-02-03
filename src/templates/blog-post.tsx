@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import { fontSize, lineHeight, spacing } from "../common";
 import theme from "../common/theme";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { devices } from "../common/breakpoints";
 
 const ArticleHeader = styled.header`
   font-family: ${theme.fonts.serif};
@@ -27,14 +28,17 @@ const HorizontalRule = styled.hr`
 
 const Article = styled.article`
   a {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: ${theme.colors.primary};
+
     color: ${theme.colors.primary};
     :hover,
     :focus {
       color: ${theme.colors.primaryLight};
 
-      // alternative:
-      // text-decoration: underline;
-      // text-decoration-color: ${theme.colors.complementary};
+      @media ${devices.tablet_portrait} {
+      }
 
       border-bottom-style: solid;
       border-bottom-width: 3px;
@@ -49,6 +53,7 @@ const Article = styled.article`
   h5,
   h6 {
     font-family: ${theme.fonts.serif};
+    font-weight: lighter;
     color: ${theme.colors.primary};
   }
 
@@ -128,12 +133,17 @@ const Article = styled.article`
 
 const FooterNextPrevious = styled.nav`
   ul {
-    margin: ${spacing[0]};
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
+    margin: 0;
     padding: 0;
+    list-style: none;
+
+    font-size: ${fontSize[0]};
+
+    @media ${devices.tablet_portrait} {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     a {
       border-radius:4px;
       padding: ${spacing[2]};
