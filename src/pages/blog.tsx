@@ -4,7 +4,6 @@ import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import { ThemeProvider } from "styled-components";
 import theme from "../common/theme";
 import { MarkdownRemarkNode } from "../common/types";
 import PostListItem from "../components/post-list-item";
@@ -54,20 +53,18 @@ const Blog = ({ data, location }: Props) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout location={location} title={siteTitle}>
-        <SEO title="Blog" />
-        <ol style={{ listStyle: `none` }}>
-          {posts.map((post: MarkdownRemarkNode) => (
-            <li key={post.fields.slug}>
-              <Link to={`/blog${post.fields.slug}`} itemProp="url">
-                <PostListItem post={post} />
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </Layout>
-    </ThemeProvider>
+    <Layout location={location} title={siteTitle}>
+      <SEO title="Blog" />
+      <ol style={{ listStyle: `none` }}>
+        {posts.map((post: MarkdownRemarkNode) => (
+          <li key={post.fields.slug}>
+            <Link to={`/blog${post.fields.slug}`} itemProp="url">
+              <PostListItem post={post} />
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </Layout>
   );
 };
 

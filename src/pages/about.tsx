@@ -3,6 +3,69 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import theme from "../common/theme";
+import styled from "styled-components";
+import { lineHeight, spacing } from "../common";
+
+const Article = styled.article`
+  a {
+    color: ${theme.colors.primary};
+    :hover,
+    :focus {
+      color: ${theme.colors.primaryLight};
+
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color: ${theme.colors.complementary};
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.fonts.sans};
+    color: ${theme.colors.primary};
+  }
+
+  p {
+    line-height: ${lineHeight.relaxed};
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+    margin: 0 0 ${spacing[8]} 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 ${spacing[8]} 0;
+    padding: 0 0 0 ${spacing[4]};
+    list-style-position: outside;
+    list-style-image: none;
+
+    li {
+      padding-left: ${spacing[2]};
+      margin-bottom: ${spacing[4]};
+    }
+  }
+
+  li {
+    > {
+      p {
+        margin-bottom: ${spacing[4]};
+      }
+      ul {
+        margin-left: ${spacing[8]};
+        margin-top: ${spacing[4]};
+      }
+    }
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
 
 const pageQuery = graphql`
   query {
@@ -44,58 +107,39 @@ const About = ({ data, location }: Props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <Article itemScope itemType="http://schema.org/Article">
         <header>
-          <h1 itemProp="headline">About Me</h1>
+          <h1 itemProp="headline">Hi, I'm Jonathan 👋</h1>
         </header>
         <section itemProp="articleBody">
-          <p>Hi, I'm Jonathan 👋</p>
-
           <p>
             I'm a computer science student at the University of Melbourne
-            (graduating 2021). Recently I've been exploring full-stack web
-            development, working with React on the front end and Spring Boot and
-            Node.js on the server side. I'm looking to gain more experience
-            working with other technology stacks.
+            graduating 2021, and an aspiring&trade; software developer.
           </p>
-          <h2>Links</h2>
-
           <p>
-            I'm always down to collaborate on a project. Feel free to contact me
-            through my email:
-            <br />
-            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
-              joncjauhari [at] gmail [dot] com.
-            </a>
+            Recently I've been exploring full-stack web
+            development, working with React on the front end and Spring Boot
+            and Node.js on the server side. Of course, I look to gain more
+            practical experience working with other technology stacks, mainly
+            so I'll have more to write here...
           </p>
 
+          <h2>Links</h2>
+          <p>
+            I'm always down to collaborate on a project. Check me out on&nbsp;
+            <a href="https://github.com/jonjau">Github</a> and &nbsp;
+            <a href="https://www.linkedin.com/in/jonathanjauhari/">LinkedIn</a>,
+            and feel free to contact me through my email&nbsp;
+            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
+              joncjauhari [at] gmail [dot] com
+            </a>. You can find my face elsewhere.
+          </p>
           <ul>
-            <li>
-              <a href="https://github.com/jonjau">Github</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/jonathanjauhari/">
-                LinkedIn
-              </a>
-            </li>
             <li>BTC: 1FrKqLmrRCTuVjq9pYRADCYXRBdVsHQmtY</li>
             <li>ETH: 0x43d5aE1Bce42210EB742486Cd3e3331011b7c454</li>
           </ul>
-          <h2>Interests</h2>
-
-          <ul>
-            <li>Data visualisation</li>
-            <li>Languages (natural / programming / constructed)</li>
-            <li>Logic puzzles (à la Nikoli)</li>
-            <li>https://www.linkedin.com/in/jonathanjauhari/</li>
-          </ul>
         </section>
-        <hr />
-      </article>
+      </Article>
     </Layout>
   );
 };

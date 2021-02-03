@@ -1,20 +1,28 @@
 import React from "react";
+import { FaSquareFull } from "react-icons/fa";
 import styled from "styled-components";
-import { fontSize } from "../common";
+import { fontSize, spacing } from "../common";
+import theme from "../common/theme";
 
-export const LogoContainer = styled.span`
+const LogoWrapper = styled.div`
   display: flex;
 `;
 
-export const TealSquare = styled.span`
-  width: ${fontSize[4]};
-  height: ${fontSize[4]};
-  display: inline-block;
-  background-color: red;
-  border-radius: 3px;
+const TealSquareWrapper = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const LogoText = styled.h2`
+const TealSquare = styled(FaSquareFull)`
+  border-radius: 2px;
+  color: #197060;
+  width: ${fontSize[4]};
+  height: ${fontSize[4]};
+  margin: ${spacing[3]};
+`;
+
+const LogoText = styled.h2`
   font-size: ${fontSize[3]};
   font-family: "Noto Sans";
   font-weight: lighter;
@@ -22,10 +30,14 @@ export const LogoText = styled.h2`
 
 const Logo = () => {
   return (
-    <LogoContainer>
-      {/* <TealSquare /> */}
-      <LogoText>Jonathan Jauhari</LogoText>
-    </LogoContainer>
+    <LogoWrapper>
+      <TealSquareWrapper>
+        <TealSquare />
+      </TealSquareWrapper>
+      <LogoText>
+        Jonathan Jauhari
+      </LogoText>
+    </LogoWrapper>
   );
 };
 

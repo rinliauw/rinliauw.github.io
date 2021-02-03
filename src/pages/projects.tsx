@@ -5,8 +5,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import { MarkdownRemarkNode } from "../common/types";
-import theme from "../common/theme";
-import { ThemeProvider } from "styled-components";
 import PostListItem from "../components/post-list-item";
 
 const pageQuery = graphql`
@@ -53,20 +51,18 @@ const Projects = ({ data, location }: Props) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout location={location} title={siteTitle}>
-        <SEO title="Projects" />
-        <ol style={{ listStyle: `none` }}>
-          {posts.map((post: MarkdownRemarkNode) => (
-            <li key={post.fields.slug}>
-              <Link to={`/projects${post.fields.slug}`} itemProp="url">
-                <PostListItem post={post} />
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </Layout>
-    </ThemeProvider>
+    <Layout location={location} title={siteTitle}>
+      <SEO title="Projects" />
+      <ol style={{ listStyle: `none` }}>
+        {posts.map((post: MarkdownRemarkNode) => (
+          <li key={post.fields.slug}>
+            <Link to={`/projects${post.fields.slug}`} itemProp="url">
+              <PostListItem post={post} />
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </Layout>
   );
 };
 

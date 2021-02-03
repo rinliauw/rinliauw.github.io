@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { spacing, fontSize } from "../common";
 import theme from "../common/theme";
+import Logo from "./logo";
 
 // TODO: breakpoints.
 
@@ -26,21 +27,14 @@ const NavbarWrapper = styled.div`
   margin-right: auto;
 `;
 
-const NavbarBrand = styled.h1`
-  font-size: ${fontSize[4]};
-  font-weight: 500;
-  margin: 0;
-`;
-
 const NavbarBrandLink = styled(Link)`
   flex: 0 0 auto;
   transition: color 0.1s;
-  color: ${theme.colors.text};
 
   &:focus,
   &:hover {
-    color: ${theme.colors.primaryLight};
-  }K
+    color: ${theme.colors.textLight};
+  }
 `;
 
 const NavbarSecondary = styled.div`
@@ -83,7 +77,7 @@ const Navbar = ({ path }: Props) => {
     <Nav>
       <NavbarWrapper>
         <NavbarBrandLink to="/">
-          <NavbarBrand>Jonathan Jauhari</NavbarBrand>
+          <Logo />
         </NavbarBrandLink>
         <NavbarSecondary>
           <NavbarLink to="/blog">Blog</NavbarLink>
