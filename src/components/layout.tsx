@@ -23,8 +23,8 @@ const LayoutHeader = styled.header`
 
 // fr is fraction
 const LayoutMain = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  min-height: 40rem;
 `;
 
 const LayoutFooter = styled.footer`

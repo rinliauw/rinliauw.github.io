@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { spacing } from "../common";
-import { createGlobalStyle } from "styled-components";
 
 const Container = styled.div`
-  grid-column: 2;
+  max-width: 50rem;
+  padding-left: ${spacing[6]};
+  padding-right: ${spacing[6]};
   margin: 0 auto;
   padding-top: 10rem;
 `;

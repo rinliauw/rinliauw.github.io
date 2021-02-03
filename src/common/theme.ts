@@ -5,6 +5,7 @@ const theme = {
   colors: {
     background: "#252525",
     backgroundLight: "#2f2f2f", // 5% lighter
+    backgroundDark: "#121212", // 50% darker
     logo: "#197060",
     primary: "#26ac94", // 20% lighter from logo
     primaryLight: "#3ad3b8", // 20% lighter from primary
