@@ -1,24 +1,22 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
 
 import Container from "./container";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
-import theme from "../common/theme";
-import { spacing } from "../common";
 import { GlobalStyle } from "../styles/global-style";
-import { devices } from "../common/breakpoints";
+import theme from "../styles/theme";
 
 const LayoutBackground = styled.div`
-  background-color: ${theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.background};
   min-height: 100%;
 `;
 
 const LayoutHeader = styled.header`
-  position: fixed; 
+  position: fixed;
 
-  @media ${devices.tablet_portrait} {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
     position: absolute;
   }
 
@@ -34,9 +32,8 @@ const LayoutMain = styled.main`
 `;
 
 const LayoutFooter = styled.footer`
-  margin-top: ${spacing[8]};
+  margin-top: ${({ theme }) => theme.spacing[8]};
 `;
-
 
 interface Props {
   location: Location;
@@ -49,21 +46,22 @@ const Layout = ({ location, title, children }: Props) => {
   const isRootPath = location.pathname === rootPath;
 
   return (
-    <LayoutBackground>
-      <LayoutHeader>
-        <Navbar path={location.pathname} />
-      </LayoutHeader>
-      <LayoutMain>
-        <Container>
-          <GlobalStyle />
-
-          {children}
-        </Container>
-      </LayoutMain>
-      <LayoutFooter>
-        <Footer />
-      </LayoutFooter>
-    </LayoutBackground>
+    <ThemeProvider theme={theme}>
+      <LayoutBackground>
+        <LayoutHeader>
+          <Navbar path={location.pathname} />
+        </LayoutHeader>
+        <LayoutMain>
+          <Container>
+            <GlobalStyle />
+            {children}
+          </Container>
+        </LayoutMain>
+        <LayoutFooter>
+          <Footer />
+        </LayoutFooter>
+      </LayoutBackground>
+    </ThemeProvider>
   );
 };
 
