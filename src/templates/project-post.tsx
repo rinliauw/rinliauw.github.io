@@ -32,7 +32,14 @@ const Article = styled.article`
     :hover,
     :focus {
       color: ${theme.colors.primaryLight};
-      text-decoration: none;
+      
+      // alternative:
+      // text-decoration: underline;
+      // text-decoration-color: ${theme.colors.complementary};
+
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color: ${theme.colors.complementary};
     }
   }
 
@@ -129,8 +136,11 @@ const FooterNextPrevious = styled.nav`
     list-style: none;
     padding: 0;
     a {
+      border-radius:4px;
+      padding: ${spacing[2]};
       color: ${theme.colors.primary};
       &:hover {
+        background-color: ${theme.colors.backgroundLight};
         color ${theme.colors.primaryLight};
       }
     }

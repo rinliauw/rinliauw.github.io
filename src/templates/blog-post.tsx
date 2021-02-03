@@ -19,20 +19,26 @@ const ArticleHeader = styled.header`
 `;
 
 const HorizontalRule = styled.hr`
-    background-color: ${theme.colors.complementary};
-    height: 0.25rem;
-    margin-bottom: ${spacing[4]};
-    border: 0;
+  background-color: ${theme.colors.complementary};
+  height: 0.25rem;
+  margin-bottom: ${spacing[4]};
+  border: 0;
 `;
 
 const Article = styled.article`
   a {
     color: ${theme.colors.primary};
-    text-decoration: none;
     :hover,
     :focus {
       color: ${theme.colors.primaryLight};
-      text-decoration: none;
+
+      // alternative:
+      // text-decoration: underline;
+      // text-decoration-color: ${theme.colors.complementary};
+
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color: ${theme.colors.complementary};
     }
   }
 
@@ -129,8 +135,11 @@ const FooterNextPrevious = styled.nav`
     list-style: none;
     padding: 0;
     a {
+      border-radius:4px;
+      padding: ${spacing[2]};
       color: ${theme.colors.primary};
       &:hover {
+        background-color: ${theme.colors.backgroundLight};
         color ${theme.colors.primaryLight};
       }
     }

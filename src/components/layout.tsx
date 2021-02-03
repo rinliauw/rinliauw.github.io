@@ -7,6 +7,7 @@ import Footer from "./footer";
 
 import theme from "../common/theme";
 import { spacing } from "../common";
+import { GlobalStyle } from "../common/global-style";
 
 const LayoutBackground = styled.div`
   background-color: ${theme.colors.background};
@@ -47,7 +48,10 @@ const Layout = ({ location, title, children }: Props) => {
         <Navbar path={location.pathname} />
       </LayoutHeader>
       <LayoutMain>
-        <Container>{children}</Container>
+        <Container>
+          <GlobalStyle />
+          {children}
+        </Container>
       </LayoutMain>
       <LayoutFooter>
         <Footer />
