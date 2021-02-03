@@ -7,7 +7,7 @@ import Footer from "./footer";
 
 import theme from "../common/theme";
 import { spacing } from "../common";
-import { GlobalStyle } from "../common/global-style";
+import { GlobalStyle } from "../styles/global-style";
 
 const LayoutBackground = styled.div`
   background-color: ${theme.colors.background};

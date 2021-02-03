@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 
 import { MarkdownRemarkNode } from "../common/types";
 import PostListItem from "../components/post-list-item";
+import PostList from "../components/post-list";
 
 const pageQuery = graphql`
   query {
@@ -53,7 +54,7 @@ const Projects = ({ data, location }: Props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Projects" />
-      <ol style={{ listStyle: `none` }}>
+      <PostList>
         {posts.map((post: MarkdownRemarkNode) => (
           <li key={post.fields.slug}>
             <Link to={`/projects${post.fields.slug}`} itemProp="url">
@@ -61,7 +62,7 @@ const Projects = ({ data, location }: Props) => {
             </Link>
           </li>
         ))}
-      </ol>
+      </PostList>
     </Layout>
   );
 };

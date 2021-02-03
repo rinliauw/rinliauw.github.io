@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { spacing, fontSize } from "../common";
 import theme from "../common/theme";
 import Logo from "./logo";
+import { devices } from "../common/breakpoints";
 
 // TODO: breakpoints.
 
@@ -21,8 +22,6 @@ const NavbarWrapper = styled.div`
   display: flex;
   max-width: 75rem;
   align-items: center;
-  padding-left: ${spacing[6]};
-  padding-right: ${spacing[6]};
   margin-left: auto;
   margin-right: auto;
 `;
@@ -38,10 +37,29 @@ const NavbarBrandLink = styled(Link)`
 `;
 
 const NavbarSecondary = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  display: none;
+
+  @media ${devices.tablet_portrait} {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+`;
+
+const MobileMenuContainer = styled.div`
+  position: fixed;
+  top: 60;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  overflow: auto;
+
+  @media ${devices.tablet_portrait} {
+    display: none;
+  }
 `;
 
 interface NavbarLinkProps {

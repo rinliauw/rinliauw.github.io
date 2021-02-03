@@ -13,16 +13,19 @@ const FooterWrapper = styled.div`
 `;
 
 const Copyright = styled.span`
-  padding: ${spacing[3]};
+  padding: ${spacing[1]};
+  margin-left: ${spacing[3]};
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: ${fontSize[1]};
+  color: ${theme.colors.textDark};
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   margin-left: auto;
+  margin-right: ${spacing[2]};
 `;
 
 const SocialLink = styled.a`
