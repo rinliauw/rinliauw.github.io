@@ -2,59 +2,56 @@ import { Link } from "gatsby";
 import React from "react";
 
 import styled from "styled-components";
-import { fontSize, spacing } from "../common";
-import { breakpoints, devices } from "../common/breakpoints";
-import theme from "../common/theme";
 
 export const StyledMenu = styled.nav<Props>`
-  @media ${ devices.tablet_portrait }  {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
     display: none;
   }
+
+  background: ${({ theme }) => theme.colors.backgroundDarker};
+  height: 100vh;
+  padding: ${({ theme }) => theme.spacing[8]};
+
+  // center links vertically, and text centered as well
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${theme.colors.backgroundDarker};
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
+  text-align: center;
+
+  // top left
   position: absolute;
   top: 0;
-  // left: 0;
   right: 0;
-  z-index: 15;
-  transition: transform 0.1s ease-in-out;
-  transform: ${({ open }) =>
-    open ? "translateX(0)" : "translateX(100%)"};
+  z-index: 20;
 
-  @media (max-width: ${breakpoints.phone}) {
+  // slide out if open
+  transition: transform 0.1s ease-in-out;
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+
+  // if smaller than phone, then the open menu will take up the whole screen
+  @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
     width: 100%;
   }
 
   a {
-    font-size: ${fontSize[1]};
-    margin: ${spacing[4]} 0;
-    
+    margin: ${({ theme }) => theme.spacing[4]} 0;
+
+    font-size: ${({ theme }) => theme.fontSize[3]};
+    font-weight: lighter;
+    color: ${({ theme }) => theme.colors.text};
+
     border-bottom-style: dotted;
     border-bottom-width: 3px;
-    border-bottom-color: ${theme.colors.primary};
-
-    font-weight: lighter;
-    color: ${theme.colors.text};
-    // text-decoration: underline;
+    border-bottom-color: ${({ theme }) => theme.colors.primary};
 
     transition: color 0.1s linear;
 
-    @media ${devices.phone} {
-      font-size: ${fontSize[3]};
-      text-align: center;
-    }
-
     &:focus,
     &:hover {
-      color: ${theme.colors.textLight};
+      color: ${({ theme }) => theme.colors.textLight};
       border-bottom-style: solid;
       border-bottom-width: 3px;
-      border-bottom-color: ${theme.colors.complementary};
+      border-bottom-color: ${({ theme }) => theme.colors.complementary};
     }
   }
 `;
@@ -66,15 +63,9 @@ interface Props {
 const Menu = ({ open }: Props) => {
   return (
     <StyledMenu open={open}>
-      <Link to="/blog">
-        Blog
-      </Link>
-      <Link to="/projects">
-        Projects
-      </Link>
-      <Link to="/about">
-        About
-      </Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/projects">Projects</Link>
+      <Link to="/about">About</Link>
     </StyledMenu>
   );
 };

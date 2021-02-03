@@ -3,20 +3,21 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import theme from "../common/theme";
 import styled from "styled-components";
-import { fontSize, lineHeight, spacing } from "../common";
 
 const Article = styled.article`
   a {
-    color: ${theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+    border-bottom-color: ${({ theme }) => theme.colors.primary};
     :hover,
     :focus {
-      color: ${theme.colors.primaryLight};
+      color: ${({ theme }) => theme.colors.primaryLight};
 
       border-bottom-style: solid;
       border-bottom-width: 3px;
-      border-bottom-color: ${theme.colors.complementary};
+      border-bottom-color: ${({ theme }) => theme.colors.complementary};
     }
   }
 
@@ -26,39 +27,40 @@ const Article = styled.article`
   h4,
   h5,
   h6 {
-    font-family: ${theme.fonts.sans};
-    color: ${theme.colors.primary};
+    font-family: ${({ theme }) => theme.fonts.serif};
+    font-weight: lighter;
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   p {
-    line-height: ${lineHeight.relaxed};
+    line-height: ${({ theme }) => theme.lineHeights.relaxed};
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    margin: 0 0 ${spacing[8]} 0;
+    margin: 0 0 ${({ theme }) => theme.spacing[8]} 0;
     padding: 0;
   }
 
   ul,
   ol {
-    margin: 0 0 ${spacing[8]} 0;
-    padding: 0 0 0 ${spacing[4]};
+    margin: 0 0 ${({ theme }) => theme.spacing[8]} 0;
+    padding: 0 0 0 ${({ theme }) => theme.spacing[4]};
     list-style-position: outside;
     list-style-image: none;
 
     li {
-      padding-left: ${spacing[2]};
-      margin-bottom: ${spacing[4]};
+      padding-left: ${({ theme }) => theme.spacing[2]};
+      margin-bottom: ${({ theme }) => theme.spacing[4]};
     }
   }
 
   li {
     > {
       p {
-        margin-bottom: ${spacing[4]};
+        margin-bottom: ${({ theme }) => theme.spacing[4]};
       }
       ul {
-        margin-left: ${spacing[8]};
-        margin-top: ${spacing[4]};
+        margin-left: ${({ theme }) => theme.spacing[8]};
+        margin-top: ${({ theme }) => theme.spacing[4]};
       }
     }
     *:last-child {
@@ -105,7 +107,7 @@ const About = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="About" />
       <Article itemScope itemType="http://schema.org/Article">
         <header>
@@ -117,11 +119,11 @@ const About = ({ data, location }: Props) => {
             graduating 2021, and an aspiring&trade; software developer.
           </p>
           <p>
-            Recently I've been exploring full-stack web
-            development, working with React on the front end and Spring Boot
-            and Node.js on the server side. Of course, I look to gain more
-            practical experience working with other technology stacks, mainly
-            so I'll have more to write here...
+            Recently I've been exploring full-stack web development, working
+            with React on the front end and Spring Boot and Node.js on the
+            server side. Of course, I look to gain more practical experience
+            working with other technology stacks, mainly so I'll have more to
+            write here...
           </p>
 
           <h2>Links</h2>
@@ -132,7 +134,8 @@ const About = ({ data, location }: Props) => {
             and feel free to contact me through my email&nbsp;
             <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
               joncjauhari [at] gmail [dot] com
-            </a>. You can find my face elsewhere.
+            </a>
+            . You can find my face elsewhere.
           </p>
           <ul>
             <li>BTC: 1FrKqLmrRCTuVjq9pYRADCYXRBdVsHQmtY</li>

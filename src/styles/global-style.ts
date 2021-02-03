@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { fontSize, lineHeight, spacing } from "../common";
-import theme from "../common/theme";
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -9,23 +7,25 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+// when selected, i.e. with click-drag
 ::selection {
-  // background light
+  background-color: ${({theme}) => theme.colors.backgroundLighter};
+  color: ${({theme}) => theme.colors.textLight};
 }
 
 html {
-  line-height: ${lineHeight.normal};
+  line-height: ${({ theme }) => theme.lineHeights.normal};
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-color: grey ${theme.colors.backgroundDark};
+  scrollbar-color: grey ${({ theme }) => theme.colors.backgroundDark};
 }
 
 body {
-  font-family: ${theme.fonts.sans};
-  font-size: ${fontSize[1]};
-  color: ${theme.colors.text};
-  background-color: ${theme.colors.background};
+  font-family: ${({ theme }) => theme.fonts.sans};
+  font-size: ${({ theme }) => theme.fontSize[1]};
+  color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.background};
 }
 
 html,
@@ -36,34 +36,33 @@ body,
 }
 
 a {
-  color: ${theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   :hover,
   :focus {
-    color: ${theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
   }
 }
 
-/* Custom classes */
-
+// code
 .gatsby-highlight {
-  margin-bottom: ${spacing[8]};
+  margin-bottom: ${({ theme }) => theme.spacing[8]};
 }
 
 .gatsby-resp-image-wrapper {
-  margin: ${spacing[6]};
+  margin: ${({ theme }) => theme.spacing[6]};
 }
 
-@media (max-width: 42rem) {
-  blockquote {
-    padding: 0 0 0 ${spacing[4]};
-    margin-left: ${spacing[0]};
-  }
-  ul,
-  ol {
-    list-style-position: inside;
-  }
-}
+// @media (max-width: 42rem) {
+//   blockquote {
+//     padding: 0 0 0 ${({ theme }) => theme.spacing[4]};
+//     margin-left: ${({ theme }) => theme.spacing[0]};
+//   }
+//   ul,
+//   ol {
+//     list-style-position: inside;
+//   }
+// }
 
 `;

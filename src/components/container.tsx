@@ -1,24 +1,23 @@
 import styled from "styled-components";
-import { fontSize, spacing } from "../common";
-import { devices } from "../common/breakpoints";
 
 const Container = styled.div`
-  @media ${devices.phone} {
+  margin: 0 auto;
+  padding-top: ${({ theme }) => theme.spacing[20]};
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.phone}) {
     max-width: 20rem;
-    padding-left: ${spacing[1]};
-    padding-right: ${spacing[1]};
+    padding-left: ${({ theme }) => theme.spacing[1]};
+    padding-right: ${({ theme }) => theme.spacing[1]};
   }
-  @media ${devices.tablet_portrait} {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
     max-width: 40rem;
-    padding-left: ${spacing[6]};
-    padding-right: ${spacing[6]};
-    padding-top: 10rem;
+    padding-left: ${({ theme }) => theme.spacing[6]};
+    padding-right: ${({ theme }) => theme.spacing[6]};
+    padding-top: ${({ theme }) => theme.spacing[40]};
   }
-  @media ${devices.tablet_landscape} {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_landscape}) {
     max-width: 50rem;
   }
-  margin: 0 auto;
-  padding-top: 5rem;
 `;
 
 export default Container;

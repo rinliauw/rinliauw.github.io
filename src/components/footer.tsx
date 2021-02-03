@@ -2,37 +2,36 @@ import React from "react";
 import styled from "styled-components";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
-import { fontSize, spacing } from "../common";
-import theme from "../common/theme";
+import theme from "../styles/theme";
 
 const FooterWrapper = styled.div`
   display: flex;
   max-width: 50rem;
-  margin: 0px auto;
-  padding-bottom: 8rem;
+  margin: 0 auto;
+  padding-bottom: ${({ theme }) => theme.spacing[32]};
 `;
 
 const Copyright = styled.span`
-  padding: ${spacing[1]};
-  margin-left: ${spacing[3]};
+  padding: ${({ theme }) => theme.spacing[1]};
+  margin-left: ${({ theme }) => theme.spacing[3]};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${fontSize[1]};
-  color: ${theme.colors.textDark};
+  font-size: ${({ theme }) => theme.fontSize[1]};
+  color: ${({ theme }) => theme.colors.textDark};
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   margin-left: auto;
-  margin-right: ${spacing[2]};
+  margin-right: ${({ theme }) => theme.spacing[2]};
 `;
 
 const SocialLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${fontSize[3]};
+  font-size: ${({ theme }) => theme.fontSize[3]};
   height: 44px;
   width: 44px;
 

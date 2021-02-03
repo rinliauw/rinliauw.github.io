@@ -2,27 +2,24 @@ import React from "react";
 
 import styled from "styled-components";
 
-import { spacing, fontSize } from "../common";
-import theme from "../common/theme";
 import { MarkdownRemarkNode } from "../common/types";
-import { devices } from "../common/breakpoints";
 
 const Header = styled.header`
-  margin-bottom: ${spacing[4]};
+  margin-bottom: ${({ theme }) => theme.spacing[4]};
 `;
 
 const Headline = styled.h2`
-  font-family: ${theme.fonts.serif};
-  font-size: ${fontSize[3]};
+  font-family: ${({ theme }) => theme.fonts.serif};
+  font-size: ${({ theme }) => theme.fontSize[3]};
   font-weight: lighter;
-  color: ${theme.colors.primary};
-  margin-bottom: ${spacing[1]};
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: ${({ theme }) => theme.spacing[1]};
   margin-top: 0;
 `;
 
 const Dateline = styled.p`
-  font-family: ${theme.fonts.serif};
-  font-size: ${fontSize[0]};
+  font-family: ${({ theme }) => theme.fonts.serif};
+  font-size: ${({ theme }) => theme.fontSize[0]};
 `;
 
 const Section = styled.section`
@@ -32,30 +29,30 @@ const Section = styled.section`
 const Description = styled.p``;
 
 const Article = styled.article`
-  margin-bottom: ${spacing[4]};
-  margin-top: ${spacing[4]};
-  padding: ${spacing[4]};
+  margin-bottom: ${({ theme }) => theme.spacing[4]};
+  margin-top: ${({ theme }) => theme.spacing[4]};
+  padding: ${({ theme }) => theme.spacing[4]};
   border-radius: 4px;
-  color: ${theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
 
   transition: background-color 0.1s;
 
-  background-color: ${theme.colors.backgroundLight};
-  @media ${devices.tablet_portrait} {
-    background-color: ${theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundLight};
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
+    background-color: ${({ theme }) => theme.colors.background};
   }
 
   // x:hover and x :hover are not the same.
   &:hover {
-    background-color: ${theme.colors.backgroundLight};
+    background-color: ${({ theme }) => theme.colors.backgroundLight};
     ${Headline} {
-      color: ${theme.colors.primaryLight};
+      color: ${({ theme }) => theme.colors.primaryLight};
     }
     ${Dateline} {
-      color: ${theme.colors.textLight};
+      color: ${({ theme }) => theme.colors.textLight};
     }
     ${Description} {
-      color: ${theme.colors.textLight};
+      color: ${({ theme }) => theme.colors.textLight};
     }
   }
 `;
