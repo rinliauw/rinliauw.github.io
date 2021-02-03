@@ -2,49 +2,49 @@ import { Link } from "gatsby";
 import React from "react";
 
 import styled from "styled-components";
-import theme from "../styles/theme";
 
 export const StyledMenu = styled.nav<Props>`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
     display: none;
   }
+
+  background: ${({ theme }) => theme.colors.backgroundDarker};
+  height: 100vh;
+  padding: ${({ theme }) => theme.spacing[8]};
+
+  // center links vertically, and text centered as well
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.colors.backgroundDarker};
-  height: 100vh;
-  text-align: left;
-  padding: ${({ theme }) => theme.spacing[8]};
+  text-align: center;
+
+  // top left
   position: absolute;
   top: 0;
-  // left: 0;
   right: 0;
-  z-index: 15;
+  z-index: 20;
+
+  // slide out if open
   transition: transform 0.1s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
 
+  // if smaller than phone, then the open menu will take up the whole screen
   @media (max-width: ${({ theme }) => theme.breakpoints.phone}) {
     width: 100%;
   }
 
   a {
-    font-size: ${({ theme }) => theme.fontSize[1]};
     margin: ${({ theme }) => theme.spacing[4]} 0;
+
+    font-size: ${({ theme }) => theme.fontSize[3]};
+    font-weight: lighter;
+    color: ${({ theme }) => theme.colors.text};
 
     border-bottom-style: dotted;
     border-bottom-width: 3px;
     border-bottom-color: ${({ theme }) => theme.colors.primary};
 
-    font-weight: lighter;
-    color: ${({ theme }) => theme.colors.text};
-    // text-decoration: underline;
-
     transition: color 0.1s linear;
-
-    @media (min-width ${({ theme }) => theme.breakpoints.phone}) {
-      font-size: ${({ theme }) => theme.fontSize[3]};
-      text-align: center;
-    }
 
     &:focus,
     &:hover {

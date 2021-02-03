@@ -5,9 +5,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import ArticleFooterNav from "../components/article-footer-nav";
-import Article from "../components/article";
 import ArticleHeader from "../components/article-header";
 import HorizontalRule from "../components/horizontal-rule";
+import Article from "../components/article";
 
 const pageQuery = graphql`
   query ProjectPostBySlug(
@@ -71,7 +71,7 @@ const ProjectPost = ({ data, location }: Props) => {
 
   // TODO: time to read, table of contents, tags
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

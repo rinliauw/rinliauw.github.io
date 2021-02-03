@@ -14,7 +14,7 @@ const ArticleFooterNav = styled.nav`
       justify-content: space-between;
     }
     a {
-      border-radius:4px;
+      border-radius: 4px;
       padding: ${({ theme }) => theme.spacing[2]};
       color: ${({ theme }) => theme.colors.primary};
       &:hover {

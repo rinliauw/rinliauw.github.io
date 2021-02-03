@@ -8,7 +8,6 @@ import Menu from "./menu";
 
 const Nav = styled.nav`
   margin: 0 auto;
-
   background-color: ${({ theme }) => theme.colors.backgroundDark};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
@@ -42,12 +41,6 @@ const NavbarSecondary = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
 `;
 
 interface NavbarLinkProps {
@@ -55,7 +48,9 @@ interface NavbarLinkProps {
 }
 
 const NavbarLink = styled(Link)<NavbarLinkProps>`
+  // hide links if phone (screen won't fit), a burger takes their place.
   display: none;
+
   font-weight: lighter;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
@@ -86,6 +81,7 @@ const MobileMenu = styled.div`
   display: flex;
 `;
 
+// React Ref magic to detect raw events to trigger a function
 const useOnClickOutside = (
   ref: React.RefObject<HTMLDivElement>,
   handler: React.Dispatch<React.SetStateAction<boolean>>

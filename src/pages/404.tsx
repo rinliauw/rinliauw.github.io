@@ -54,7 +54,7 @@ const NotFound = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="404: Page Not Found" />
       <Text404>404: Page Not Found</Text404>
       <Message>

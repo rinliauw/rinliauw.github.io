@@ -52,7 +52,7 @@ const Projects = ({ data, location }: Props) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="Projects" />
       <PostList>
         {posts.map((post: MarkdownRemarkNode) => (

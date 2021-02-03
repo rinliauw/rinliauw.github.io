@@ -3,9 +3,11 @@ import styled from "styled-components";
 const Article = styled.article`
   a {
     color: ${({ theme }) => theme.colors.primary};
+
     border-bottom-style: dotted;
     border-bottom-width: 2px;
     border-bottom-color: ${({ theme }) => theme.colors.primary};
+
     :hover,
     :focus {
       color: ${({ theme }) => theme.colors.primaryLight};
@@ -70,7 +72,6 @@ const Article = styled.article`
     padding: 0 0 0 ${({ theme }) => theme.spacing[6]};
     border-left: 0.25rem solid ${({ theme }) => theme.colors.complementary};
     font-size: ${({ theme }) => theme.fontSize[1]};
-    // font-style: italic;
     margin-bottom: ${({ theme }) => theme.spacing[8]};
 
     > {
@@ -89,7 +90,7 @@ const Article = styled.article`
     width: 100%;
     margin-bottom: ${({ theme }) => theme.spacing[8]};
     border-collapse: collapse;
-    border-spacing: 0.25rem;
+    border-spacing: ${({ theme }) => theme.spacing[1]};
     thead {
       tr {
         th {

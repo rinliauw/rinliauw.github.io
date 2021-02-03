@@ -7,6 +7,7 @@ const theme = {
   colors: {
     background: "#252525",
     backgroundLight: "#2f2f2f", // 5% lighter
+    backgroundLighter: "#505050", // 20% lighter
     backgroundDark: "#121212", // 50% darker
     backgroundDarker: "#070707", // 80% darker
 

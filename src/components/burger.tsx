@@ -1,7 +1,6 @@
 import React from "react";
 
 import styled from "styled-components";
-import theme from "../styles/theme";
 
 interface StyledBurgerProps {
   open: boolean;
@@ -12,7 +11,7 @@ const BurgerWrapper = styled.div`
     display: none;
   }
   padding: ${({ theme }) => theme.spacing[4]};
-  z-index: 20;
+  z-index: 30;
 `;
 
 const StyledBurger = styled.button<StyledBurgerProps>`
@@ -35,7 +34,7 @@ const StyledBurger = styled.button<StyledBurgerProps>`
     height: ${({ theme }) => theme.spacing[1]};
     background: ${({ theme, open }) =>
       open ? theme.colors.complementary : theme.colors.complementary};
-    border-radius: 10px;
+    border-radius: 4px;
     transition: all 0.1s linear;
     position: relative;
     transform-origin: 1px;

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  margin: 0 auto;
+  padding-top: ${({ theme }) => theme.spacing[20]};
+  
   @media (min-width: ${({ theme }) => theme.breakpoints.phone}) {
     max-width: 20rem;
     padding-left: ${({ theme }) => theme.spacing[1]};
@@ -15,8 +18,6 @@ const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_landscape}) {
     max-width: 50rem;
   }
-  margin: 0 auto;
-  padding-top: ${({ theme }) => theme.spacing[20]};
 `;
 
 export default Container;

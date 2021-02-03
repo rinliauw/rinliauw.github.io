@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -72,7 +71,7 @@ const BlogPost = ({ data, location }: Props) => {
 
   // TODO: time to read, table of contents, tags
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

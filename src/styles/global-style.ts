@@ -7,8 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+// when selected, i.e. with click-drag
 ::selection {
-  // background light
+  background-color: ${({theme}) => theme.colors.backgroundLighter};
+  color: ${({theme}) => theme.colors.textLight};
 }
 
 html {
@@ -43,8 +45,7 @@ a {
   }
 }
 
-/* Custom classes */
-
+// code
 .gatsby-highlight {
   margin-bottom: ${({ theme }) => theme.spacing[8]};
 }
@@ -53,15 +54,15 @@ a {
   margin: ${({ theme }) => theme.spacing[6]};
 }
 
-@media (max-width: 42rem) {
-  blockquote {
-    padding: 0 0 0 ${({ theme }) => theme.spacing[4]};
-    margin-left: ${({ theme }) => theme.spacing[0]};
-  }
-  ul,
-  ol {
-    list-style-position: inside;
-  }
-}
+// @media (max-width: 42rem) {
+//   blockquote {
+//     padding: 0 0 0 ${({ theme }) => theme.spacing[4]};
+//     margin-left: ${({ theme }) => theme.spacing[0]};
+//   }
+//   ul,
+//   ol {
+//     list-style-position: inside;
+//   }
+// }
 
 `;

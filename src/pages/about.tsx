@@ -107,7 +107,7 @@ const About = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="About" />
       <Article itemScope itemType="http://schema.org/Article">
         <header>

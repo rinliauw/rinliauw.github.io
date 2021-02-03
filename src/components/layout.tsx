@@ -15,14 +15,13 @@ const LayoutBackground = styled.div`
 
 const LayoutHeader = styled.header`
   position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
     position: absolute;
   }
-
-  left: 0;
-  right: 0;
-  z-index: 10;
 `;
 
 // fr is fraction
@@ -37,13 +36,11 @@ const LayoutFooter = styled.footer`
 
 interface Props {
   location: Location;
-  title: string;
   children?: any;
 }
 
-const Layout = ({ location, title, children }: Props) => {
+const Layout = ({ location, children }: Props) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const isRootPath = location.pathname === rootPath;
 
   return (
     <ThemeProvider theme={theme}>
