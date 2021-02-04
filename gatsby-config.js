@@ -36,23 +36,29 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          // processes images in .md: add wrappers and blurred placeholders
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
             },
           },
+          // wraps iframes in .md files in responsive elastic containers
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          // code highlighting
           `gatsby-remark-prismjs`,
+          // copies local files linked from .md files to public/
           `gatsby-remark-copy-linked-files`,
+          // implements smartypants: better punctuation marks
           `gatsby-remark-smartypants`,
         ],
       },
@@ -61,6 +67,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     // low-level plugin for image processing functions of the Sharp library
     `gatsby-plugin-sharp`,
+    // google analytics
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

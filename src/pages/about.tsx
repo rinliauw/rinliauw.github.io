@@ -12,25 +12,12 @@ const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
-      }
-    }
   }
 `;
 
 interface Props extends PageProps {
   data: {
-    allMarkdownRemark: any;
+    allMdx: any;
     site: {
       siteMetadata: {
         title: string;

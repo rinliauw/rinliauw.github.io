@@ -14,6 +14,16 @@ a line-by-line translation from the rules of Sudoku *that actually runs* (!!).
 
 I've added some annotations below -- it really is just precise, plain, English.
 
+This is inline math $\frac{4}{5} \sigma^2$. $a^2 + b^2 = c^2$
+
+$$ c \equiv d \pmod{\phi(n)} \implies a^c \equiv a^d \pmod n $$
+
+Block:
+
+> $$
+> \Sigma^{\infty}_{i=0} \left(\sqrt{\frac{i}{\pi}} + 3 \cdot \Phi \right)
+> $$
+
 ```prolog
 :- use_module(library(clpfd)).                          %*
 

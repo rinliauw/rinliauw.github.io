@@ -8,6 +8,7 @@ import ArticleFooterNav from "../components/article-footer-nav";
 import ArticleHeader from "../components/article-header";
 import HorizontalRule from "../components/horizontal-rule";
 import Article from "../components/article";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const pageQuery = graphql`
   query ProjectPostBySlug(
@@ -20,17 +21,17 @@ const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -38,7 +39,7 @@ const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }
@@ -52,7 +53,7 @@ const pageQuery = graphql`
 interface Props {
   location: Location;
   data: {
-    markdownRemark: any;
+    mdx: any;
     site: {
       siteMetadata: {
         title: string;
@@ -65,7 +66,7 @@ interface Props {
 }
 
 const ProjectPost = ({ data, location }: Props) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
@@ -83,10 +84,9 @@ const ProjectPost = ({ data, location }: Props) => {
           <p>{post.frontmatter.date}</p>
           <HorizontalRule />
         </ArticleHeader>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <MDXRenderer>
+          {post.body}
+        </MDXRenderer>
         <HorizontalRule />
       </Article>
       <ArticleFooterNav>
