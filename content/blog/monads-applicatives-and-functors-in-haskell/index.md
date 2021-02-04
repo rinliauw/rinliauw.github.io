@@ -1,7 +1,8 @@
 ---
 title: "Monads, Applicatives, and Functors in Haskell"
 date: "2020-10-07T22:31:10+11:00"
-description: "A summary of monads, applicatives, and functors in Haskell."
+description: "A brief summary of Haskell's type system, detailing monads,
+applicatives and functors, and how they relate to one another."
 ---
 
 This is my summary of Chapter 11 and 12 of

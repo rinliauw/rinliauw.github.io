@@ -76,6 +76,7 @@ const BlogPost = ({ data, location }: Props) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        url={location.href}
       />
       <Article itemScope itemType="http://schema.org/Article">
         <ArticleHeader>

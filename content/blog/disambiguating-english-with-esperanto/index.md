@@ -3,7 +3,7 @@ title: "Disambiguating English with Esperanto"
 date: 2020-12-27T18:34:18+11:00
 draft: false
 description: "Exploring the use of Esperanto grammar structures with English
-  vocabulary in the context of ambiguities in sentences."
+  vocabulary to disambiguate sentences."
 ---
 
 ## Some problems
@@ -345,4 +345,5 @@ irregularity in English.
 Perhaps a system similar to this may be useful in informal human-readable
 [speech tagging](https://en.wikipedia.org/wiki/Part-of-speech_tagging), to
 disambiguate speech, or more generally, help separate
-grammar from vocabulary (I have not looked into that).
+grammar from vocabulary (I have not looked into that). Importantly, English
+vocabulary here could be swapped out for some other language's vocabulary.

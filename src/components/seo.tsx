@@ -12,13 +12,15 @@ import { useStaticQuery, graphql } from "gatsby";
 import favicon from '../../content/assets/profile-pic.jpg';
 
 interface Props {
-  description?: string
-  lang?: string
-  meta?: []
-  title: string
+  description?: string;
+  lang?: string;
+  meta?: [];
+  title: string;
+  url?: string;
 }
 
-const SEO = ({ description, lang, meta, title }: Props) => {
+const SEO = ({ description, lang, meta, title, url }: Props) => {
+  // query at *build time*
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -50,6 +52,7 @@ const SEO = ({ description, lang, meta, title }: Props) => {
           name: `description`,
           content: metaDescription,
         },
+        // OpenGraph SEO
         {
           property: `og:title`,
           content: title,
@@ -62,6 +65,11 @@ const SEO = ({ description, lang, meta, title }: Props) => {
           property: `og:type`,
           content: `website`,
         },
+        {
+          property: `og:url`,
+          content: url,
+        },
+        // Twitter SEO
         {
           name: `twitter:card`,
           content: `summary`,

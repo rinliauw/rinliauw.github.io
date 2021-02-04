@@ -2,7 +2,8 @@
 title: "The Visitor Pattern for Collision Handling"
 date: 2020-11-20T11:23:15+11:00
 draft: false
-description: "A motivation for the visitor design pattern."
+description: "A motivation for the visitor design pattern, in the context of
+basic collision handling in a game."
 ---
 
 Let's say we were building a system where components can interact with other

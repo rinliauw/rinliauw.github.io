@@ -1,7 +1,8 @@
 ---
 title: "A Sudoku Solver in 15 Lines of Prolog"
 date: "2020-10-26T18:22:55+11:00"
-description: "Appreciating a sudoku solver in 15 lines of Prolog."
+description: "Appreciating a sudoku solver in 15 lines of Prolog, a classic
+example of declarative programming."
 ---
 
 The title says it all. I came across this Prolog code in a lecture recently,
