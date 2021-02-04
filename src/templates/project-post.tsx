@@ -98,7 +98,6 @@ const ProjectPost = ({ data, location }: Props) => {
             padding: 0,
           }}
         >
-          {/* TODO: make these stack */}
           <li>
             {previous && (
               <Link to={`/projects${previous.fields.slug}`} rel="prev">

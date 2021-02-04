@@ -29,6 +29,7 @@ const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      timeToRead
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
@@ -79,7 +80,9 @@ const BlogPost = ({ data, location }: Props) => {
       <Article itemScope itemType="http://schema.org/Article">
         <ArticleHeader>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p>
+            {post.frontmatter.date} | <span>{post.timeToRead} min read</span>
+          </p>
         </ArticleHeader>
         <HorizontalRule />
         <section

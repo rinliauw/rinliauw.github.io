@@ -8,7 +8,7 @@ module.exports = {
       name: `Jonathan Jauhari`,
       summary: `Computer Science student at the University of Melbourne`,
     },
-    description: ``,
+    description: `Jonathan's personal website.`,
     siteUrl: `https://jonjau.github.io`,
     social: {
       twitter: `jonjauhari`,

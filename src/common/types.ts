@@ -9,4 +9,5 @@ export interface MarkdownRemarkNode {
     title: string;
     description: string;
   };
+  timeToRead: number;
 }

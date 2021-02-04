@@ -29,6 +29,7 @@ const pageQuery = graphql`
           title
           description
         }
+        timeToRead
       }
     }
   }
