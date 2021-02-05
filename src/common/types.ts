@@ -1,5 +1,5 @@
 // used for (blog) posts
-export interface MarkdownRemarkNode {
+export interface MdxNode {
   excerpt: string;
   fields: {
     slug: string;
@@ -9,4 +9,5 @@ export interface MarkdownRemarkNode {
     title: string;
     description: string;
   };
+  timeToRead: number;
 }

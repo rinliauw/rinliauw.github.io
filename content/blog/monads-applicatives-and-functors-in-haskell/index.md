@@ -1,7 +1,8 @@
 ---
 title: "Monads, Applicatives, and Functors in Haskell"
 date: "2020-10-07T22:31:10+11:00"
-description: "A summary of monads, applicatives, and functors in Haskell."
+description: "A brief summary of Haskell's type system, detailing monads,
+applicatives and functors, and how they relate to one another."
 ---
 
 This is my summary of Chapter 11 and 12 of
@@ -169,11 +170,13 @@ class Monoid m where
     mconcat = foldr mappend mempty -- default implementation!
 ```
 
-Monoid laws (surrounding a function with backticks (\`) allows infix calling):
+Monoid laws (surrounding a function with backticks `` ` `` allows infix calling):
 
-* ``mempty `mappend` x = x``
-* ``x `mappend` mempty = x``
-* ``(x `mappend` y) `mappend` z = x `mappend` (y `mappend` z)``
+```_
+1. mempty `mappend` x = x
+2. x `mappend` mempty = x
+3. (x `mappend` y) `mappend` z = x `mappend` (y `mappend` z)
+```
 
 Monoid instances:
 
@@ -234,9 +237,15 @@ fmap (+3) (Just 5) -- evaluates to (Just 8)
 
 Anyway, here are the Functor laws:
 
-1. `fmap id = id`, where `id` is `\x -> x`: "return what was passed"
-2. `fmap (f . g) = fmap f . fmap g`, or equivalently, \
-   `fmap (f . g) F = fmap f (fmap g F)`.
+```_
+1. fmap id = id
+2. fmap (f . g) = fmap f . fmap g
+
+-- equivalently for 2. :
+fmap (f . g) F = fmap f (fmap g F)
+```
+
+where `id` is `\x -> x`: "return what was passed".
 
 The `\x y -> x + y` syntax is a lambda expression, here it defines an
 anonymous function that takes two arguments x and y and returns their sum.
@@ -273,10 +282,12 @@ Nothing <*> Nothing        -- Nothing
 
 Applicative functor laws (this is where the analogies fall apart):
 
-1. `pure id <*> v = v`
-2. `pure f <*> pure x = pure (f x)`
-3. `u <*> pure y = pure ($ y) <*> u`
-4. `pure (.) <*> u <*> v <*> w = u <*> (v <*> w)`
+```_
+1. pure id <*> v = v
+2. pure f <*> pure x = pure (f x)
+3. u <*> pure y = pure ($ y) <*> u
+4. pure (.) <*> u <*> v <*> w = u <*> (v <*> w)
+```
 
 ## Monads
 

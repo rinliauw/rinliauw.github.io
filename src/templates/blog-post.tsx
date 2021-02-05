@@ -8,6 +8,7 @@ import ArticleFooterNav from "../components/article-footer-nav";
 import Article from "../components/article";
 import ArticleHeader from "../components/article-header";
 import HorizontalRule from "../components/horizontal-rule";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const pageQuery = graphql`
   query BlogPostBySlug(
@@ -20,17 +21,19 @@ const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      timeToRead
+      tableOfContents
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -38,7 +41,7 @@ const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }
@@ -52,7 +55,7 @@ const pageQuery = graphql`
 interface Props {
   location: Location;
   data: {
-    markdownRemark: any;
+    mdx: any;
     site: {
       siteMetadata: {
         title: string;
@@ -65,27 +68,29 @@ interface Props {
 }
 
 const BlogPost = ({ data, location }: Props) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
-  // TODO: time to read, table of contents, tags
+  // TODO: table of contents, tags
   return (
     <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        url={location.href}
       />
       <Article itemScope itemType="http://schema.org/Article">
         <ArticleHeader>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p>
+            {post.frontmatter.date} | <span>{post.timeToRead} min read</span>
+          </p>
         </ArticleHeader>
         <HorizontalRule />
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <MDXRenderer>
+          {post.body}
+        </MDXRenderer>
         <HorizontalRule />
       </Article>
       <ArticleFooterNav>

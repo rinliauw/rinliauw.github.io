@@ -19,7 +19,7 @@ const theme = {
 
     text: "#cfcfcf",
     textLight: "#ffffff", // 100% lighter
-    textDark: "#afafaf", // 15% darker
+    textDark: "#9b9b9b", // 25% darker
   },
 
   // 'monospace' does not affect generated code blocks: the prism theme does.

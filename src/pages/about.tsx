@@ -3,71 +3,7 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import styled from "styled-components";
-
-const Article = styled.article`
-  a {
-    color: ${({ theme }) => theme.colors.primary};
-    border-bottom-style: dotted;
-    border-bottom-width: 2px;
-    border-bottom-color: ${({ theme }) => theme.colors.primary};
-    :hover,
-    :focus {
-      color: ${({ theme }) => theme.colors.primaryLight};
-
-      border-bottom-style: solid;
-      border-bottom-width: 3px;
-      border-bottom-color: ${({ theme }) => theme.colors.complementary};
-    }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: ${({ theme }) => theme.fonts.serif};
-    font-weight: lighter;
-    color: ${({ theme }) => theme.colors.primary};
-  }
-
-  p {
-    line-height: ${({ theme }) => theme.lineHeights.relaxed};
-    --baseline-multiplier: 0.179;
-    --x-height-multiplier: 0.35;
-    margin: 0 0 ${({ theme }) => theme.spacing[8]} 0;
-    padding: 0;
-  }
-
-  ul,
-  ol {
-    margin: 0 0 ${({ theme }) => theme.spacing[8]} 0;
-    padding: 0 0 0 ${({ theme }) => theme.spacing[4]};
-    list-style-position: outside;
-    list-style-image: none;
-
-    li {
-      padding-left: ${({ theme }) => theme.spacing[2]};
-      margin-bottom: ${({ theme }) => theme.spacing[4]};
-    }
-  }
-
-  li {
-    > {
-      p {
-        margin-bottom: ${({ theme }) => theme.spacing[4]};
-      }
-      ul {
-        margin-left: ${({ theme }) => theme.spacing[8]};
-        margin-top: ${({ theme }) => theme.spacing[4]};
-      }
-    }
-    *:last-child {
-      margin-bottom: 0;
-    }
-  }
-`;
+import Article from "../components/article";
 
 const pageQuery = graphql`
   query {
@@ -76,25 +12,11 @@ const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
-      }
-    }
   }
 `;
 
 interface Props extends PageProps {
   data: {
-    allMarkdownRemark: any;
     site: {
       siteMetadata: {
         title: string;
@@ -111,7 +33,7 @@ const About = ({ data, location }: Props) => {
       <SEO title="About" />
       <Article itemScope itemType="http://schema.org/Article">
         <header>
-          <h1 itemProp="headline">Hi, I'm Jonathan 👋</h1>
+          <h1 itemProp="headline">About me</h1>
         </header>
         <section itemProp="articleBody">
           <p>
@@ -135,7 +57,7 @@ const About = ({ data, location }: Props) => {
             <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
               joncjauhari [at] gmail [dot] com
             </a>
-            . You can find my face elsewhere.
+            .
           </p>
           <ul>
             <li>BTC: 1FrKqLmrRCTuVjq9pYRADCYXRBdVsHQmtY</li>

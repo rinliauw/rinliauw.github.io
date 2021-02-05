@@ -18,7 +18,7 @@ phonetic cipher. Currently punctuation is a problem.
 The dictionary used is the
 [CMU pronouncing dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict).
 
-This was my first non-trivial program, after
+This was my first non-trivial application, after
 [reading](https://www.amazon.com/Programming-Principles-Practice-Using-C/dp/0321543726)
 [a](https://nostarch.com/automatestuff2)
 [few](https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008)

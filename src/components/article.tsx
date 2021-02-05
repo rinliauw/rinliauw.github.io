@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const Article = styled.article`
+  font-size: ${({theme}) => theme.fontSize[0]};
+  @media (min-width: ${({theme}) => theme.breakpoints.tablet_portrait}) {
+    font-size: ${({theme}) => theme.fontSize[1]};
+  }
+
   a {
     color: ${({ theme }) => theme.colors.primary};
 

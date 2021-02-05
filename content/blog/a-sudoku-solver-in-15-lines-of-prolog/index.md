@@ -1,7 +1,8 @@
 ---
 title: "A Sudoku Solver in 15 Lines of Prolog"
 date: "2020-10-26T18:22:55+11:00"
-description: "Appreciating a sudoku solver in 15 lines of Prolog."
+description: "Appreciating a sudoku solver in 15 lines of Prolog, a classic
+example of declarative programming."
 ---
 
 The title says it all. I came across this Prolog code in a lecture recently,
@@ -12,6 +13,16 @@ Honestly though, can anyone even claim this is computer code? Seems to me like
 a line-by-line translation from the rules of Sudoku *that actually runs* (!!).
 
 I've added some annotations below -- it really is just precise, plain, English.
+
+This is inline math $\frac{4}{5} \sigma^2$. $a^2 + b^2 = c^2$
+
+$$ c \equiv d \pmod{\phi(n)} \implies a^c \equiv a^d \pmod n $$
+
+Block:
+
+> $$
+> \Sigma^{\infty}_{i=0} \left(\sqrt{\frac{i}{\pi}} + 3 \cdot \Phi \right)
+> $$
 
 ```prolog
 :- use_module(library(clpfd)).                          %*

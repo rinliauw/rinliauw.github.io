@@ -4,7 +4,7 @@ import { Link, graphql, PageProps } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import { MarkdownRemarkNode } from "../common/types";
+import { MdxNode } from "../common/types";
 import PostListItem from "../components/post-list-item";
 import PostList from "../components/post-list";
 
@@ -15,7 +15,7 @@ const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { fileAbsolutePath: { regex: "/projects/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -29,6 +29,7 @@ const pageQuery = graphql`
           title
           description
         }
+        timeToRead
       }
     }
   }
@@ -36,8 +37,8 @@ const pageQuery = graphql`
 
 interface Props extends PageProps {
   data: {
-    allMarkdownRemark: {
-      nodes: MarkdownRemarkNode[];
+    allMdx: {
+      nodes: MdxNode[];
     };
     site: {
       siteMetadata: {
@@ -49,13 +50,13 @@ interface Props extends PageProps {
 
 const Projects = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const posts = data.allMarkdownRemark.nodes;
+  const posts = data.allMdx.nodes;
 
   return (
     <Layout location={location}>
       <SEO title="Projects" />
       <PostList>
-        {posts.map((post: MarkdownRemarkNode) => (
+        {posts.map((post: MdxNode) => (
           <li key={post.fields.slug}>
             <Link to={`/projects${post.fields.slug}`} itemProp="url">
               <PostListItem post={post} />

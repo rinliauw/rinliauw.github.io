@@ -2,30 +2,41 @@
 title: "The Visitor Pattern for Collision Handling"
 date: 2020-11-20T11:23:15+11:00
 draft: false
-description: "A motivation for the visitor design pattern."
+description: "A motivation for the visitor design pattern, in the context of
+basic collision handling in a game."
 ---
 
-Let's say we were building a system where components can interact with other
-components, and based on the combination of components, some behaviour is to
-be expected. We must also assume the handled interactions are only between
-pairs.
+I find that in learning conventions in programming it always pays to know the
+alternatives.
+[Software design patterns](https://refactoring.guru/design-patterns) (which
+are conventions, really) are particularly important to know as they can be
+very specific and at times, overkill.
+
+I recently came across a situation where the Visitor pattern seemed like the
+best fit, but in all honesty, the alternative only seemed worse because of
+the lack of language support. To set it up:
+
+Let's say we were building a system where components can
+interact with other components, and based on the combination of components,
+some behaviour is to be expected. We must also assume the handled
+interactions are only between pairs.
 
 A classic example is a pairwise collision system:
 
-* Adventurers and beasts are creatures.
-* Adventurers are either knights or archers.
-* Beasts are either werewolves or (flying) dragons.
-* When adventurers and beasts collide, they fight.
-* The way a fight goes is decided by the kind of the adventurer, as well as the
+- Adventurers and beasts are creatures.
+- Adventurers are either knights or archers.
+- Beasts are either werewolves or (flying) dragons.
+- When adventurers and beasts collide, they fight.
+- The way a fight goes is decided by the kind of the adventurer, as well as the
   kind of the beast, e.g. archers shoot dragons, punch werewolves, and
   werewolves disarm knights.
-* Knights are particularly polite -- when a pair of knights meet, they loudly
+- Knights are particularly polite -- when a pair of knights meet, they loudly
   greet each other.
 
 We see that we can have well-defined adventurer-beast collisions and
 possibly a knight-knight collision too. To start off, the collision handling
 system shouldn't need to know the class hierarchy and how each
-creature behaves when it hits another, it just needs them to *do what they do*.
+creature behaves when it hits another, it just needs them to _do what they do_.
 A simple system might look like this, free of `instanceof` checks:
 
 ```java
@@ -87,9 +98,9 @@ class Werewolf extends Beast {
 All we've really done is push back the `instanceof` checks into each
 method's implementation. This works.
 
-* Adding new behaviour for existing classes means adding an extra
+- Adding new behaviour for existing classes means adding an extra
   `instanceof` check.
-* Adding a new kind of `Creature` will not affect existing classes. If they
+- Adding a new kind of `Creature` will not affect existing classes. If they
   don't interact with the new kind of `Creature`, they simply don't have
   to handle it in the if-else chain.
 
@@ -121,7 +132,7 @@ The issue is, Java, like C++, Python, and many other languages, only supports
 [single dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch#Single_and_multiple_dispatch):
 
 > The concrete function that is called from a function call depends on the
-> dynamic (meaning runtime) type of a single object, the *receiver*, which is
+> dynamic (meaning runtime) type of a single object, the _receiver_, which is
 > `a` in `a.collide(b)`.
 
 To illustrate:
@@ -219,9 +230,9 @@ class Game {
 
 This also works.
 
-* Adding new behaviour for existing classes means changing the implementation
+- Adding new behaviour for existing classes means changing the implementation
   of a `collide` method.
-* Adding a new kind of Creature will not affect existing classes. If they
+- Adding a new kind of Creature will not affect existing classes. If they
   aren’t concerned about the new kind of Creature, they simply don’t have to
   implement a `collide(NewCreatureType x)`. Though that method will have to
   be added to the `CreatureVisitor` interface as a default, empty method.
