@@ -1,9 +1,55 @@
 import styled from "styled-components";
 
+const ArticleFooterNav = styled.nav`
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-size: ${({ theme }) => theme.fontSize[0]};
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    a {
+      border-radius: 4px;
+      padding: ${({ theme }) => theme.spacing[2]};
+      color: ${({ theme }) => theme.colors.primary};
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.backgroundLight};
+        color ${({ theme }) => theme.colors.primaryLight};
+      }
+    }
+  }
+`;
+
+const ArticleHeader = styled.header`
+  font-size: ${({ theme }) => theme.fontSize[0]};
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
+    font-size: ${({ theme }) => theme.fontSize[1]};
+  }
+
+  font-family: ${({ theme }) => theme.fonts.serif};
+  h1 {
+    margin: 0 ${({ theme }) => theme.spacing[4]} 0 0;
+  }
+  p {
+    font-size: ${({ theme }) => theme.fontSize[0]};
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
+      font-size: ${({ theme }) => theme.fontSize[1]};
+    }
+    span {
+      color: ${({ theme }) => theme.colors.textDark};
+    }
+  }
+`;
+
 const Article = styled.article`
-  font-size: ${({theme}) => theme.fontSize[0]};
-  @media (min-width: ${({theme}) => theme.breakpoints.tablet_portrait}) {
-    font-size: ${({theme}) => theme.fontSize[1]};
+  font-size: ${({ theme }) => theme.fontSize[0]};
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet_portrait}) {
+    font-size: ${({ theme }) => theme.fontSize[1]};
   }
 
   a {
@@ -107,4 +153,4 @@ const Article = styled.article`
   }
 `;
 
-export default Article;
+export { Article, ArticleFooterNav, ArticleHeader };

@@ -4,11 +4,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ArticleFooterNav from "../components/article-footer-nav";
-import Article from "../components/article";
-import ArticleHeader from "../components/article-header";
 import HorizontalRule from "../components/horizontal-rule";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Article, ArticleHeader, ArticleFooterNav } from "../components/article";
 
 const pageQuery = graphql`
   query BlogPostBySlug(

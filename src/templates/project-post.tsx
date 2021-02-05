@@ -4,11 +4,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ArticleFooterNav from "../components/article-footer-nav";
-import ArticleHeader from "../components/article-header";
 import HorizontalRule from "../components/horizontal-rule";
-import Article from "../components/article";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Article, ArticleHeader, ArticleFooterNav } from "../components/article";
 
 const pageQuery = graphql`
   query ProjectPostBySlug(
@@ -70,7 +68,7 @@ const ProjectPost = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
-  // TODO: time to read, table of contents, tags
+  // TODO: table of contents, tags
   return (
     <Layout location={location}>
       <SEO

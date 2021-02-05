@@ -5,8 +5,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import { MdxNode } from "../common/types";
-import PostListItem from "../components/post-list-item";
-import PostList from "../components/post-list";
+import { SectionDescription, SectionTitle } from "../components/section";
+import { PostList, PostListItem } from "../components/post-list";
 
 const pageQuery = graphql`
   query {
@@ -55,6 +55,11 @@ const Blog = ({ data, location }: Props) => {
   return (
     <Layout location={location}>
       <SEO title="Blog" />
+      <SectionTitle>Blog</SectionTitle>
+      <SectionDescription>
+        I mainly write about programming and software development. The RSS
+        feed for this blog is <a href="/rss.xml">here</a>.
+      </SectionDescription>
       <PostList>
         {posts.map((post: MdxNode) => (
           <li key={post.fields.slug}>
