@@ -53,7 +53,7 @@ const About = ({ data, location }: Props) => {
             I'm always down to collaborate on a project. Check me out on&nbsp;
             <a href="https://github.com/jonjau">Github</a> and &nbsp;
             <a href="https://www.linkedin.com/in/jonathanjauhari/">LinkedIn</a>,
-            and feel free to contact me through my email&nbsp;
+            and feel free to contact me via email:&nbsp;
             <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
               joncjauhari [at] gmail [dot] com
             </a>

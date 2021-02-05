@@ -57,7 +57,7 @@ const Projects = ({ data, location }: Props) => {
       <SEO title="Projects" />
       <SectionTitle>Projects</SectionTitle>
       <SectionDescription>
-        Here I write about notable projects that I have undertaken.
+        Here I write about notable projects that I've undertaken.
       </SectionDescription>
       <PostList>
         {posts.map((post: MdxNode) => (

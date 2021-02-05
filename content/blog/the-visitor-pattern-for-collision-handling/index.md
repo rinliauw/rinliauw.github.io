@@ -7,9 +7,9 @@ basic collision handling in a game."
 ---
 
 I find that in learning conventions in programming it always pays to know the
-alternatives.
-[Software design patterns](https://refactoring.guru/design-patterns) (which
-are conventions, really) are particularly important to know as they can be
+alternatives. Alternatives to 
+[software design patterns](https://refactoring.guru/design-patterns) (which
+are conventions, really) are particularly important to know as patterns can be
 very specific and at times, overkill.
 
 I recently came across a situation where the Visitor pattern seemed like the
@@ -110,7 +110,7 @@ much [pattern matching](https://docs.microsoft.com/en-us/dotnet/csharp/pattern-m
 just a lot uglier. Apparently more recent Java versions have
 [improved on that](https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html).
 That being said, this alternative `instanceof` approach doesn't really have
-a name, and I'm not sure if fits among the usual over-abstracted Java code.
+a name, and I'm not sure if it fits among the usual over-abstracted Java code.
 
 ## Multiple dispatch
 
