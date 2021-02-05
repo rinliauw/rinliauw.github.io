@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           // processes images in .md: add wrappers and blurred placeholders
           {
@@ -63,6 +63,67 @@ module.exports = {
         ],
       },
     },
+    // RSS feed
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                });
+              });
+            },
+            query: `
+              {
+                allMdx(
+                  filter: { fileAbsolutePath: { regex: "/blog/" } }
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      fields { slug }
+                      frontmatter {
+                        description
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Jonathan Jauhari's Blog Posts",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp to test
+            // if pathname of current page satisfies it.
+            // If not provided or `undefined`, all pages will have feed
+            // reference inserted
+            match: "^/blog/",
+          },
+        ],
+      },
+    },
     // Creates ImageSharp nodes from image files supported by Sharp
     `gatsby-transformer-sharp`,
     // low-level plugin for image processing functions of the Sharp library
@@ -74,7 +135,6 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
     // for web manifest:
     {
       resolve: `gatsby-plugin-manifest`,

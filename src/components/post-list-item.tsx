@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-import { MarkdownRemarkNode } from "../common/types";
+import { MdxNode } from "../common/types";
 
 const Header = styled.header`
   margin-bottom: ${({ theme }) => theme.spacing[4]};
@@ -58,7 +58,7 @@ const Article = styled.article`
 `;
 
 interface Props {
-  post: MarkdownRemarkNode;
+  post: MdxNode;
 }
 
 const PostListItem = ({ post }: Props) => {
