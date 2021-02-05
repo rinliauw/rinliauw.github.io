@@ -7,7 +7,7 @@ module.exports = {
       summary: `Computer Science student at the University of Melbourne`,
     },
     description: `The personal website of Jonathan Jauhari.`,
-    siteUrl: `https://jonjau.github.io`,
+    siteUrl: `https://jonjauhari.me`,
     social: {
       twitter: `jonjauhari`,
     },

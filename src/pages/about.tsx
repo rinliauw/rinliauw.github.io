@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Article from "../components/article";
+import { Article } from "../components/article";
 
 const pageQuery = graphql`
   query {

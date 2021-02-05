@@ -5,8 +5,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import { MdxNode } from "../common/types";
-import PostListItem from "../components/post-list-item";
-import PostList from "../components/post-list";
+import { PostList, PostListItem } from "../components/post-list";
+import { SectionDescription, SectionTitle } from "../components/section";
 
 const pageQuery = graphql`
   query {
@@ -55,6 +55,10 @@ const Projects = ({ data, location }: Props) => {
   return (
     <Layout location={location}>
       <SEO title="Projects" />
+      <SectionTitle>Projects</SectionTitle>
+      <SectionDescription>
+        Here I write about notable projects that I have undertaken.
+      </SectionDescription>
       <PostList>
         {posts.map((post: MdxNode) => (
           <li key={post.fields.slug}>
