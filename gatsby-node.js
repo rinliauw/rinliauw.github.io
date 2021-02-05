@@ -4,14 +4,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
 
-  // make / ("index") point to /blog
-  createRedirect({
-    fromPath: "/",
-    toPath: "/blog",
-    isPermanent: true,
-    redirectInBrowser: true,
-  });
-
   // Get all markdown posts in the the subfolder category in /content/{category}
   // (defined in gatsby-config.js)
   const createPagesFromMarkdownFiles = async (category, postComponent) => {

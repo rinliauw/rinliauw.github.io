@@ -17,7 +17,6 @@ const pageQuery = graphql`
 
 interface Props extends PageProps {
   data: {
-    allMdx: any;
     site: {
       siteMetadata: {
         title: string;
@@ -34,7 +33,7 @@ const About = ({ data, location }: Props) => {
       <SEO title="About" />
       <Article itemScope itemType="http://schema.org/Article">
         <header>
-          <h1 itemProp="headline">Hi, I'm Jonathan 👋</h1>
+          <h1 itemProp="headline">About me</h1>
         </header>
         <section itemProp="articleBody">
           <p>
