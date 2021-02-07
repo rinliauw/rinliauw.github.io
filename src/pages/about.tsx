@@ -41,7 +41,7 @@ const About = ({ data, location }: Props) => {
             graduating 2021, and an aspiring&trade; software developer.
           </p>
           <p>
-            Recently I've been exploring full-stack web development, working
+            Recently, I've been exploring full-stack web development, working
             with React on the front end and Spring Boot and Node.js on the
             server side. Of course, I look to gain more practical experience
             working with other technology stacks, mainly so I'll have more to
@@ -51,10 +51,21 @@ const About = ({ data, location }: Props) => {
           <h2>Links</h2>
           <p>
             I'm always down to collaborate on a project. Check me out on&nbsp;
-            <a href="https://github.com/jonjau">Github</a> and &nbsp;
-            <a href="https://www.linkedin.com/in/jonathanjauhari/">LinkedIn</a>,
-            and feel free to contact me through my email&nbsp;
-            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D">
+            <a title="My Github profile" href="https://github.com/jonjau">
+              Github
+            </a>{" "}
+            and &nbsp;
+            <a
+              title="My LinkedIn profile"
+              href="https://www.linkedin.com/in/jonathanjauhari/"
+            >
+              LinkedIn
+            </a>
+            , and feel free to contact me via email:&nbsp;
+            <a
+              title="Send me an email"
+              href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D"
+            >
               joncjauhari [at] gmail [dot] com
             </a>
             .

@@ -10,10 +10,11 @@ description: "A desktop application for syllable separation and phonetic
 
 64-bit Windows 10 / Linux executables are available on the Github page.
 
-Cifero is a Python GUI (PyQt5) program for (esoteric)
-phonetic transliteration and syllable separation. Transliterates sentences to
-and from: dictionary English, IPA, a "typable" IPA, a "readable" IPA, and a
-phonetic cipher. Currently punctuation is a problem.
+Cifero is a Python GUI (PyQt5) program to aid in understanding language
+pronunciation. What it actually does is (esoteric) phonetic transliteration
+and syllable separation. It transliterates sentences to and from: dictionary
+English, IPA, a "typable" IPA, a "readable" IPA, and a phonetic cipher.
+Currently punctuation is a problem.
 
 The dictionary used is the
 [CMU pronouncing dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict).
