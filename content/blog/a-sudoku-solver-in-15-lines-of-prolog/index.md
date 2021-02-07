@@ -12,7 +12,7 @@ isn't peak abstraction, I don't know what is.
 Honestly though, can anyone even claim this is computer code? Seems to me like
 a line-by-line translation from the rules of Sudoku *that actually runs* (!!).
 
-I've added some annotations below -- it really is just precise, plain, English.
+I've added some annotations below -- it really is just precise English.
 
 ```prolog
 :- use_module(library(clpfd)).                          %*

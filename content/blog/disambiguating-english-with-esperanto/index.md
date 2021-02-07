@@ -53,15 +53,16 @@ All we're taking from Esperanto are the suffixes and sentence structure.
 | -e     | adverb    |
 
 The immediate problem are the words themselves. Most English words have
-meaning baked into their "root words", like 'often' or 'again'; modifying
-them with suffixes leads to non-obvious interpretations ('again-o': what would
-'again' mean as a noun?) and should be avoided, but what if someone does it
-anyway? Exceptions regarding special word forms will have to remain.
+grammatical meaning baked into their "root words", like 'often' or 'again';
+modifying them with suffixes leads to non-obvious interpretations ('again-o':
+what would 'again' mean as a noun?) and should be avoided, but what if
+someone does it anyway? Exceptions regarding special word forms will have to
+remain.
 
 A good practice might be to avoid special words and phrases altogether, and
-stick with simple suffix-friendly words, say 'frequent-e' to mean
-'frequently' instead of 'often'. I don't know how 'again' could be avoided,
-it might have to be an exception.
+stick with simple suffix-friendly words, say, writing 'frequent-e' to mean
+'frequently' instead of 'often'. But I don't know how 'again' could be broken
+down into a word and a suffix, so it might have to be a 'special word'.
 
 The verb suffix system for Esperanto is
 [well-defined](http://esperanto.davidgsimpson.com/eo-verbforms.html):
@@ -75,7 +76,9 @@ The verb suffix system for Esperanto is
 | -us    | conditional | I do-us    | I would do     |
 | -i     | infinitive  | do-i it    | to do it       |
 
-More complex verb suffixes (maybe unnecessary):
+These should cover most cases when forming simple sentences.
+
+There are also more complex verb suffixes, which may be unnecessary:
 
 | Suffix | Meaning         | Example         | Interpretation        |
 | :----- | :-------------- | :-------------- | :-------------------- |
@@ -105,18 +108,17 @@ words more than necessary. Trying to get at meaning 1 leads to another issue:
 2. `repetitive-e`
 3. `repetitively-e`
 
-Which one is correct? Perhaps all of them, although 3 is redundant. We see
+Which one is correct? Perhaps all of them, although 3 is redundant. We see that
 mixing English suffixes and (abused) Esperanto suffixes leads to even more
 choice.
 
 So, abusing Esperanto's suffix system, words can become verbs, adjectives or
 adverbs, as appropriate. Let's say prepositions (over, on, at), articles (a,
-the), conjunctions (and, or) are not changed.
+the), conjunctions (and, or) are not changed, and omitted if appropriate.
 
-In this system, the words to
-which we attach suffixes are the English words, and those words don't have to
-be actual root words. It's not always possible and might lead to ambiguity
-(e.g. `'repeat-e'`).
+In this system, the words to which we attach suffixes are the English words,
+and those words don't have to be actual root words. It's not always possible
+and might lead to ambiguity (e.g. `'repeat-e'`).
 
 Here's how the system might be used to disambiguate some sentences:
 
@@ -135,8 +137,8 @@ There are several interpretations:
 2. The man has a telescope.
 3. I used a telescope to see the man.
 
-The sentence might be disambiguated by context, or a change in sentence
-structure:
+In English, the sentence might be disambiguated by context, or a change in
+sentence structure:
 
     1. I saw a man on a hill, which had a telescope.
     2. I saw a man, who had a telescope, on a hill.
@@ -211,7 +213,7 @@ possible):
     2. I like people-understanding.
 
 Esperanto grammar is particularly well-suited for this. Changing the suffix
-changes the role of the word.
+changes the role of the word, and the structure is untouched:
 
     1. I like-as understand-ajn person-ojn.
     2. I like-as understand-i person-ojn.
