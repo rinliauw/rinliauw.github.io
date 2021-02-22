@@ -382,7 +382,7 @@ e4 lst =
 ## Types and instances of functors et al
 
 * `map :: (a -> b) -> [a] -> [b]`, literally `fmap` but just for lists
-* `fmap :: (a -> b) -> f a -> f b`, where f is a functor :@1
+* `fmap :: (a -> b) -> f a -> f b`, where f is a functor \*
 * `(<$>) :: (a -> b) -> f a -> f b`, where f is a functor
 * `pure :: a -> f a`, where f is an applicative functor
 * `(<*>) :: f (a -> b) -> f a -> f b`, where f is an applicative functor
@@ -390,7 +390,7 @@ e4 lst =
 * `(>>) :: m a -> m b -> m b`, where m is a monad
 * `return :: a -> m a`, where m is a monad
 
-["lifting"](https://wiki.haskell.org/Lifting):
+\* ["lifting"](https://wiki.haskell.org/Lifting):
 `(->)` is right-applicative, so
 `fmap :: (a -> b) -> (f a -> f b)` is equivalent, and emphasises the "lift",
 likewise for `pure` et al.
@@ -432,6 +432,7 @@ instance Applicative ((->) r) where
     pure x = (\_ -> x)
     f <*> g = \x -> f x (g x)
 
+-- this makes my head hurt
 ghci> (+) <$> (+3) <*> (*100) $ 5
 508
 ```
@@ -446,7 +447,7 @@ Golfing once again...
 ghci> getZipList $ (+) <$> ZipList [1,2,3] <*> ZipList [100,10,20]
 [101, 12, 23]
 
--- implicitly, this is (fmap <$> [(+2,(*2))]) <*> [Just 10, Just 20] :@1
+-- implicitly, this is (fmap <$> [(+2,(*2))]) <*> [Just 10, Just 20]
 ghci> fmap <$> [(+2),(*2)] <*> [Just 10, Just 20]
 [Just 12,Just 22,Just 20,Just 40]
 

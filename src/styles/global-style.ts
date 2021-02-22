@@ -38,8 +38,8 @@ body,
 a {
   color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
-  :hover,
-  :focus {
+  &:hover,
+  &:focus {
     color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
   }
