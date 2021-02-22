@@ -1,6 +1,6 @@
 import React from "react";
 
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 
 interface StyledBurgerProps {
   open: boolean;
@@ -32,8 +32,7 @@ const StyledBurger = styled.button<StyledBurgerProps>`
   div {
     width: ${({ theme }) => theme.spacing[8]};
     height: ${({ theme }) => theme.spacing[1]};
-    background: ${({ theme, open }) =>
-      open ? theme.colors.complementary : theme.colors.complementary};
+    background: ${({ theme }) => theme.colors.complementary};
     border-radius: 4px;
     transition: all 0.1s linear;
     position: relative;
@@ -61,9 +60,14 @@ interface Props {
 
 const Burger = ({ open, setOpen }: Props) => {
   // the three empty div's are the bars that make up the burger
+  // with aria-label for perfect Lighthouse score!
   return (
     <BurgerWrapper>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <StyledBurger
+        aria-label="Tabs menu"
+        open={open}
+        onClick={() => setOpen(!open)}
+      >
         <div />
         <div />
         <div />

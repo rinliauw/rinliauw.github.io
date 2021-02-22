@@ -327,7 +327,7 @@ Esperanto grammar (kind of):
     be-as like learn-i drive-i, you can-as learn-i all the theory-ojn,
     rule-ojn, regulation-ojn, but you not good-os at it unless you
     practice-as it-n and it start-as become-i second-a nature-o to you.
-    Grammar-o be-is extreme-e important-a, not-correct-a use-o of grammar-o
+    Grammar-o be-as extreme-e important-a, not-correct-a use-o of grammar-o
     can-as confuse-i the person-on whom you speak-as, and even change-as the
     meaning-on of what you communicate-as, more-e, native-a English-a
     speaker-oj hyper-e aware-as of grammar-o and notice-os almost immediate-e

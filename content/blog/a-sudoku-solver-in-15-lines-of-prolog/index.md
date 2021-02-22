@@ -33,7 +33,7 @@ blocks([A,B,C|Bs1], [D,E,F|Bs2], [G,H,I|Bs3]) :-        %7
 ```
 
 \* This is the secret sauce:
-[Constraint Logic Programming over Finite Domains](http://pathwayslms.com/swipltuts/clpfd/clpfd.html),
+[Constraint Logic Programming over Finite Domains](https://www.swi-prolog.org/man/clpfd.html),
 which is as far as I know, needed for the `Vs ins 1..9` bit.
 
 A list of lists `Rows` is a solved Sudoku puzzle when all of these statements
@@ -46,7 +46,7 @@ hold:
 4. Columns are the rows of the board transposed.
 5. In each column the values contained are distinct.
 6. Letting the rows from the first to the ninth be named A to I,
-   Rows A,B,C, and D,E,F, and G,H,I form "blocks".
+   rows A,B,C, and D,E,F, and G,H,I form "blocks".
 7. Three rows form "blocks" if the first three values from each of the three
    rows (a 3x3 on the board) altogether contain only distinct values, and
    that this is true for the following group of three values. Three empty rows
