@@ -41,7 +41,7 @@ const Index = ({ data, location }: Props) => {
           Hi, I'm <HighlightPrimary>Jonathan</HighlightPrimary>.
         </HeroTitle>
         <HeroSubtitle>
-          I build web and mobile applications.
+          I build web applications.
           <HighlightComplementary>*</HighlightComplementary>
         </HeroSubtitle>
         <HeroDetail>
