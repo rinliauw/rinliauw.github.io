@@ -191,7 +191,7 @@ Monoid instances:
 What can I map functions over? I can map functions over a
 "computational context".
 
-* functors are things that can be mapped over (e.g. lists, Maybes).
+* functors are things that can be mapped over (e.g. lists, `Maybe`s).
 * functors are instances of the typeclass `Functor`.
 * `fmap` works like `map`, but is more general (works on all functors, not
   just lists).
@@ -226,7 +226,7 @@ fmap (+3) (Just 5) -- evaluates to (Just 8)
 > In general there is not a nice function you can use to recover the `a` once
 > it is inside a functor (or an `Applicative`, or a `Monad`). That is,
 > `Functor` does not require its instances to define what it means to unwrap
-> a the context to return the value.
+> the context to return the value.
 >
 > This is by design. For instance, unwrapping a `Maybe` to try and get the value
 > inside of it doesn't always make sense: what would `Nothing` unwrap into?

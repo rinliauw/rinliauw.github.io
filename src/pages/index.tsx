@@ -28,6 +28,10 @@ interface Props extends PageProps {
   };
 }
 
+// TODO: minecraft calculator, blockchain incentive systems,
+// lisp/lojban, tokenomics, information asymmetry, convergence to typescript
+// the extended stack: hosting, domain names, infrastructure, project
+// management, pointless meetings and emails as a meta programming language
 const Index = ({ data, location }: Props) => {
   return (
     <Layout location={location}>

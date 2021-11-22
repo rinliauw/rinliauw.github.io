@@ -18,7 +18,7 @@ The website is hosted on Firebase, and the domain registration and DNS
 services are from Namecheap. This time, deploying to a subdomain was
 surprisingly straightforward, maybe I'll write about it sometime.
 
-The scroll component on the bottom left was a really tricky bit, and currently
+The scroll component on the bottom right was a really tricky bit, and currently
 it's not perfect, but it works most of the time...
 
 Screenshots and more details coming soon!
