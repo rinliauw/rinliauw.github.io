@@ -8,6 +8,7 @@ export interface MdxNode {
     date: Date;
     title: string;
     description: string;
+    featured: any;
   };
   timeToRead: number;
 }

@@ -53,8 +53,8 @@ g x y = x == y      -- equality, g is pretty much (==)
 
 The second function `g` has a type constraint: it takes two arguments of a type
 `a` that must have properly defined equality, such that it is of the
-typeclass `Eq` (more on this later), e.g. `Int`. This is parametric
-polymorphism, with especially lightweight syntax.
+typeclass `Eq` (more on this later), e.g. `Int`. This is
+*parametric polymorphism*, with especially lightweight syntax.
 
 Note functions in Haskell are automatically
 [curried](https://en.wikipedia.org/wiki/Currying) (like partial application,

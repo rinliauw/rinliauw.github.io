@@ -1,4 +1,5 @@
 ---
+featured: "./cifero1.jpg"
 title: "Cifero"
 date: 2018-11-01T13:14:30+11:00
 draft: false

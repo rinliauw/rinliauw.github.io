@@ -124,6 +124,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     // Creates ImageSharp nodes from image files supported by Sharp
     `gatsby-transformer-sharp`,
     // low-level plugin for image processing functions of the Sharp library

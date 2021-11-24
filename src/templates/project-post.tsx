@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HorizontalRule from "../components/horizontal-rule";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Article, ArticleHeader, ArticleFooterNav } from "../components/article";
 
 const pageQuery = graphql`
@@ -27,6 +28,13 @@ const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featured {
+          childImageSharp {
+            gatsbyImageData(
+              layout: CONSTRAINED
+            )
+          }
+        }
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {
@@ -67,6 +75,7 @@ const ProjectPost = ({ data, location }: Props) => {
   const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
+  const featuredImage = getImage(post.frontmatter.featured);
 
   // TODO: table of contents, tags
   return (
@@ -81,6 +90,17 @@ const ProjectPost = ({ data, location }: Props) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
           <HorizontalRule />
+          {
+            post.frontmatter.featured &&
+            featuredImage !== undefined ? 
+            <p>
+              <GatsbyImage
+                image={featuredImage}
+                alt={post.frontmatter.title}
+              />
+            </p>
+            : null
+          }
         </ArticleHeader>
         <MDXRenderer>
           {post.body}
