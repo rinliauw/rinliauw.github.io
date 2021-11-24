@@ -28,6 +28,13 @@ const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featured {
+            childImageSharp {
+              gatsbyImageData(
+                layout: CONSTRAINED
+              )
+            }
+          }
         }
         timeToRead
       }

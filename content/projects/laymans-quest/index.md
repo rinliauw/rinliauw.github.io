@@ -95,30 +95,34 @@ To see the game in action, see the playthrough I did, linked above.
 
 UI guide accessible in the pause menu:
 
-<p align="center">
-  <img src="./ui_guide.jpg"  width="700" />
-</p>
+![UI Guide](./ui_guide.jpg)
 
 Real-time map UI, first half of the game map:
 
-<p align="center">
-  <img src="./maps.jpg"  width="700" />
-</p>
+![Main Map UI](./maps.jpg)
 
 Starting area, and the leaf particle system:
 
 <p align="center">
-  <img src="./leaf.gif"  width="700" />
+  <img
+    src="./leaf.gif"
+    style="max-width: 100%; width: auto; height: auto;"
+  />
 </p>
 
 Midgame optional area, combat and looting interactions:
 
 <p align="center">
-  <img src="./cave_interact_objects.gif"  width="700" />
+  <img
+    src="./cave_interact_objects.gif"
+    style="max-width: 100%; width: auto; height: auto;" />
 </p>
 
 Final stage, boss fight, a custom shader:
 
 <p align="center">
-  <img src="./enemyShader.gif"  width="700" />
+  <img
+    src="./enemyShader.gif"
+    style="max-width: 100%; width: auto; height: auto;"
+  />
 </p>

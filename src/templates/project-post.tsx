@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HorizontalRule from "../components/horizontal-rule";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Article, ArticleHeader, ArticleFooterNav } from "../components/article";
 
 const pageQuery = graphql`
@@ -30,9 +30,9 @@ const pageQuery = graphql`
         description
         featured {
           childImageSharp {
-            fluid(maxWidth: 750) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              layout: CONSTRAINED
+            )
           }
         }
       }
@@ -75,6 +75,7 @@ const ProjectPost = ({ data, location }: Props) => {
   const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
+  const featuredImage = getImage(post.frontmatter.featured);
 
   // TODO: table of contents, tags
   return (
@@ -91,12 +92,14 @@ const ProjectPost = ({ data, location }: Props) => {
           <HorizontalRule />
           {
             post.frontmatter.featured &&
+            featuredImage !== undefined ? 
             <p>
-              <Img
-                fluid={post.frontmatter.featured.childImageSharp.fluid}
+              <GatsbyImage
+                image={featuredImage}
                 alt={post.frontmatter.title}
               />
             </p>
+            : null
           }
         </ArticleHeader>
         <MDXRenderer>

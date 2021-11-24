@@ -1,4 +1,5 @@
 ---
+featured: "./c4p2.png"
 title: "Connect 4 Pancake"
 date: 2020-08-01T15:12:16+11:00
 draft: false

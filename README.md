@@ -10,4 +10,3 @@ old one which used Hugo.
 * Compact/archive view of posts
 * Post tagging and filter-by-tag system
 * Search post by title
-* More distinct projects page
