@@ -1,4 +1,5 @@
 ---
+featured: "./thumbnail.jpg"
 title: "Layman's Quest"
 date: 2021-11-03T12:12:16+11:00
 draft: false
