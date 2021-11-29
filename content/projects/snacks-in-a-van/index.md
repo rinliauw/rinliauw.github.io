@@ -1,12 +1,12 @@
 ---
-featured: "./dashboard.jpg"
-title: "OneThread"
+featured: "./menu.jpg"
+title: "Snacks In A Van"
 date: 2021-11-15T12:12:16+11:00
 draft: false
 description:
-    "A personal CRM web app with contact management, event scheduling,
+    "A web app for customers to order
     note taking, and JWT authentication functionalities.
-    Built with MERN for COMP30022."
+    Built with Express and Handlebars for COMP30022."
 ---
 
 * [Live client website](https://spider55-fe.herokuapp.com)

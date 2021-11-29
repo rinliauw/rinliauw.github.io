@@ -32,8 +32,8 @@ We discussed the game concepts and set targets in the first two weeks of
 development. Being epic gamers, we understood the classic RPG tropes and just
 went with them: medieval, low fantasy, save-the-world, etc. The aesthetic was
 meant to be informed by both grittier titles like *The Witcher 3* (UI) and
-*The Elder Scrolls Online* (background music), but also with the brightness of
-*Genshin Impact* (sound effects). We quickly realized it was difficult to
+*The Elder Scrolls Online* (background music), and brighter ones
+*Genshin Impact* (interactions). We quickly realized it was difficult to
 exactly nail a specific look-and-feel for the game when working with random
 free assets.
 
