@@ -32,7 +32,7 @@ We discussed the game concepts and set targets in the first two weeks of
 development. Being epic gamers, we understood the classic RPG tropes and just
 went with them: medieval, low fantasy, save-the-world, etc. The aesthetic was
 meant to be informed by both grittier titles like *The Witcher 3* (UI) and
-*The Elder Scrolls Online* (background music), and brighter ones
+*The Elder Scrolls Online* (background music), and brighter ones such as
 *Genshin Impact* (interactions). We quickly realized it was difficult to
 exactly nail a specific look-and-feel for the game when working with random
 free assets.
@@ -70,7 +70,7 @@ Having zero experience in developing a Unity 3D game, each of us turned to
 resources on the internet to work on the game aspects piecemeal. In my case, I
 adapted the AI, camera, and combat system from
 [the Dark Souls Series by Sebastian Graves](https://www.youtube.com/watch?v=HKMo3pczQyc&list=PLD_vBJjpCwJtrHIW1SS5_BNRk6KZJZ7_d).
-Among other things, I omitted the more interesting aspects, and switched up
+Among other things, I omitted the more interesting features, and switched up
 the animations.
 
 In the face of other assignments and exams, we finished most of the game in
@@ -80,12 +80,12 @@ would constantly be overwritten, and this ended up causing **excessive**
 grief, and a critical bug in our final submission. Of course, it also became
 harder to guarantee a bug-free experience as the game rapidly grew more
 complex. Our repo went past 20 GB at submission, when including all the stuff
-that Git ignores. It would be interesting to learn how actual game studios
+that Git ignores -- It would be interesting to learn how actual game studios
 split work and test their game...
 
 Development sped up just before the trailer release (2 weeks before the
 deadline), and we collected feedback from friends shortly after that. Then, we
-actually addressed all the points brought up and added even more content. The
+*actually* addressed all the points brought up and added even more content. The
 feature list ended up being massive, and we somehow met all of the ambitious
 targets we set out at the onset of the project.
 
