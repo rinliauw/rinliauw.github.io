@@ -1,16 +1,16 @@
 ---
 featured: "./menu.jpg"
 title: "Snacks In A Van"
-date: 2021-11-15T12:12:16+11:00
+date: 2021-05-31T12:12:16+11:00
 draft: false
 description:
-    "A web app for customers to order
-    note taking, and JWT authentication functionalities.
-    Built with Express and Handlebars for COMP30022."
+    "A web app for customers and travelling vendors to submit, edit,
+    and track food orders, with geolocating, discount and rating
+	functionality. Built with Express and Handlebars for COMP30022."
 ---
 
-* [Live client website](https://spider55-fe.herokuapp.com)
-* [Live backend server](https://spider55-api.herokuapp.com)
+* [Live customer app](https://spider55-fe.herokuapp.com)
+* [Live vendor app](https://spider55-api.herokuapp.com)
 
 OneThread was a semester-long "capstone" project for the Computing and
 Software Systems degree at Melbourne Uni, delivered in the subject COMP30022.

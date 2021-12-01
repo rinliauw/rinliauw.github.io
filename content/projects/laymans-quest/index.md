@@ -91,9 +91,11 @@ targets we set out at the onset of the project.
 
 ## Gallery
 
-To see the game in action, see the playthrough I did, linked above.
+To see the game in action, see the playthrough I did, linked above. The game
+length is about 1 hour from start to finish if you were to take your time and
+explore.
 
-UI guide accessible in the pause menu:
+The user interface guide accessible in the pause menu:
 
 ![UI Guide](./ui_guide.jpg)
 
