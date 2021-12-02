@@ -4,8 +4,9 @@ title: "Connect 4 Pancake"
 date: 2020-08-01T15:12:16+11:00
 draft: false
 description:
-    "Connect 4 with board rotation, in a pancake cafe.
-    Built with pygame for UniJam 2020. "
+    "A Connect 4 desktop game with board rotation and AI opponents,
+    set in a pancake cafe. Built with pygame for UniJam 2020, a week-long 
+    hackathon."
 ---
 
 * [Submission](https://jhan1.itch.io/connect-4-pancake)

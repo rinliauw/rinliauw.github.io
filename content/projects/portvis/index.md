@@ -3,8 +3,9 @@ featured: "./backtest.jpg"
 title: "Portvis"
 date: 2020-10-31T22:53:12+11:00
 draft: false
-description: A web app to compare and visualise portfolios of US stocks, built
-             with Spring Boot and React.
+description:
+  "A web app to compare and visualise historical returns of US stock
+   portfolios, built with Spring Boot, React, MySQL and Docker."
 ---
 
 [Github](https://github.com/jonjau/portvis)

@@ -12,9 +12,8 @@ description:
 * [HackMelbourne](https://hackmelb.org)
 * [Melbourne Hack Website](https://melbournehack.hackmelb.org)
 
-I built this website with React, Typescript and Sass. Unsurprisingly, I did
-not design the website, and the sleek space design was done by
-[@mispelledname](https://github.com/mispelledname).
+I built this website with React, Typescript and Sass, from a finished design
+which was done by [@mispelledname](https://github.com/mispelledname).
 
 The website is hosted on Firebase, and the domain registration and DNS
 services are from Namecheap. This time, deploying to a subdomain was

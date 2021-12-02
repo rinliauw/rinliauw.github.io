@@ -43,9 +43,9 @@ const About = ({ data, location }: Props) => {
           <p>
             Recently, I've been exploring full-stack web development, working
             with React on the front end and Spring Boot and Node.js on the
-            server side. Of course, I look to gain more practical experience
-            working with other technology stacks, mainly so I'll have more to
-            write here...
+            server side. Of course, I'm looking to gain more practical
+            experience working with other technology stacks, mainly so I'll
+            have more to write here...
           </p>
 
           <h2>Links</h2>
