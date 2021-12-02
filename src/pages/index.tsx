@@ -28,10 +28,6 @@ interface Props extends PageProps {
   };
 }
 
-// TODO: minecraft calculator, blockchain incentive systems,
-// lisp/lojban, tokenomics, information asymmetry, convergence to typescript
-// the extended stack: hosting, domain names, infrastructure, project
-// management, pointless meetings and emails as a meta programming language
 const Index = ({ data, location }: Props) => {
   return (
     <Layout location={location}>
@@ -66,5 +62,4 @@ const Index = ({ data, location }: Props) => {
   );
 };
 
-// Empty component for now. Currently / redirects to /blog. See gatsby-node.js
 export { Index as default, pageQuery };
