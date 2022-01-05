@@ -12,7 +12,7 @@ description:
 
 This post is about the redstone world I worked on until August 2018, which is
 available from the link above. It is filled with my experiments with
-![the redstone system](https://minecraft-archive.fandom.com/wiki/Redstone)
+[the redstone system](https://minecraft-archive.fandom.com/wiki/Redstone)
 in Minecraft, exploring how it can be used to simulate basic electronic
 circuits, even building up to crude computation and memory.
 
@@ -63,15 +63,15 @@ modification to the Addition/Subtraction module:
 The **Multiplication** module is actually 5-bit and works using bit-shifting.
 It's a trick one would see in low-level programming: multiplying `x` by 4,
 which is 2 to the power of 2, is the same as shifting `x` in binary by 2
-positions. The 5-bit limitation to avoid overflow and the hardwired bitshifts
-can be seen in the module itself:
+positions. The 5-bit limitation is to avoid overflow and the hardwired
+bitshifts can be seen physically in the module itself:
 
 ![Multiplication module](mul.png)
 
 ### Division
 
 By far the ugliest implementation, the **Division** module is my own bad
-design, essentially a hard-coded form of long division as in elementary
+design, essentially a hard-coded form of long division as taught in elementary
 school, with subsequent subtractions and remainder checking. Unsurprisingly,
 division by zero is also handled incorrectly.
 
@@ -82,8 +82,8 @@ division by zero is also handled incorrectly.
 The **Input** module is made up of three unintuitive keypads, for the first
 and second argument, and the operation. These two numbers are each saved in
 8-bit volatile memory module, then the computation is done by directing those
-two numbers to the desired module. The wiring for this redirection makes the
-bulk of the whole structure.
+two numbers to the desired module. The wiring for this redirection makes up
+the bulk of the whole structure.
 
 The **Output** module contains 7-segment decimal displays for the numbers,
 supporting `-127` and `128` inclusive, as well as a binary to BCD converter.
@@ -94,7 +94,7 @@ Division also truncates:
 
 ![Full calculator 2](k3ki2.png)
 
-More pictures are on the Planet Minecraft link above.
+More pictures are on the Planet Minecraft link at the top of this post.
 
 ## DENTA9
 
