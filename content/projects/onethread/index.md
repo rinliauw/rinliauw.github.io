@@ -29,7 +29,7 @@ Basically all projects were web applications.
 
 > Really, for my team this subject meant adapting what we knew about web
 > development from a previous subject we had done together, which culminated
-> in ![Snacks in a Van](https://jonjauhari.me/projects/snacks-in-a-van/). Sure
+> in ![Snacks in a Van](https://jonjauhari.com/projects/snacks-in-a-van/). Sure
 > enough, this time the tutors and lecturers did not help us in any technical
 > way, instead ensuring that we showed evidence of documenting APIs, meetings
 > and work delegation. So much so that I suspect the final product doesn't

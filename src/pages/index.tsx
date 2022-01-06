@@ -49,7 +49,7 @@ const Index = ({ data, location }: Props) => {
           This website is{" "}
           <a
             title="Github Repo for this site"
-            href="https://github.com/jonjau/jonjauhari.me"
+            href="https://github.com/jonjau/jonjauhari.com"
             target="_blank"
             rel="noopener noreferrer"
           >
