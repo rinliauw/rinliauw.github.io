@@ -40,7 +40,7 @@ free assets.
 > Currently, all the game's assets are free to use, but perhaps not
 > commercially. All artistic assets such as character models and animations
 > were either from [the Unity Asset Store](https://assetstore.unity.com/),
-> or from downloaded for free from YouTube and other game asset sites.
+> or downloaded for free from YouTube and other game asset sites.
 
 As for gameplay, we liberally took inspiration from (read: ripped off) series
 like *Dark Souls*, in the combat system, the boss fight, and how the
@@ -91,9 +91,9 @@ targets we set out at the onset of the project.
 
 ## Gallery
 
-To see the game in action, see the playthrough I did, linked above. The game
-length is about 1 hour from start to finish if you were to take your time and
-explore.
+To see the game in action, see the playthrough I did, linked at the top of
+this post. The game length is about 1 hour from start to finish if you were to
+take your time and explore.
 
 The user interface guide accessible in the pause menu:
 
