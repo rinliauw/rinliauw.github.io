@@ -37,8 +37,9 @@ const About = ({ data, location }: Props) => {
         </header>
         <section itemProp="articleBody">
           <p>
-            I'm a computer science student at the University of Melbourne
-            graduating 2021, and an aspiring&trade; software developer.
+            I'm a 2021 computer science graduate from the University of
+            Melbourne, and now work as a full-time software developer in the
+            financial services industry.
           </p>
           <p>
             Recently, I've been exploring full-stack web development, working
