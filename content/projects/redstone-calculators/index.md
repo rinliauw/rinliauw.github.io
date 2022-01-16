@@ -14,7 +14,7 @@ This post is about the redstone world I worked on until August 2018, which is
 available from the link above. It is filled with my experiments with
 [the redstone system](https://minecraft-archive.fandom.com/wiki/Redstone)
 in Minecraft, exploring how it can be used to simulate basic electronic
-circuits, even building up to crude computation and memory.
+circuits, even building up to primitive computation and memory.
 
 I thought of redstone as a way to simulate and learn about electronics --
 clearly more practical and affordable than buying physical wires and
@@ -64,7 +64,8 @@ The **Multiplication** module is actually 5-bit and works using bit-shifting.
 It's a trick one would see in low-level programming: multiplying `x` by 4,
 which is 2 to the power of 2, is the same as shifting `x` in binary by 2
 positions. The 5-bit limitation is to avoid overflow and the hardwired
-bitshifts can be seen physically in the module itself:
+bitshifts can be seen physically in the module itself, namely the staggering
+of the top and bottom set of wires:
 
 ![Multiplication module](mul.png)
 

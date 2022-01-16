@@ -23,16 +23,16 @@ regular meetings and work in weeks-long sprints.
 The idea for this semester was "**Personal CRM**", but each team was given
 full freedom in how they approached the requirement gathering, design, and
 implementation for the product. Overall, one functionality common throughout
-the other projects we saw (each team had to present their project) was
+the other projects we saw -- each team had to present their project -- was
 enabling a user to manage contacts and their details, like a phone book.
 Basically all projects were web applications.
 
 > Really, for my team this subject meant adapting what we knew about web
 > development from a previous subject we had done together, which culminated
-> in ![Snacks in a Van](https://jonjauhari.com/projects/snacks-in-a-van/). Sure
+> in [Snacks in a Van](https://jonjauhari.com/projects/snacks-in-a-van/). Sure
 > enough, this time the tutors and lecturers did not help us in any technical
 > way, instead ensuring that we showed evidence of documenting APIs, meetings
-> and work delegation. So much so that I suspect the final product doesn't
+> and work delegation. So much so that I suspect the final product did not
 > even matter to them...
 
 ## Development Process
