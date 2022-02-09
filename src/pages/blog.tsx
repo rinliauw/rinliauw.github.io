@@ -57,7 +57,7 @@ const Blog = ({ data, location }: Props) => {
       <SEO title="Blog" />
       <SectionTitle>Blog</SectionTitle>
       <SectionDescription>
-        I mainly write about programming and software development. The RSS
+        I sometimes write about programming and software development. The RSS
         feed for this blog is <a href="/rss.xml">here</a>.
       </SectionDescription>
       <PostList>
