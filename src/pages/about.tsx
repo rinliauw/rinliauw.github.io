@@ -38,8 +38,8 @@ const About = ({ data, location }: Props) => {
         <section itemProp="articleBody">
           <p>
             I'm a 2021 computer science graduate from the University of
-            Melbourne, and now work as a full-time software developer in the
-            financial services industry.
+            Melbourne, currently working as a full-time software developer in
+            the financial services industry.
           </p>
           <p>
             Recently, I've been exploring full-stack web development, working
