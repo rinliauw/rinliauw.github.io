@@ -8,28 +8,33 @@ Once, my friend told me that there was a 'financial engineering' subject
 taught at my university and that he really wanted to take it. My immediate
 reaction was to laugh as it sounded absurd, and somehow nefarious. Then again,
 he did seem like the kind of guy who would love to work behind 6 or so
-monitors trading in ((*exotic*)) financial instruments for the fun of it.
+monitors trading in *((exotic))* financial instruments for the fun of it.
 
-In fact, I had been taking an introductory finance class (in person!) at that
-time, and my intuition was that in the thing called Finance, KISS holds, and
-complexity only invites middlemen and fraudulence...
+> In fact, I had been taking an introductory finance class (in person!) at
+> that time, and my newly-formed intuition was that in the thing called
+> Finance, KISS holds, and complexity only invites middlemen and
+> fraudulence...
 
 Coming back to that moment a few times, I realised I was the weirdo. The
 subject name was simply using 'engineering' in a slightly different meaning,
-obviously not the kind with hard hats. It is used the way it's used in
-'Software Engineering' -- a subtle divergence in meaning I think we could do
-without.
+obviously not the kind with hard hats. In particular, it is used the way it's
+used in 'Software Engineering' -- a subtle divergence in meaning I think we
+could do without.
 
-For me, the word has always felt off for what
+For me, 'engineering' has always felt off for what I've seen software
+engineers actually do. My preference for the term *'software development'*
+over *'software engineering'* has now led me to write a lot of paragraphs to
+question the nature of the profession from the microscopic bit of experience
+that I've had in it. Beginners and bikeshedding do go hand in hand!
 
-and I think
-
-and this led to me question the nature of the entire profession from the
-little experience that I've had in it, and why I 
+I think there are fundamental differences that set software engineering
+apart from the other branches of engineering (with which I am even less
+familiar) to warrant a different term.
 
 ## Similarity in methodologies
 
-Why was the
+There are clearly similarities between what someone would consider *classical*
+engineering disciplines
 
 transferrable skills in problem solving and more importantly, understanding
 problems then communicating that understanding to others (next part...)
@@ -61,7 +66,9 @@ electronic? digital virtual meta.
 
 We could make up words instead: firewall, metaverse, devops
 
-## Physical aspirations
+## Lusting for physicality
+
+Nice subheading.
 
 We see this manifest too in the way programming is taught. The allure of
 teaching inheritance with animals, woofing dogs and meowing cats...
@@ -92,15 +99,18 @@ trudge through
 
 ## The Extended Stack
 
-In software development, web development in particular, people love to quote
-the shiny techonologies they use, perhaps as a sign of tech-forwardness
+In software development, web development in particular, there is a thing where
+one would quote the shiny techonologies they use, perhaps to signal tech-forwardness
 
-some of these stacks 
+Almost as if they were personality traits...
+
+some of these stacks are so commonly-used, they are crystallised as acronyms
+used in job requirements, such as LAMP, MEAN, or MERN.
 
 The "stack" of technologies, as in "full-stack engineer", does not end at
-whether you use React or Vue, or even AWS or Azure, but it can be said that
-the communication of concepts that sits atop these layers is a technology in
-itself.
+whether you use React or Vue, or even AWS or Azure, but it's interesting to
+think that the communication of concepts that sits atop these layers is a
+technology in itself.
 
 That English is the
 
@@ -161,6 +171,8 @@ compilers do a lot of heavy lifting. Bad code with good libs run OK.
 
 some words are bubbling up: coding, programming, developing, engineering,
 architecting
+
+logistician
 
 many roles to play: communicating, designing, developing, refactoring,
 deploying, testing
