@@ -1,7 +1,8 @@
 ---
 title: "Engineering and Developing Software"
-date: "2022-02-20T18:22:55+11:00"
-description: "What comes to mind?"
+date: "2022-02-27T18:22:55+11:00"
+description: "Some thoughts about the nature of software engineering and
+              development, and the role of communication."
 ---
 
 Once, my friend told me that there was a 'financial engineering' subject
@@ -28,10 +29,6 @@ over *'software engineering'* in most cases has now led me to write a lot of
 paragraphs to question the nature of the profession from the microscopic bit
 of experience that I've had in it, even if I use them basically
 interchangeably. Beginners and bikeshedding do go hand in hand!
-
-but Dijkstra
-writing about computing's "radical novelties" and the misuse of terms probably
-indicates that the situation is indeed not ideal.
 
 My room-temperature take is that there are fundamental differences that set
 software engineering apart from the other branches of engineering -- with
@@ -147,7 +144,7 @@ running it is virtually free. At most, you'll spend time and electricity.
 That malleability of software makes it much easier to overengineer, i.e.
 coming up with complex solutions when simpler ones would do. Often this
 would mean adding more layers of abstraction. An example in programming is
-[extracting all the functionality in FizzBuzz](https://www.dalejefferson.com/articles/2018-03-15-convoluted-fizzbuzz/).
+[overcomplicating FizzBuzz](https://www.dalejefferson.com/articles/2018-03-15-convoluted-fizzbuzz/).
 Functionally each iteration is equivalent, but you could argue the
 extra indirection there makes for nice-to-read-and-maintain code, i.e. the
 code communicates better.
@@ -226,20 +223,20 @@ Represented with a catchy term, it could give a truer representation of the
 development environment and how software development work is actually done:
 that the stack as in "full-stack" engineer is actually overfull...
 
-## Final subheading
+## A Final Subheading
 
 Seeking wisdom on a dozen blog posts on the internet reveals that a software
 engineer seems to be understood to be a cut above software developers,
 with a focus on the gathering of requirements, client communication, systems
 analysis and working with larger teams. I still feel uneasy in admitting that
 "applying engineering principles to the software development lifecycle" is
-enough to win over a term to describe entire domains which work with
-fundamentally different tools and constraints.
+enough to win over a term that describes entire domains which work with
+fundamentally different applications and constraints.
 
 It may be a sign of my ignorance, but my impression was that most developers
-are already expected to do those tasks anyway, on top of many other things
-extraneous to writing code that fulfills requirements and is easy to
-understand or maintain. Those things are those that I say make up "the
+are already expected to apply those engineering principles anyway, on top of
+many other things extraneous to writing code that fulfills requirements and is
+easy to understand or maintain. Those things are those that I say make up "the
 overfull stack".
 
 Besides, if the pure act of writing code, i.e. programming, while adhering to
@@ -253,143 +250,3 @@ relative youth of the discipline helps here, and frantically renaming things
 for no good reason shouldn't be too out of character. Surely we can 'engineer'
 some better terms to fit the nature of software development. And so ends my
 aimless rambling.
-
-```_
-
-naming is all we have, so why not try that here?
-
-some words are bubbling up: coding, programming, developing, engineering,
-architecting
-
-logistician
-
-many roles to play: communicating, designing, developing, refactoring,
-deploying, testing
-
-Beyond slapping e- in front
-of nouns
-
-buzzwords come and go
-
-e-sports and sports
-
-
-- term hijacking
-- fundamental difference: engineering vs developing
-- main constraint: communication
-- layers of abstraction: necessary evil
-- extended stack
-- the layers are malleable: your code changing without you knowing
-- a symptom of its youth: layers changing so quickly, terms coming and going
-- myriad consequences of term misuse, overconfidence, python and C elitist
-- so what? more wordsmithing, designer sounds better
-
-If for each problem, we could all just each sit down for a few days,
-
-understand the problem domain, then solve it ourselves in low-level 
-
-It wouldn't be very fun, nor time-efficient, but you can imagine that many
-people could do it, if forced to.
-And the "problem domain" of  
-
-But it
-is actually human nature that makes it *necessary* to overengineer, in the
-sense that 
-
-Yet, abstracting information and communicating is really a large 
-
-We see this manifest too in the way programming is taught. The allure of
-teaching inheritance with animals, woofing dogs and meowing cats...
-
-Not only is this misleading in teaching how inheritance is used, but it also
-suggests that software engineering having to do with anything physical by
-default.
-
-When [random large percentage] of the time we are simply modelling abstract
-concepts, whether it's UI elements in a desktop application, different
-database adapters for a CRUD web service, or some business object whose
-technicalities perpetually change. Sure, using pet animals makes it fun and
-less context-dependent, but my impression was that engineer-type folks pride
-themselves on keeping it light on theory and tight on application.
-
-The truth is, outside the realm of robotics or developing simulations, for
-instance those in video games, the bulk of the work labelled as 'software
-development' seems to be dealing with information. And dealing with
-information, means 
-
-two schools of thought, UNIX and electron crowd
-
-
-To stretch it even further, we can even think of trends we see in software
-development
-
-Another clear parallel is that between legal code and actual code, smart
-contracts
-
-the emails that we send, the standup meetings and 
-
-
-In the end, the ultimate communication tool is unambiguous language
-
-
-
-The world's choice of technology however, is English. Legacy tech, really. 
-
-It makes a poor programming language, then again its duties go far beyond
-describing FizzBuzz.
-
-After all, it is information all the way down
-
-Fully within the human world
-
-There is no force of nature involved. Remember, the moment you hit the
-physical electronic bits and bobs that breathe life into your "Hello World",
-you are far beyond the borders of "Software Engineering".
-
-By nature,
-software is built upon layers and layers of abstraction, The "tools" we
-"invent" are not to conquer, say, gravitational limitations, but simply to conquer
-our aversity to complex information systems.
-
-A core idea is that of abstracting complexity
-
-By the same token, it is equally easy to oversimplify: the fewer levers to
-fiddle with, the harder it is to get a handle (literally) on what's going on.
-An immediate example would be list comprehensions in Python hiding
-computational complexity, and being harder to debug.
-
-I think it doesn't help that
-The lower barrier of entry coupled with the half-false "prestige" that
-the title of "engineer", as well as the very-real high salaries the
-career path promises, tends to brew overconfidence
-
-A unique concept in software engineering is version control
-
-don't forget hardware.
-
-unlike a bridge, software products can improve without the developers knowing
-compilers do a lot of heavy lifting. Bad code with good libs run OK.
-
-A side effect of no physical constraints
-Information, by nature sits atop other
-
-
-Where in electrical engineering, one may create/modify software to interface
-with some hardware, i.e. it being a means to an end, software engineering is
-wholly concerned about that process, making the software as robust as
-possible, and at times to the detriment of commercial deadlines or 
-
-In particular, data science has a vastly different set of constraints, to the
-point where, even if the tools are the same, it is not software development.
-
-I've always thought programming as an activity shares more in common with
-linguistics than it does with mathematics
-
-Part of a trend of appropriating terms originally for physical objects to
-describe software products or digital concepts, prefix e in front of
-everything, but we grew out of that quickly, there is no e-cloud, electric or
-electronic? digital virtual meta.
-
-We could make up words instead: firewall, metaverse, devops
-
-```
