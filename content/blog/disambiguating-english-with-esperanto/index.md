@@ -31,7 +31,7 @@ Designing a new language from the ground up is hard, so in any case
 vocabulary should be kept constant (if not restricted to simpler words). This
 means points 3, 4, 5 are off-limits, there is no way to improve on those
 without modifying English words or how they are spelled
-([related](https://jonjau.github.io/projects/cifero/)). So, grammar has to
+([related](https://jonjauhari.com/projects/cifero/)). So, grammar has to
 change.
 
 I've been thinking about how Esperanto
@@ -156,7 +156,7 @@ A possible translation:
 - the article 'a' is dropped.
 - -o marks a noun.
 - -on marks a noun that is the direct object of the verb
-  (here the man is the object of seeing, 'so man-on').
+  (here the man is the object of seeing, so 'man-on').
 - -is turns a verb into past tense.
 - -e marks an adverb.
 - -a marks an adjective.

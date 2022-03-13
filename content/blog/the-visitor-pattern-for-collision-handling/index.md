@@ -7,7 +7,7 @@ basic collision handling in a game."
 ---
 
 I find that in learning conventions in programming it always pays to know the
-alternatives. Alternatives to 
+alternatives. Alternatives to
 [software design patterns](https://refactoring.guru/design-patterns) (which
 are conventions, really) are particularly important to know as patterns can be
 very specific and at times, overkill.
