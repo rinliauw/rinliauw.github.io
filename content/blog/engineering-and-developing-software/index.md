@@ -226,12 +226,12 @@ that the stack as in "full-stack" engineer is actually overfull...
 ## A Final Subheading
 
 Seeking wisdom on a dozen blog posts on the internet reveals that a software
-engineer seems to be understood to be a cut above software developers,
-with a focus on the gathering of requirements, client communication, systems
-analysis and working with larger teams. I still feel uneasy in admitting that
-"applying engineering principles to the software development lifecycle" is
-enough to win over a term that describes entire domains which work with
-fundamentally different applications and constraints.
+engineer is understood to be a cut above software developers, with a focus on
+the gathering of requirements, client communication, systems analysis and
+working with larger teams. I still feel uneasy in admitting that "applying
+engineering principles to the software development lifecycle" is enough to win
+over a term that describes entire domains which work with fundamentally
+different applications and constraints.
 
 It may be a sign of my ignorance, but my impression was that most developers
 are already expected to apply those engineering principles anyway, on top of
