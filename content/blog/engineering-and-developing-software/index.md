@@ -104,16 +104,13 @@ considering only human contraints.
 > "Software Engineering".
 
 Not to mention, the domain where software applications are used can have very
-little to do with the natural world, consider music players, browsers,
+little to do with the natural world -- consider music players, browsers,
 jobseeking websites, mobile banking apps, law encyclopedia, text editors. The
 closest software engineering gets to the physical is in modelling, and a
 [random large percentage] of the time we are simply modelling abstract
 concepts, whether it's UI elements in a desktop application, different
 database adapters for a CRUD web service, or some business object whose
-technicalities perpetually change. Sure, teaching inheritance with animals,
-woofing dogs and meowing cats is intuitive, but not only is this misleading in
-teaching how inheritance is used, but it also suggests that software
-engineering having to do with anything physical by default.
+technicalities perpetually change.
 
 > What if the software being engineered is to be applied to a problem in the
 > physical world, say, to control generators in a dam? In that case, the
@@ -126,8 +123,11 @@ engineering having to do with anything physical by default.
 The important human constraint is that it takes time and effort to understand
 complex information. It can be argued that computational complexity is a
 "natural" constraint, but in producing software we really only consider the
-cognition of the average human, and the time/memory tradeoffs potentially
-resulting from that complexity.
+cognition of the average human user/developer, and the time/memory tradeoffs
+potentially resulting from that complexity. Notably, those tradeoffs can
+change in production without the software engineer knowing! For instance, if
+there are changes in the underlying third-party library or the bare-metal
+hardware.
 
 The scarcity of physical constraints in the true problem domain of software
 engineering leads to the main constraint being centered around
@@ -144,10 +144,10 @@ running it is virtually free. At most, you'll spend time and electricity.
 That malleability of software makes it much easier to overengineer, i.e.
 coming up with complex solutions when simpler ones would do. Often this
 would mean adding more layers of abstraction. An example in programming is
-[overcomplicating FizzBuzz](https://www.dalejefferson.com/articles/2018-03-15-convoluted-fizzbuzz/).
-Functionally each iteration is equivalent, but you could argue the
-extra indirection there makes for nice-to-read-and-maintain code, i.e. the
-code communicates better.
+[overcomplicating FizzBuzz](https://www.dalejefferson.com/articles/2018-03-15-convoluted-fizzbuzz/):
+functionally each iteration is equivalent, but you could argue the extra
+indirection there makes for nice-to-read-and-maintain code, i.e. the code
+communicates better.
 
 Abstraction in communicating information (sometimes to the point of
 overengineering) is not only easier in software, it is also necessary. To save
@@ -162,18 +162,18 @@ environments like Jupyter is an obvious example of this.
 Communication happens in all levels of abstraction in software engineering. Of
 course, the idea of abstraction itself is also to aid in communication. At a
 higher level of abstraction, we could think of the software tools developers
-use. IDEs communicate the complexities of executing and debugging code through
-a nice graphical interface, as do graphical git clients for git commands.
-Even the leanest of developer environments would need an operating system.
-
-> **We use the software to make the software**.
+use as inter-developer communication. IDEs communicate the complexities of
+executing and debugging code through a nice graphical interface, as do
+graphical git clients for git commands. Even the leanest of developer
+environments would need an operating system.
+**We use the software to make the software**.
 
 It's becoming clear to me that creating software is inherently "softer" than
 other engineering disciplines, and that is because the core problem being
 solved is communicating logic to another person effectively. Instead of
 finding deterministic solution(s) as in say, physics, chemistry, or
-mathematics, often the solutions in software engineering are equally correct,
-and the choice of one over the other is down to the client, company
+mathematics, often the solutions to a software engineering problem are equally
+correct, and the choice of one over the other is down to the client, company
 convention, or even personal preference -- not unlike the choices of wording
 in an email.
 
@@ -191,16 +191,17 @@ the communication of concepts between developers and clients that sits atop
 these layers is a technology in itself. It might explain why the entire world
 clings so dearly to the word "Agile", as it is a vital name-tag for an
 improved process of communication whose effects can outweigh any choice of
-'actual' technology.
+'actual' technology. And the bulk of software engineering is just
+communicating concepts in many different mediums.
 
 DevOps is an emergent term related to Agile that aims to capture the
-infrastructure and software tools that developers use. But why not go further:
-to codify the way natural language is used day-to-day for effective
-communication and coin a term for it? Imagine if we formally specified the
-process and format that should be followed. For instance, when communicating
-requirements, nudging a colleague about an issue, or explaining a difficult
-concept to clients, maybe precise sentence forms and vocabulary to minimise
-ambiguity and redundancy are mandated.
+infrastructure and software tools that developers use. I'll reach a bit and
+suggest going further: to codify the way natural language is used day-to-day
+for effective communication and coining a term for it. Imagine if we formally
+specified the process and format that should be followed. For instance, when
+communicating requirements, nudging a colleague about an issue, or explaining
+a difficult concept to clients, maybe precise sentence forms and vocabulary to
+minimise ambiguity and redundancy are mandated.
 
 After all, short of telepathy, natural language in its many forms is
 probably the highest level communication tool we have. If Agile tells us to
@@ -211,21 +212,23 @@ is needed would probably invalidate a large part of the profession, for
 instance requirements gathering, standups, and code reviews.
 [Outside of closed-world exercises](https://jonjauhari.com/blog/a-sudoku-solver-in-15-lines-of-prolog/)
 this is impossible anyway. Humans are fickle, and we all secretly enjoy
-mastering artificial complexities and getting paid for it.
+overcoming artificial complexities and getting paid for it.
 
 Maybe effective comunication is already what people strive for, and maybe
 specifying how to say things would just turn team communication into legal
 documents. But I still think the general idea of formalising the use of
-natural language (probably English) outside of programming can be useful in
+natural language (probably English) outside of computer code can be useful in
 reducing cognitive load, especially for non-English speakers.
 
 Represented with a catchy term, it could give a truer representation of the
 development environment and how software development work is actually done:
-that the stack as in "full-stack" engineer is actually overfull...
+lots of communication, not just via code, but also emails, diagrams, comments,
+interface design and so on. It would mean that the stack as in
+"full-stack" engineer is actually overfull...
 
 ## A Final Subheading
 
-Seeking wisdom on a dozen blog posts on the internet reveals that a software
+Seeking wisdom from a dozen blog posts on the internet reveals that a software
 engineer is understood to be a cut above software developers, with a focus on
 the gathering of requirements, client communication, systems analysis and
 working with larger teams. I still feel uneasy in admitting that "applying
@@ -239,10 +242,10 @@ many other things extraneous to writing code that fulfills requirements and is
 easy to understand or maintain. Those things are those that I say make up "the
 overfull stack".
 
-Besides, if the pure act of writing code, i.e. programming, while adhering to
-benevolent practices such as code documentation, reviews, and integration
-testing, is entirely what a role comprises, then we could use more focused
-words like "programmer" to describe it.
+Besides, if the pure act of writing code, while adhering to benevolent
+practices such as code documentation, reviews, and integration testing, is
+entirely what a role comprises, then we could use more focused words like
+"programmer" to describe it.
 
 If Software Developer isn't exactly right, then maybe we try misusing other
 terms: architect, designer, interpreter, logician, refactorer(!?). The
