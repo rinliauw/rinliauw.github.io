@@ -53,7 +53,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonjau/v2.git"
+    "url": "https://github.com/rinliauw/rinliauw.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",

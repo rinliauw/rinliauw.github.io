@@ -6,10 +6,10 @@ const theme = {
 
   colors: {
     background: "#f2f2f0",
-    backgroundLight: "#BFBFBD", // 5% lighter
-    backgroundLighter: "#ABAAA9", // 20% lighter
-    backgroundDark: "#121212", // 50% darker
-    backgroundDarker: "#070707", // 80% darker
+    backgroundLight: "#E6E6E3", // 5% darker
+    backgroundLighter: "#C5C5BC", // 20% darker
+    backgroundDark: "#f8f8f7", // 50% lighter
+    backgroundDarker: "#fcfcfb", // 80% lighter
 
     logo: "#CA93B0",
     primary: "#CA93B0", // 20% lighter from logo

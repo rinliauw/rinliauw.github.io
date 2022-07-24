@@ -7,7 +7,7 @@ module.exports = {
       summary: `Data Science student at the University of Melbourne`,
     },
     description: `The personal website of Karina Liauw.`,
-    siteUrl: `https://jonjauhari.com`,
+    siteUrl: `https://rinliauw.github.io/`,
   },
   plugins: [
     // include files and make them available as data nodes
