@@ -33,48 +33,45 @@ const About = ({ data, location }: Props) => {
       <SEO title="About" />
       <Article itemScope itemType="http://schema.org/Article">
         <header>
-          <h1 itemProp="headline">About me</h1>
+          <h1 itemProp="headline">About</h1>
         </header>
         <section itemProp="articleBody">
           <p>
-            I'm a 2021 computer science graduate from the University of
-            Melbourne, currently working as a full-time software developer in
-            the financial services industry.
+            I'm a data science graduate from the University of
+            Melbourne, currently working as a junior data engineer in
+            a business management consultant company.
           </p>
           <p>
-            Recently, I've been exploring full-stack web development, working
-            with React on the front end and Spring Boot and Node.js on the
-            server side. Of course, I'm looking to gain more practical
-            experience working with other technology stacks, mainly so I'll
-            have more to write here...
+            My studies is focused in data processing, analyzing and predicting modelling,
+            with a minor in software development and computer science. I'm proficient in 
+            programming languages such as Python, SQL and R. My work is closely 
+            related to working with PostgreSQL, Pentaho and python ansible scripts to troubleshoot
+            developed data engineering platforms and ETL's.
+            In the future, I would be interested in exploring Tableau and other BI frameworks.
           </p>
 
           <h2>Links</h2>
           <p>
-            I'm always down to collaborate on a project. Check me out on&nbsp;
-            <a title="My Github profile" href="https://github.com/jonjau">
+            View my portfolio on&nbsp;
+            <a title="My Github profile" href="https://github.com/rinliauw">
               Github
             </a>{" "}
-            and &nbsp;
+            and&nbsp;
             <a
               title="My LinkedIn profile"
-              href="https://www.linkedin.com/in/jonathanjauhari/"
+              href="https://www.linkedin.com/in/rinliauw/"
             >
               LinkedIn
             </a>
-            , and feel free to contact me via email:&nbsp;
+            , contact me via e-mail:&nbsp;
             <a
               title="Send me an email"
-              href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6A%6F%6E%63%6A%61%75%68%61%72%69%40%67%6D%61%69%6C%2E%63%6F%6D"
+              href="mailto:karinaliauw@gmail.com"
             >
-              joncjauhari [at] gmail [dot] com
+              karinaliauw@gmail.com
             </a>
             .
           </p>
-          <ul>
-            <li>BTC: 1FrKqLmrRCTuVjq9pYRADCYXRBdVsHQmtY</li>
-            <li>ETH: 0x43d5aE1Bce42210EB742486Cd3e3331011b7c454</li>
-          </ul>
         </section>
       </Article>
     </Layout>

@@ -117,9 +117,9 @@ const Navbar = ({ path }: Props) => {
           <Logo />
         </NavbarBrandLink>
         <NavbarSecondary>
-          <NavbarLink to="/blog" selected={path.includes("/blog")}>
-            Blog
-          </NavbarLink>
+          {/* <NavbarLink to="/blog" selected={path.includes("/blog")}> */}
+            {/* Blog */}
+          {/* </NavbarLink> */}
           <NavbarLink to="/projects" selected={path.includes("/projects")}>
             Projects
           </NavbarLink>

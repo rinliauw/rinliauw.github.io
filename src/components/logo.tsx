@@ -14,7 +14,7 @@ const TealSquareWrapper = styled.span`
 
 const TealSquare = styled(FaSquareFull)`
   border-radius: 2px;
-  color: #197060;
+  color: #CA93B0;
   width: ${({ theme }) => theme.fontSize[4]};
   height: ${({ theme }) => theme.fontSize[4]};
   margin-left: ${({ theme }) => theme.spacing[3]};
@@ -34,7 +34,7 @@ const Logo = () => {
       <TealSquareWrapper>
         <TealSquare />
       </TealSquareWrapper>
-      <LogoText>Jonathan Jauhari</LogoText>
+      <LogoText>Karina Liauw</LogoText>
     </LogoWrapper>
   );
 };

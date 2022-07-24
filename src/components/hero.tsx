@@ -4,6 +4,7 @@ const Hero = styled.div``;
 
 const HeroTitle = styled.h1`
   margin: 0;
+  margin-top: ${({ theme }) => theme.spacing[10]};
   font-family: ${({ theme }) => theme.fonts.serif};
   font-size: ${({ theme }) => theme.fontSize[6]};
   font-weight: lighter;
@@ -43,7 +44,7 @@ const HeroDetail = styled.p`
     }
   }
 
-  margin-top: ${({ theme }) => theme.spacing[8]};
+  margin-top: ${({ theme }) => theme.spacing[10]};
   font-size: ${({ theme }) => theme.fontSize[2]};
   max-width: 560;
 `;

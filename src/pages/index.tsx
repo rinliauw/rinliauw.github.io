@@ -34,28 +34,24 @@ const Index = ({ data, location }: Props) => {
       <SEO title="Home" />
       <Hero>
         <HeroTitle>
-          Hi, I'm <HighlightPrimary>Jonathan</HighlightPrimary>.
+          Hi, I'm <HighlightPrimary>Karina</HighlightPrimary>,
         </HeroTitle>
         <HeroSubtitle>
-          I build web applications.
-          <HighlightComplementary>*</HighlightComplementary>
+         an aspiring data scientist.
+          
         </HeroSubtitle>
-        <HeroDetail>
-          <HighlightComplementary>*</HighlightComplementary> learning to,
-          anyway.
-        </HeroDetail>
 
         <HeroDetail>
-          This website is{" "}
+          Click{" "}
           <a
-            title="Github Repo for this site"
-            href="https://github.com/jonjau/jonjauhari.com"
+            title="My resume"
+            href="https://drive.google.com/file/d/1CYXj3EuhDbibj3W1ZlndMxtYyOgW9wXx/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
-            a work in progress
+            here to view my resume
           </a>
-          . Regardless, enjoy your stay!
+        . Let's get connected!
         </HeroDetail>
       </Hero>
     </Layout>

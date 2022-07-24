@@ -28,13 +28,6 @@ const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
-          featured {
-            childImageSharp {
-              gatsbyImageData(
-                layout: CONSTRAINED
-              )
-            }
-          }
         }
         timeToRead
       }
@@ -64,7 +57,7 @@ const Projects = ({ data, location }: Props) => {
       <SEO title="Projects" />
       <SectionTitle>Projects</SectionTitle>
       <SectionDescription>
-        Here I write about notable projects that I've undertaken.
+        Here are some notable projects I've undertaken:
       </SectionDescription>
       <PostList>
         {posts.map((post: MdxNode) => (

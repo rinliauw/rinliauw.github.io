@@ -5,21 +5,21 @@ const theme = {
   ...defaults,
 
   colors: {
-    background: "#252525",
-    backgroundLight: "#2f2f2f", // 5% lighter
-    backgroundLighter: "#505050", // 20% lighter
+    background: "#f2f2f0",
+    backgroundLight: "#BFBFBD", // 5% lighter
+    backgroundLighter: "#ABAAA9", // 20% lighter
     backgroundDark: "#121212", // 50% darker
     backgroundDarker: "#070707", // 80% darker
 
-    logo: "#197060",
-    primary: "#26ac94", // 20% lighter from logo
-    primaryLight: "#3ad3b8", // 20% lighter from primary
+    logo: "#CA93B0",
+    primary: "#CA93B0", // 20% lighter from logo
+    primaryLight: "#997086", // 20% lighter from primary
 
-    complementary: "#ac263e",
-
-    text: "#cfcfcf",
-    textLight: "#ffffff", // 100% lighter
-    textDark: "#9b9b9b", // 25% darker
+    complementary: "#AEC8D4",
+     // 
+    text: "#A19A91",
+    textLight: "#696664", // 100% lighter
+    textDark: "#857F77", // 25% darker
   },
 
   // 'monospace' does not affect generated code blocks: the prism theme does.

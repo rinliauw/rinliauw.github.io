@@ -1,16 +1,13 @@
 module.exports = {
   // metadata for SEO and also accessible by components/pages
   siteMetadata: {
-    title: `Jonathan Jauhari`,
+    title: `Karina Liauw`,
     author: {
-      name: `Jonathan Jauhari`,
-      summary: `Computer Science student at the University of Melbourne`,
+      name: `Karina Liauw`,
+      summary: `Data Science student at the University of Melbourne`,
     },
-    description: `The personal website of Jonathan Jauhari.`,
+    description: `The personal website of Karina Liauw.`,
     siteUrl: `https://jonjauhari.com`,
-    social: {
-      twitter: `jonjauhari`,
-    },
   },
   plugins: [
     // include files and make them available as data nodes
@@ -113,7 +110,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Jonathan Jauhari's Blog Posts",
+            title: "Karina Liauw's Blog Posts",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp to test
             // if pathname of current page satisfies it.
@@ -140,8 +137,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jonathan Jauhari`,
-        short_name: `Jonathan Jauhari`,
+        name: `Karina Liauw`,
+        short_name: `Karina Liauw`,
         start_url: `/`,
         background_color: `#252525`,
         theme_color: `#197060`,

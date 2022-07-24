@@ -63,7 +63,7 @@ interface Props {
 const Menu = ({ open }: Props) => {
   return (
     <StyledMenu open={open}>
-      <Link to="/blog">Blog</Link>
+      {/* <Link to="/blog">Blog</Link>  */}
       <Link to="/projects">Projects</Link>
       <Link to="/about">About</Link>
     </StyledMenu>

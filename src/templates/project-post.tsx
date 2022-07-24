@@ -28,13 +28,6 @@ const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        featured {
-          childImageSharp {
-            gatsbyImageData(
-              layout: CONSTRAINED
-            )
-          }
-        }
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {
